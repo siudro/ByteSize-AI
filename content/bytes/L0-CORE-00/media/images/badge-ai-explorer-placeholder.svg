@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">AI Explorer Badge</title>
+  <desc id="desc">Placeholder badge for ByteSize AI.</desc>
+  <rect width="640" height="640" rx="72" fill="#0f8b8d"/>
+  <circle cx="320" cy="272" r="142" fill="#fff7df" opacity="0.96"/>
+  <path d="M320 112l42 102 110 9-84 72 26 108-94-57-94 57 26-108-84-72 110-9z" fill="#d69b2d"/>
+  <path d="M156 442h328v54H156z" fill="#1f2520" opacity="0.88"/>
+  <text x="320" y="480" text-anchor="middle" font-family="Arial, Tahoma, sans-serif" font-size="30" font-weight="700" fill="#fffdf7">AI Explorer</text>
+</svg>

@@ -1,0 +1,51 @@
+{
+  "id": "teach_the_machine",
+  "default_language": "ar",
+  "direction": "rtl",
+  "title": {
+    "ar": "علّم الآلة",
+    "en": "Teach the Machine"
+  },
+  "goal": {
+    "ar": "اجعل المتعلم يرى كيف تتحسن تخمينات الآلة عندما تحصل على أمثلة أكثر.",
+    "en": "Let the learner see how a machine's guesses improve when it receives more examples."
+  },
+  "rounds": 3,
+  "categories": [
+    {
+      "id": "cat",
+      "label": {
+        "ar": "قطة",
+        "en": "Cat"
+      }
+    },
+    {
+      "id": "dog",
+      "label": {
+        "ar": "كلب",
+        "en": "Dog"
+      }
+    }
+  ],
+  "example_media": [
+    {
+      "id": "cat_placeholder_1",
+      "path": "../../media/images/example-cat-placeholder.png",
+      "label": "cat"
+    },
+    {
+      "id": "dog_placeholder_1",
+      "path": "../../media/images/example-dog-placeholder.png",
+      "label": "dog"
+    }
+  ],
+  "ui": {
+    "show_confidence_meter": true,
+    "allow_retry": true,
+    "show_pattern_hint": true
+  },
+  "completion": {
+    "required_interactions": 3,
+    "minimum_score": 70
+  }
+}
