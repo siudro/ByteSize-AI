@@ -1,7 +1,9 @@
-﻿export type LanguageCode = "ar" | "en";
+export type LanguageCode = "ar" | "en";
+export type ArabicVariantCode = "saudi" | "standard";
 
 export type LocalizedText = {
   ar?: string;
+  ar_fusha?: string;
   en?: string;
 };
 
@@ -146,9 +148,12 @@ export type Byte = {
   version?: string | number;
   language?: {
     default?: LanguageCode;
+    default_arabic_variant?: ArabicVariantCode;
     direction?: "rtl" | "ltr";
     supported?: LanguageCode[];
+    supported_arabic_variants?: ArabicVariantCode[];
     fallback?: LanguageCode;
+    fallback_arabic_variant?: ArabicVariantCode;
   };
   map?: {
     node_label?: LocalizedText;

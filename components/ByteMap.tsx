@@ -1,56 +1,45 @@
-﻿"use client";
+"use client";
 
 import { ExperienceControls } from "./ExperienceProvider";
 import { LanguageToggle, useLanguage } from "./LanguageProvider";
 import { MapNode } from "./MapNode";
 import { useProgress } from "./ProgressProvider";
-import type { ByteSummary, NodeState } from "@/lib/schema";
+import { t } from "@/lib/i18n";
+import type { ByteSummary, LocalizedText, NodeState } from "@/lib/schema";
 
 type ByteMapProps = {
   bytes: ByteSummary[];
 };
 
-const LEVEL_COPY: Record<number, { arTitle: string; enTitle: string; arVibe: string; enVibe: string }> = {
+const LEVEL_COPY: Record<number, { title: LocalizedText; vibe: LocalizedText }> = {
   0: {
-    arTitle: "البايت الأول",
-    enTitle: "The First Byte",
-    arVibe: "نقطة الدخول. بايت واحد يفتح المستوى الأول.",
-    enVibe: "The calm entry point. One Byte unlocks Level 1."
+    title: { ar: "البايت الأول", ar_fusha: "البايت الأول", en: "The First Byte" },
+    vibe: { ar: "نقطة الدخول. بايت واحد يفتح المستوى الأول.", ar_fusha: "نقطة البداية. بايت واحد يفتح المستوى الأول.", en: "The calm entry point. One Byte unlocks Level 1." }
   },
   1: {
-    arTitle: "أول تماس",
-    enTitle: "First Contact",
-    arVibe: "فضول واكتشاف للمسارات الأربعة.",
-    enVibe: "Curiosity and pathway discovery."
+    title: { ar: "أول تماس", ar_fusha: "أول تواصل", en: "First Contact" },
+    vibe: { ar: "فضول واكتشاف للمسارات الأربعة.", ar_fusha: "فضول واكتشاف للمسارات الأربعة.", en: "Curiosity and pathway discovery." }
   },
   2: {
-    arTitle: "تبدأ الروابط",
-    enTitle: "Things Start Connecting",
-    arVibe: "الأفكار تتقاطع وتبدأ المسارات بالوضوح.",
-    enVibe: "Ideas cross over and the pathways become clearer."
+    title: { ar: "تبدأ الروابط", ar_fusha: "تبدأ الروابط", en: "Things Start Connecting" },
+    vibe: { ar: "الأفكار تتقاطع وتبدأ المسارات بالوضوح.", ar_fusha: "تتقاطع الأفكار وتبدأ المسارات بالاتضاح.", en: "Ideas cross over and the pathways become clearer." }
   },
   3: {
-    arTitle: "فهم حقيقي يظهر",
-    enTitle: "Real Understanding Emerging",
-    arVibe: "مشاريع أكثر وقرارات أذكى.",
-    enVibe: "More projects and smarter decisions."
+    title: { ar: "فهم حقيقي يظهر", ar_fusha: "يظهر فهم حقيقي", en: "Real Understanding Emerging" },
+    vibe: { ar: "مشاريع أكثر وقرارات أذكى.", ar_fusha: "مشاريع أكثر وقرارات أذكى.", en: "More projects and smarter decisions." }
   },
   4: {
-    arTitle: "كفاءة عميقة",
-    enTitle: "Deep Competence",
-    arVibe: "تخصصات ومهارات قابلة للتطبيق.",
-    enVibe: "Specializations and applied skills."
+    title: { ar: "كفاءة عميقة", ar_fusha: "كفاءة عميقة", en: "Deep Competence" },
+    vibe: { ar: "تخصصات ومهارات قابلة للتطبيق.", ar_fusha: "تخصصات ومهارات قابلة للتطبيق.", en: "Specializations and applied skills." }
   },
   5: {
-    arTitle: "منطقة متقدمة",
-    enTitle: "Advanced Territory",
-    arVibe: "مساحة للتحديات المتقدمة والإنجازات الكبيرة.",
-    enVibe: "Advanced challenges and bigger achievements."
+    title: { ar: "منطقة متقدمة", ar_fusha: "منطقة متقدمة", en: "Advanced Territory" },
+    vibe: { ar: "مساحة للتحديات المتقدمة والإنجازات الكبيرة.", ar_fusha: "مساحة للتحديات المتقدمة والإنجازات الكبيرة.", en: "Advanced challenges and bigger achievements." }
   }
 };
 
 export function ByteMap({ bytes }: ByteMapProps) {
-  const { language } = useLanguage();
+  const { language, arabicVariant } = useLanguage();
   const { loaded, isUnlocked, isCompleted, resetProgress } = useProgress();
   const levels = [0, 1, 2, 3, 4, 5];
 
@@ -67,7 +56,7 @@ export function ByteMap({ bytes }: ByteMapProps) {
           <div className="brand-mark">B</div>
           <div>
             <span className="brand-title">ByteSize AI</span>
-            <p className="eyebrow">{language === "ar" ? "الخارطة" : "Map"}</p>
+            <p className="eyebrow">{t({ ar: "الخارطة", ar_fusha: "الخريطة", en: "Map" }, language, arabicVariant)}</p>
           </div>
         </div>
         <div className="topbar-controls">
@@ -78,19 +67,25 @@ export function ByteMap({ bytes }: ByteMapProps) {
 
       <section className="map-intro">
         <div>
-          <h1>{language === "ar" ? "تبسيط الذكاء الاصطناعي في بايتات صغيرة" : "Learn AI in small, digestible Bytes"}</h1>
+          <h1>{t({ ar: "تبسيط الذكاء الاصطناعي في بايتات صغيرة", ar_fusha: "تعلّم الذكاء الاصطناعي في بايتات صغيرة", en: "Learn AI in small, digestible Bytes" }, language, arabicVariant)}</h1>
           <p>
-            {language === "ar"
-              ? "ابدأ من المستوى صفر. كل بايت يفتح فكرة ومشروع ولقيمات جديدة في الأسفل."
-              : "Start at Level 0. Each Byte opens an idea, a small project, and new nodes below."}
+            {t(
+              {
+                ar: "ابدأ من المستوى صفر. كل بايت يفتح فكرة ومشروع ولقيمات جديدة في الأسفل.",
+                ar_fusha: "ابدأ من المستوى صفر. كل بايت يفتح فكرة ومشروعًا وعقدًا جديدة في الأسفل.",
+                en: "Start at Level 0. Each Byte opens an idea, a small project, and new nodes below."
+              },
+              language,
+              arabicVariant
+            )}
           </p>
         </div>
         <button className="button danger" type="button" onClick={resetProgress}>
-          {language === "ar" ? "إعادة ضبط التقدم" : "Reset progress"}
+          {t({ ar: "إعادة ضبط التقدم", ar_fusha: "إعادة ضبط التقدم", en: "Reset progress" }, language, arabicVariant)}
         </button>
       </section>
 
-      <section className="map-journey" aria-busy={!loaded} aria-label={language === "ar" ? "خارطة التعلم" : "Learning map"}>
+      <section className="map-journey" aria-busy={!loaded} aria-label={t({ ar: "خارطة التعلم", ar_fusha: "خريطة التعلم", en: "Learning map" }, language, arabicVariant)}>
         <svg className="map-lines" viewBox="0 0 1000 1780" preserveAspectRatio="none" aria-hidden="true">
           <path className="path-professional" d="M500 230 C500 305 125 340 125 465" />
           <path className="path-creative" d="M500 230 C500 305 375 340 375 465" />
@@ -111,14 +106,14 @@ export function ByteMap({ bytes }: ByteMapProps) {
             <div className={`level-band level-${level}`} key={level}>
               <div className="level-header">
                 <div>
-                  <p className="eyebrow">{language === "ar" ? `المستوى ${level}` : `Level ${level}`}</p>
-                  <h2>{language === "ar" ? copy.arTitle : copy.enTitle}</h2>
-                  <p>{language === "ar" ? copy.arVibe : copy.enVibe}</p>
+                  <p className="eyebrow">{t({ ar: `المستوى ${level}`, ar_fusha: `المستوى ${level}`, en: `Level ${level}` }, language, arabicVariant)}</p>
+                  <h2>{t(copy.title, language, arabicVariant)}</h2>
+                  <p>{t(copy.vibe, language, arabicVariant)}</p>
                 </div>
               </div>
               <div className="node-grid">
                 {levelBytes.map((byte) => (
-                  <MapNode byte={byte} key={byte.id} language={language} state={nodeState(byte)} />
+                  <MapNode byte={byte} key={byte.id} language={language} arabicVariant={arabicVariant} state={nodeState(byte)} />
                 ))}
               </div>
             </div>
@@ -128,5 +123,3 @@ export function ByteMap({ bytes }: ByteMapProps) {
     </main>
   );
 }
-
-

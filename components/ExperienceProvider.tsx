@@ -1,7 +1,9 @@
-﻿"use client";
+"use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
+import { t } from "@/lib/i18n";
+import type { LocalizedText } from "@/lib/schema";
 
 export type StimulusMode = "low" | "standard" | "high";
 
@@ -124,14 +126,14 @@ export function useExperience() {
   return context;
 }
 
-const STIMULUS_LABELS: Record<StimulusMode, { ar: string; en: string }> = {
-  low: { ar: "هادئ", en: "Low" },
-  standard: { ar: "متوازن", en: "Standard" },
-  high: { ar: "حيوي", en: "High" }
+const STIMULUS_LABELS: Record<StimulusMode, LocalizedText> = {
+  low: { ar: "هادئ", ar_fusha: "هادئ", en: "Low" },
+  standard: { ar: "متوازن", ar_fusha: "متوازن", en: "Standard" },
+  high: { ar: "حيوي", ar_fusha: "حيوي", en: "High" }
 };
 
 export function ExperienceControls() {
-  const { language } = useLanguage();
+  const { language, arabicVariant } = useLanguage();
   const { stimulusMode, setStimulusMode, fontScale, increaseFontScale, decreaseFontScale, resetFontScale } =
     useExperience();
   const modes: StimulusMode[] = ["low", "standard", "high"];
@@ -141,7 +143,7 @@ export function ExperienceControls() {
       <div
         className="segmented-control"
         role="group"
-        aria-label={language === "ar" ? "مستوى التحفيز البصري" : "Visual stimulus level"}
+        aria-label={t({ ar: "مستوى التحفيز البصري", ar_fusha: "مستوى التحفيز البصري", en: "Visual stimulus level" }, language, arabicVariant)}
       >
         {modes.map((mode) => (
           <button
@@ -151,17 +153,17 @@ export function ExperienceControls() {
             type="button"
             onClick={() => setStimulusMode(mode)}
           >
-            {language === "ar" ? STIMULUS_LABELS[mode].ar : STIMULUS_LABELS[mode].en}
+            {t(STIMULUS_LABELS[mode], language, arabicVariant)}
           </button>
         ))}
       </div>
 
-      <div className="text-size-control" role="group" aria-label={language === "ar" ? "حجم النص" : "Text size"}>
+      <div className="text-size-control" role="group" aria-label={t({ ar: "حجم النص", ar_fusha: "حجم النص", en: "Text size" }, language, arabicVariant)}>
         <button
           className="icon-button"
           type="button"
-          aria-label={language === "ar" ? "تصغير النص" : "Decrease text size"}
-          title={language === "ar" ? "تصغير النص" : "Decrease text size"}
+          aria-label={t({ ar: "تصغير النص", ar_fusha: "تصغير النص", en: "Decrease text size" }, language, arabicVariant)}
+          title={t({ ar: "تصغير النص", ar_fusha: "تصغير النص", en: "Decrease text size" }, language, arabicVariant)}
           onClick={decreaseFontScale}
           disabled={fontScale <= FONT_SCALES[0]}
         >
@@ -170,8 +172,8 @@ export function ExperienceControls() {
         <button
           className="icon-button"
           type="button"
-          aria-label={language === "ar" ? "إعادة حجم النص" : "Reset text size"}
-          title={language === "ar" ? "إعادة حجم النص" : "Reset text size"}
+          aria-label={t({ ar: "إعادة حجم النص", ar_fusha: "إعادة حجم النص", en: "Reset text size" }, language, arabicVariant)}
+          title={t({ ar: "إعادة حجم النص", ar_fusha: "إعادة حجم النص", en: "Reset text size" }, language, arabicVariant)}
           onClick={resetFontScale}
         >
           A
@@ -179,8 +181,8 @@ export function ExperienceControls() {
         <button
           className="icon-button"
           type="button"
-          aria-label={language === "ar" ? "تكبير النص" : "Increase text size"}
-          title={language === "ar" ? "تكبير النص" : "Increase text size"}
+          aria-label={t({ ar: "تكبير النص", ar_fusha: "تكبير النص", en: "Increase text size" }, language, arabicVariant)}
+          title={t({ ar: "تكبير النص", ar_fusha: "تكبير النص", en: "Increase text size" }, language, arabicVariant)}
           onClick={increaseFontScale}
           disabled={fontScale >= FONT_SCALES[FONT_SCALES.length - 1]}
         >

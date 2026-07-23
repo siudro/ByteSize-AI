@@ -1,10 +1,12 @@
-﻿id: L0-CORE-00
+id: L0-CORE-00
 title:
   ar: الذكاء الاصطناعي ليس سحرًا
   en: AI Is Not Magic
+  ar_fusha: الذكاء الاصطناعي ليس سحرًا
 subtitle:
   ar: البايت الأول في رحلة ByteSize AI
   en: The first Byte in the ByteSize AI journey
+  ar_fusha: البايت الأول في رحلة ByteSize AI
 level: 0
 primary_pathway: core
 estimated_duration_minutes: 35
@@ -14,306 +16,376 @@ language:
   default: ar
   direction: rtl
   supported:
-  - ar
-  - en
+    - ar
+    - en
   fallback: ar
+  default_arabic_variant: saudi
+  supported_arabic_variants:
+    - saudi
+    - standard
+  fallback_arabic_variant: saudi
 map:
   node_label:
     ar: البايت الأول
     en: First Byte
+    ar_fusha: البايت الأول
   node_icon: spark
   pathway_color: gold
   position:
     level_band: 0
     order: 1
   unlocks:
-  - L1-ENG-01
-  - L1-MAK-01
-  - L1-CRE-01
-  - L1-PRO-01
+    - L1-ENG-01
+    - L1-MAK-01
+    - L1-CRE-01
+    - L1-PRO-01
   connections:
-  - target_byte_id: L1-ENG-01
-    type: ladder
-    reason:
-      ar: فهم أساسيات البيانات والأنماط يفتح طريق بناء أنظمة الذكاء الاصطناعي.
-      en: Understanding data and patterns opens the path to building AI systems.
-  - target_byte_id: L1-MAK-01
-    type: ladder
-    reason:
-      ar: فهم قدرات الذكاء الاصطناعي يفتح طريق التصميم والصناعة.
-      en: Understanding AI capabilities opens the path to design and making.
-  - target_byte_id: L1-CRE-01
-    type: ladder
-    reason:
-      ar: فهم التوليد والتحقق يفتح الطريق إلى الإبداع المسؤول.
-      en: Understanding generation and verification opens the path to responsible creativity.
-  - target_byte_id: L1-PRO-01
-    type: ladder
-    reason:
-      ar: فهم القرار والمسؤولية يفتح الطريق إلى الاستخدام المهني.
-      en: Understanding decisions and accountability opens the professional pathway.
+    - target_byte_id: L1-ENG-01
+      type: ladder
+      reason:
+        ar: فهم أساسيات البيانات والأنماط يفتح طريق بناء أنظمة الذكاء الاصطناعي.
+        en: Understanding data and patterns opens the path to building AI systems.
+        ar_fusha: فهم أساسيات البيانات والأنماط يفتح طريق بناء أنظمة الذكاء الاصطناعي.
+    - target_byte_id: L1-MAK-01
+      type: ladder
+      reason:
+        ar: فهم قدرات الذكاء الاصطناعي يفتح طريق التصميم والصناعة.
+        en: Understanding AI capabilities opens the path to design and making.
+        ar_fusha: فهم قدرات الذكاء الاصطناعي يفتح طريق التصميم والصناعة.
+    - target_byte_id: L1-CRE-01
+      type: ladder
+      reason:
+        ar: فهم التوليد والتحقق يفتح الطريق إلى الإبداع المسؤول.
+        en: Understanding generation and verification opens the path to responsible creativity.
+        ar_fusha: فهم التوليد والتحقق يفتح الطريق إلى الإبداع المسؤول.
+    - target_byte_id: L1-PRO-01
+      type: ladder
+      reason:
+        ar: فهم القرار والمسؤولية يفتح الطريق إلى الاستخدام المهني.
+        en: Understanding decisions and accountability opens the professional pathway.
+        ar_fusha: فهم القرار والمسؤولية يفتح الطريق إلى الاستخدام المهني.
 badge:
   name:
     ar: مستكشف الذكاء الاصطناعي
     en: AI Explorer
+    ar_fusha: مستكشف الذكاء الاصطناعي
   type: physical
   icon: media/images/badge-ai-explorer-placeholder.svg
   criteria:
-  - ar: إكمال شاشات البايت الأساسية
-    en: Complete the required Byte screens
-  - ar: إكمال مهمة مصمم نظام الذكاء الاصطناعي
-    en: Complete the AI System Designer mission
-  - ar: اختيار قرار الجاهزية
-    en: Choose a readiness decision
+    - ar: إكمال شاشات البايت الأساسية
+      en: Complete the required Byte screens
+      ar_fusha: إكمال شاشات البايت الأساسية
+    - ar: إكمال مهمة مصمم نظام الذكاء الاصطناعي
+      en: Complete the AI System Designer mission
+      ar_fusha: إكمال مهمة مصمم نظام الذكاء الاصطناعي
+    - ar: اختيار قرار الجاهزية
+      en: Choose a readiness decision
+      ar_fusha: اختيار قرار الجاهزية
 learning_design:
   one_concept:
-    ar: الذكاء الاصطناعي يتعلم أو يستخدم أنماطًا من البيانات ليلاحظ ويتنبأ ويوصي ويولّد ويتصرف، لكن جودة نتائجه
+    ar: الذكاء الاصطناعي يتعلم أو يستخدم أنماطًا من البيانات ليلاحظ ويتنبأ ويوصي ويولّد ويتصرف، لكن جودة نتائجه ومسؤولية
+      استخدامه تعتمدان على البشر والبيانات.
+    en: AI learns or uses patterns in data to recognize, predict, recommend, generate, and act, while its quality and
+      responsible use depend on people and data.
+    ar_fusha: الذكاء الاصطناعي يتعلم أو يستخدم أنماطًا من البيانات ليلاحظ ويتنبأ ويوصي ويولّد ويتصرف، لكن جودة نتائجه
       ومسؤولية استخدامه تعتمدان على البشر والبيانات.
-    en: AI learns or uses patterns in data to recognize, predict, recommend, generate, and act, while its quality
-      and responsible use depend on people and data.
   project_output:
     ar: بطاقة نظام إنذار حريق ذكي توضّح الهدف والبيانات والنمط والنتيجة وضابط الأمان.
     en: A smart fire-warning system card showing the goal, data, pattern, output, and safeguard.
+    ar_fusha: بطاقة نظام إنذار حريق ذكي توضّح الهدف والبيانات والنمط والنتيجة وضابط الأمان.
   concepts_taught:
-  - ar: الذكاء الاصطناعي يحاكي بعض القدرات الذهنية البشرية، وليس عقلًا بشريًا كاملًا.
-    en: AI imitates some human cognitive abilities; it is not a complete human mind.
-  - ar: الذكاء الاصطناعي أوسع من المحتوى التوليدي.
-    en: AI is broader than generative content.
-  - ar: قد يتعرف ويتنبأ ويوصي ويولّد ويتخذ إجراءات ضمن الصلاحيات الممنوحة له.
-    en: It can recognize, predict, recommend, generate, and take actions within the authority it is given.
-  - ar: البيانات قد تكون أرقامًا أو صورًا أو فيديو أو صوتًا أو نصوصًا.
-    en: Data can be numbers, images, video, audio, or text.
-  - ar: الأنماط هي علاقات أو تكرارات تساعد النظام على التخمين.
-    en: Patterns are relationships or repetitions that help a system make guesses.
-  - ar: البيانات الناقصة أو غير المتوازنة قد تقود إلى استنتاجات خاطئة.
-    en: Missing or unbalanced data can lead to wrong conclusions.
-  - ar: المظهر الواقعي لا يثبت أن المحتوى حقيقي.
-    en: Realistic appearance does not prove content is real.
-  - ar: الذكاء الاصطناعي قد يتخذ قرارات أو ينفذ أفعالًا، لكن البشر والجهات التي تصممه وتنشره وتستخدمه تبقى مسؤولة
-      عن الضوابط والنتائج.
-    en: AI may make decisions or take actions, but the people and organizations that design, deploy, and use it
-      remain responsible for safeguards and outcomes.
+    - ar: الذكاء الاصطناعي يحاكي بعض القدرات الذهنية البشرية، وليس عقلًا بشريًا كاملًا.
+      en: AI imitates some human cognitive abilities; it is not a complete human mind.
+      ar_fusha: الذكاء الاصطناعي يحاكي بعض القدرات الذهنية البشرية، وليس عقلًا بشريًا كاملًا.
+    - ar: الذكاء الاصطناعي أوسع من المحتوى التوليدي.
+      en: AI is broader than generative content.
+      ar_fusha: الذكاء الاصطناعي أوسع من المحتوى التوليدي.
+    - ar: قد يتعرف ويتنبأ ويوصي ويولّد ويتخذ إجراءات ضمن الصلاحيات الممنوحة له.
+      en: It can recognize, predict, recommend, generate, and take actions within the authority it is given.
+      ar_fusha: قد يتعرف ويتنبأ ويوصي ويولّد ويتخذ إجراءات ضمن الصلاحيات الممنوحة له.
+    - ar: البيانات قد تكون أرقامًا أو صورًا أو فيديو أو صوتًا أو نصوصًا.
+      en: Data can be numbers, images, video, audio, or text.
+      ar_fusha: البيانات قد تكون أرقامًا أو صورًا أو فيديو أو صوتًا أو نصوصًا.
+    - ar: الأنماط هي علاقات أو تكرارات تساعد النظام على التخمين.
+      en: Patterns are relationships or repetitions that help a system make guesses.
+      ar_fusha: الأنماط هي علاقات أو تكرارات تساعد النظام على التخمين.
+    - ar: البيانات الناقصة أو غير المتوازنة قد تقود إلى استنتاجات خاطئة.
+      en: Missing or unbalanced data can lead to wrong conclusions.
+      ar_fusha: البيانات الناقصة أو غير المتوازنة قد تقود إلى استنتاجات خاطئة.
+    - ar: المظهر الواقعي لا يثبت أن المحتوى حقيقي.
+      en: Realistic appearance does not prove content is real.
+      ar_fusha: المظهر الواقعي لا يثبت أن المحتوى حقيقي.
+    - ar: الذكاء الاصطناعي قد يتخذ قرارات أو ينفذ أفعالًا، لكن البشر والجهات التي تصممه وتنشره وتستخدمه تبقى مسؤولة عن الضوابط
+        والنتائج.
+      en: AI may make decisions or take actions, but the people and organizations that design, deploy, and use it remain
+        responsible for safeguards and outcomes.
+      ar_fusha: الذكاء الاصطناعي قد يتخذ قرارات أو ينفذ أفعالًا، لكن البشر والجهات التي تصممه وتنشره وتستخدمه تبقى مسؤولة عن
+        الضوابط والنتائج.
   learner_takeaway:
-    ar: أستطيع أن أحدد ما يفعله نظام الذكاء الاصطناعي، وما البيانات التي يحتاجها، وما النمط الذي يبحث عنه، ومن المسؤول
+    ar: أستطيع أن أحدد ما يفعله نظام الذكاء الاصطناعي، وما البيانات التي يحتاجها، وما النمط الذي يبحث عنه، ومن المسؤول عن
+      استخدامه.
+    en: I can identify what an AI system does, what data it needs, what pattern it looks for, and who is responsible for its
+      use.
+    ar_fusha: أستطيع أن أحدد ما يفعله نظام الذكاء الاصطناعي، وما البيانات التي يحتاجها، وما النمط الذي يبحث عنه، ومن المسؤول
       عن استخدامه.
-    en: I can identify what an AI system does, what data it needs, what pattern it looks for, and who is responsible
-      for its use.
 audience:
   minimum_age: 10
   prerequisites:
-  - ar: لا توجد متطلبات سابقة
-    en: No prerequisites
+    - ar: لا توجد متطلبات سابقة
+      en: No prerequisites
+      ar_fusha: لا توجد متطلبات سابقة
   accessibility_notes:
-  - ar: لا يحتاج إلى برمجة
-    en: No coding required
-  - ar: كل شاشة تحتوي على عنصر جذب بصري أو تفاعل
-    en: Every screen includes a visual or interactive attention anchor
-  - ar: سؤال كتابي واحد فقط في نهاية البايت
-    en: Only one written reflection appears near the end
-  - ar: معظم الأسئلة تحتوي على خيارين أو ثلاثة خيارات قصيرة
-    en: Most questions use two or three short options
+    - ar: لا يحتاج إلى برمجة
+      en: No coding required
+      ar_fusha: لا يحتاج إلى برمجة
+    - ar: كل شاشة تحتوي على عنصر جذب بصري أو تفاعل
+      en: Every screen includes a visual or interactive attention anchor
+      ar_fusha: كل شاشة تحتوي على عنصر جذب بصري أو تفاعل
+    - ar: سؤال كتابي واحد فقط في نهاية البايت
+      en: Only one written reflection appears near the end
+      ar_fusha: سؤال كتابي واحد فقط في نهاية البايت
+    - ar: معظم الأسئلة تحتوي على خيارين أو ثلاثة خيارات قصيرة
+      en: Most questions use two or three short options
+      ar_fusha: معظم الأسئلة تحتوي على خيارين أو ثلاثة خيارات قصيرة
 experience_style:
   format: duolingo_pages
   pacing: one_idea_or_decision_per_screen
   reading_level:
     ar: قصير وواضح وغير طفولي
     en: Short, clear, and not childish
+    ar_fusha: قصير وواضح وغير طفولي
   tone:
     ar: فضولي، ذكي، خفيف، ومباشر
     en: Curious, smart, light, and direct
+    ar_fusha: فضولي، ذكي، خفيف، ومباشر
   interaction_density: very_high
   maximum_seconds_without_interaction: 40
   content_rules:
-  - No learner screen may contain text only.
-  - Every screen must include media, sound, a quiz, a reveal, or an interactive task.
-  - Answer labels should usually be two to five words.
-  - Do not show feedback before the learner selects an answer.
+    - No learner screen may contain text only.
+    - Every screen must include media, sound, a quiz, a reveal, or an interactive task.
+    - Answer labels should usually be two to five words.
+    - Do not show feedback before the learner selects an answer.
 media:
   base_path: ./media
   images:
-  - id: ai_world_hook
-    path: images/ai-world-hook-placeholder.png
-    alt:
-      ar: .
-      en:  .
-  - id: ai_capabilities
-    path: images/ai-capabilities-placeholder.jpg
-    alt:
-      ar: الذكاء الاصطناعي محاكاة لقدراتنا البشرية
-      en: AI imitates human capabilities
-  - id: dartmouth_1956
-    path: images/dartmouth-1956-placeholder.jpg
-    alt:
-      ar: لقاء دارتموث عام 1956
-      en: The 1956 Dartmouth meeting
-  - id: fixed_rules
-    path: images/fixed-rules-placeholder.png
-    alt:
-      ar: آلة حاسبة ومنبه ومفتاح مصباح ليسوا ذكاء اصطناعي
-      en: A calculator, alarm, and light switch are not AI
-  - id: self_driving_car
-    path: images/self-driving-car-placeholder.jpg
-    alt:
-      ar: سيارة ذاتية القيادة تلاحظ الطريق
-      en: A self-driving car observing the road
-  - id: disaster_detection
-    path: images/disaster-detection-placeholder.jpg
-    alt:
-      ar: نظام يكتشف الحرائق أو الفيضانات
-      en: A system detecting fires or floods
-  - id: medical_scan
-    path: images/medical-scan-placeholder.jpg
-    alt:
-      ar: نظام يحلل صورة طبية
-      en: A system analyzing a medical image
-  - id: recommendation
-    path: images/ai-phone-recommendation-placeholder.gif
-    alt:
-      ar: تطبيق يعرض توصيات
-      en: An app showing recommendations
-  - id: fraud_detection
-    path: images/fraud-detection-placeholder.jpg
-    alt:
-      ar: نظام يكتشف عملية مالية غير معتادة
-      en: A system detecting an unusual transaction
-  - id: data_types
-    path: images/data-types-placeholder.png
-    alt:
-      ar: أرقام وصورة وصوت وفيديو ونص
-      en: Numbers, image, audio, video, and text
-  - id: numeric_data
-    path: images/numeric-data-placeholder.svg
-    alt:
-      ar: درجة حرارة ونبض وضغط دم
-      en: Temperature, heart rate, and blood pressure
-  - id: image_data
-    path: images/image-data-placeholder.jpg
-    alt:
-      ar: مجموعة صور
-      en: A collection of images
-  - id: audio_text_data
-    path: images/audio-text-data-placeholder.svg
-    alt:
-      ar: موجة صوتية وفقاعة نص
-      en: An audio waveform and a text bubble
-  - id: pattern_sort
-    path: images/pattern-sorting.png
-    alt:
-      ar: ملاحظة الأنماط تساعد في استخراج معلومات مفيدة
-      en: Noticing patterns helps extract useful information
-
-  - id: pattern_cats
-    path: images/pattern-cats-placeholder.jpg
-    alt:
-      ar: صور قطط بصفات متكررة
-      en: Cat images with recurring features
-  - id: pattern_spam
-    path: images/pattern-spam-placeholder.svg
-    alt:
-      ar: رسائل مزعجة بعبارات متكررة
-      en: Spam messages with repeated phrases
-  - id: pattern_traffic
-    path: images/pattern-traffic-placeholder.jpg
-    alt:
-      ar: ازدحام متكرر في وقت محدد
-      en: Repeated traffic at a certain time
-  - id: pattern_health
-    path: images/pattern-health-placeholder.svg
-    alt:
-      ar: مؤشرات صحية تتكرر مع حالة معينة
-      en: Health indicators recurring with a condition
-  - id: diverse_examples
-    path: images/diverse-examples-placeholder.jpg
-    alt:
-      ar: أمثلة متنوعة ومتوازنة
-      en: Diverse and balanced examples
-  - id: survivorship_planes
-    path: images/survivorship-planes-placeholder.jpeg
-    alt:
-      ar: طائرات عادت من الحرب مع آثار إصابات
-      en: Returning wartime planes with damage marks
-  - id: survivorship_reveal
-    path: images/survivorship-reveal-placeholder.png
-    alt:
-      ar: مناطق الإصابة في الطائرات المفقودة
-      en: Damage areas on missing planes
-  - id: missing_data_kids
-    path: images/missing-data-school-placeholder.jpg
-    alt:
-      ar: نتائج فريق ناجح مع غياب نتائج الفرق التي لم تكمل
-      en: A successful team result with missing results from teams that did not finish
-  - id: generated_image_pair
-    path: images/real-ai-image-pair-placeholder.jpg
-    alt:
-      ar: .
-      en: .
-  - id: verify_source
-    path: images/verify-source-placeholder.jpg
-    alt:
-      ar: تحقق من المصدر دائما
-      en: Always verify sources
-  - id: responsible_ai
-    path: images/responsible-ai-placeholder.jpg
-    alt:
-      ar: إنسان يراجع نظام ذكاء اصطناعي
-      en: A person reviewing an AI system
-  - id: emergency_alert
-    path: images/fake-emergency-alert-placeholder.gif
-    alt:
-      ar: تنبيه تسبب في ذعز الناس
-      en: A fake emergency evacuation alert
-  - id: accountability_chain
-    path: images/accountability-chain-placeholder.png
-    alt:
-      ar: سلسلة المسؤولية من التصميم إلى الاستخدام
-      en: The accountability chain from design to use
-  - id: mission_builder
-    path: images/ai-mission-builder-placeholder.png
-    alt:
-      ar: لوحة بناء مهمة ذكاء اصطناعي
-      en: An AI mission builder board
-  - id: badge_ai_explorer
-    path: images/badge-ai-explorer-placeholder.svg
-    alt:
-      ar: شارة مستكشف الذكاء الاصطناعي
-      en: AI Explorer badge
-  - id: text_style_comparison
-    path: images/text-style-comparison-placeholder.svg
-    alt:
-      ar: بطاقتان تعرضان نصين بأسلوبين مختلفين
-      en: Two cards showing texts in different writing styles
+    - id: ai_world_hook
+      path: images/ai-world-hook-placeholder.png
+      alt:
+        ar: .
+        en: .
+        ar_fusha: .
+    - id: ai_capabilities
+      path: images/ai-capabilities-placeholder.jpg
+      alt:
+        ar: الذكاء الاصطناعي محاكاة لقدراتنا البشرية
+        en: AI imitates human capabilities
+        ar_fusha: الذكاء الاصطناعي محاكاة لقدراتنا البشرية
+    - id: dartmouth_1956
+      path: images/dartmouth-1956-placeholder.jpg
+      alt:
+        ar: لقاء دارتموث عام 1956
+        en: The 1956 Dartmouth meeting
+        ar_fusha: لقاء دارتموث عام 1956
+    - id: fixed_rules
+      path: images/fixed-rules-placeholder.png
+      alt:
+        ar: آلة حاسبة ومنبه ومفتاح مصباح ليسوا ذكاء اصطناعي
+        en: A calculator, alarm, and light switch are not AI
+        ar_fusha: آلة حاسبة ومنبه ومفتاح مصباح ليسوا ذكاء اصطناعي
+    - id: self_driving_car
+      path: images/self-driving-car-placeholder.jpg
+      alt:
+        ar: سيارة ذاتية القيادة تلاحظ الطريق
+        en: A self-driving car observing the road
+        ar_fusha: سيارة ذاتية القيادة تلاحظ الطريق
+    - id: disaster_detection
+      path: images/disaster-detection-placeholder.jpg
+      alt:
+        ar: نظام يكتشف الحرائق أو الفيضانات
+        en: A system detecting fires or floods
+        ar_fusha: نظام يكتشف الحرائق أو الفيضانات
+    - id: medical_scan
+      path: images/medical-scan-placeholder.jpg
+      alt:
+        ar: نظام يحلل صورة طبية
+        en: A system analyzing a medical image
+        ar_fusha: نظام يحلل صورة طبية
+    - id: recommendation
+      path: images/ai-phone-recommendation-placeholder.gif
+      alt:
+        ar: تطبيق يعرض توصيات
+        en: An app showing recommendations
+        ar_fusha: تطبيق يعرض توصيات
+    - id: fraud_detection
+      path: images/fraud-detection-placeholder.jpg
+      alt:
+        ar: نظام يكتشف عملية مالية غير معتادة
+        en: A system detecting an unusual transaction
+        ar_fusha: نظام يكتشف عملية مالية غير معتادة
+    - id: data_types
+      path: images/data-types-placeholder.png
+      alt:
+        ar: أرقام وصورة وصوت وفيديو ونص
+        en: Numbers, image, audio, video, and text
+        ar_fusha: أرقام وصورة وصوت وفيديو ونص
+    - id: numeric_data
+      path: images/numeric-data-placeholder.svg
+      alt:
+        ar: درجة حرارة ونبض وضغط دم
+        en: Temperature, heart rate, and blood pressure
+        ar_fusha: درجة حرارة ونبض وضغط دم
+    - id: image_data
+      path: images/image-data-placeholder.jpg
+      alt:
+        ar: مجموعة صور
+        en: A collection of images
+        ar_fusha: مجموعة صور
+    - id: audio_text_data
+      path: images/audio-text-data-placeholder.svg
+      alt:
+        ar: موجة صوتية وفقاعة نص
+        en: An audio waveform and a text bubble
+        ar_fusha: موجة صوتية وفقاعة نص
+    - id: pattern_sort
+      path: images/pattern-sorting.png
+      alt:
+        ar: ملاحظة الأنماط تساعد في استخراج معلومات مفيدة
+        en: Noticing patterns helps extract useful information
+        ar_fusha: ملاحظة الأنماط تساعد في استخراج معلومات مفيدة
+    - id: pattern_cats
+      path: images/pattern-cats-placeholder.jpg
+      alt:
+        ar: صور قطط بصفات متكررة
+        en: Cat images with recurring features
+        ar_fusha: صور قطط بصفات متكررة
+    - id: pattern_spam
+      path: images/pattern-spam-placeholder.svg
+      alt:
+        ar: رسائل مزعجة بعبارات متكررة
+        en: Spam messages with repeated phrases
+        ar_fusha: رسائل مزعجة بعبارات متكررة
+    - id: pattern_traffic
+      path: images/pattern-traffic-placeholder.jpg
+      alt:
+        ar: ازدحام متكرر في وقت محدد
+        en: Repeated traffic at a certain time
+        ar_fusha: ازدحام متكرر في وقت محدد
+    - id: pattern_health
+      path: images/pattern-health-placeholder.svg
+      alt:
+        ar: مؤشرات صحية تتكرر مع حالة معينة
+        en: Health indicators recurring with a condition
+        ar_fusha: مؤشرات صحية تتكرر مع حالة معينة
+    - id: diverse_examples
+      path: images/diverse-examples-placeholder.jpg
+      alt:
+        ar: أمثلة متنوعة ومتوازنة
+        en: Diverse and balanced examples
+        ar_fusha: أمثلة متنوعة ومتوازنة
+    - id: survivorship_planes
+      path: images/survivorship-planes-placeholder.jpeg
+      alt:
+        ar: طائرات عادت من الحرب مع آثار إصابات
+        en: Returning wartime planes with damage marks
+        ar_fusha: طائرات عادت من الحرب مع آثار إصابات
+    - id: survivorship_reveal
+      path: images/survivorship-reveal-placeholder.png
+      alt:
+        ar: مناطق الإصابة في الطائرات المفقودة
+        en: Damage areas on missing planes
+        ar_fusha: مناطق الإصابة في الطائرات المفقودة
+    - id: missing_data_kids
+      path: images/missing-data-school-placeholder.jpg
+      alt:
+        ar: نتائج فريق ناجح مع غياب نتائج الفرق التي لم تكمل
+        en: A successful team result with missing results from teams that did not finish
+        ar_fusha: نتائج فريق ناجح مع غياب نتائج الفرق التي لم تكمل
+    - id: generated_image_pair
+      path: images/real-ai-image-pair-placeholder.jpg
+      alt:
+        ar: .
+        en: .
+        ar_fusha: .
+    - id: verify_source
+      path: images/verify-source-placeholder.jpg
+      alt:
+        ar: تحقق من المصدر دائما
+        en: Always verify sources
+        ar_fusha: تحقق من المصدر دائما
+    - id: responsible_ai
+      path: images/responsible-ai-placeholder.jpg
+      alt:
+        ar: إنسان يراجع نظام ذكاء اصطناعي
+        en: A person reviewing an AI system
+        ar_fusha: إنسان يراجع نظام ذكاء اصطناعي
+    - id: emergency_alert
+      path: images/fake-emergency-alert-placeholder.gif
+      alt:
+        ar: تنبيه تسبب في ذعز الناس
+        en: A fake emergency evacuation alert
+        ar_fusha: تنبيه تسبب في ذعز الناس
+    - id: accountability_chain
+      path: images/accountability-chain-placeholder.png
+      alt:
+        ar: سلسلة المسؤولية من التصميم إلى الاستخدام
+        en: The accountability chain from design to use
+        ar_fusha: سلسلة المسؤولية من التصميم إلى الاستخدام
+    - id: mission_builder
+      path: images/ai-mission-builder-placeholder.png
+      alt:
+        ar: لوحة بناء مهمة ذكاء اصطناعي
+        en: An AI mission builder board
+        ar_fusha: لوحة بناء مهمة ذكاء اصطناعي
+    - id: badge_ai_explorer
+      path: images/badge-ai-explorer-placeholder.svg
+      alt:
+        ar: شارة مستكشف الذكاء الاصطناعي
+        en: AI Explorer badge
+        ar_fusha: شارة مستكشف الذكاء الاصطناعي
+    - id: text_style_comparison
+      path: images/text-style-comparison-placeholder.svg
+      alt:
+        ar: بطاقتان تعرضان نصين بأسلوبين مختلفين
+        en: Two cards showing texts in different writing styles
+        ar_fusha: بطاقتان تعرضان نصين بأسلوبين مختلفين
   videos:
-  - id: mystery_video_01
-    path: videos/mystery_car.mp4
-    caption:
-      ar: 'مقطع للاختبار: حقيقي أم مولّد؟'
-      en: 'Challenge clip: real or generated?'
-  - id: mystery_video_02
-    path: videos/mystery_video.mp4
-    caption:
-      ar: 'مقطع للاختبار: حقيقي أم مولّد؟'
-      en: 'Challenge clip: real or generated?'
-  - id: mystery_video_03
-    path: videos/mystery_cat.mp4
-    caption:
-      ar: 'مقطع للاختبار: حقيقي أم مولّد؟'
-      en: 'Challenge clip: real or generated?'
-  - id: mystery_explained_video
-    path: videos/mystery_explained_video.mp4
-    caption:
-      ar: مقارنة تشرح كيف يصعب التمييز.
-      en: A comparison showing why detection is difficult.
+    - id: mystery_video_01
+      path: videos/mystery_car.mp4
+      caption:
+        ar: "مقطع للاختبار: حقيقي أم مولّد؟"
+        en: "Challenge clip: real or generated?"
+        ar_fusha: "مقطع للاختبار: حقيقي أم مولّد؟"
+    - id: mystery_video_02
+      path: videos/mystery_video.mp4
+      caption:
+        ar: "مقطع للاختبار: حقيقي أم مولّد؟"
+        en: "Challenge clip: real or generated?"
+        ar_fusha: "مقطع للاختبار: حقيقي أم مولّد؟"
+    - id: mystery_video_03
+      path: videos/mystery_cat.mp4
+      caption:
+        ar: "مقطع للاختبار: حقيقي أم مولّد؟"
+        en: "Challenge clip: real or generated?"
+        ar_fusha: "مقطع للاختبار: حقيقي أم مولّد؟"
+    - id: mystery_explained_video
+      path: videos/mystery_explained_video.mp4
+      caption:
+        ar: مقارنة تشرح كيف يصعب التمييز.
+        en: A comparison showing why detection is difficult.
+        ar_fusha: مقارنة تشرح كيف يصعب التمييز.
   audio:
-  - id: emergency_alert_audio
-    path: audio/fake-emergency-alert-placeholder.mp3
-    caption:
-      ar: رسالة طوارئ تمثيلية لأغراض التعلم.
-      en: A simulated emergency message for learning.
-  - id: pattern_sound
-    path: audio/pattern-sound-placeholder.mp3
-    caption:
-      ar: إيقاع صوتي متكرر.
-      en: A repeating sound pattern.
+    - id: emergency_alert_audio
+      path: audio/fake-emergency-alert-placeholder.mp3
+      caption:
+        ar: رسالة طوارئ تمثيلية لأغراض التعلم.
+        en: A simulated emergency message for learning.
+        ar_fusha: رسالة طوارئ تمثيلية لأغراض التعلم.
+    - id: pattern_sound
+      path: audio/pattern-sound-placeholder.mp3
+      caption:
+        ar: إيقاع صوتي متكرر.
+        en: A repeating sound pattern.
+        ar_fusha: إيقاع صوتي متكرر.
   downloads: []
 tools:
   internal_visualizations: []
@@ -321,1307 +393,1570 @@ tools:
 makerspace_integration:
   required: false
   environment_tasks:
-  - ar: يمكن للمتعلم لاحقًا البحث عن مثال حقيقي للذكاء الاصطناعي داخل مساحة الابتكار.
-    en: Learners may later look for a real AI example inside the makerspace.
+    - ar: يمكن للمتعلم لاحقًا البحث عن مثال حقيقي للذكاء الاصطناعي داخل مساحة الابتكار.
+      en: Learners may later look for a real AI example inside the makerspace.
+      ar_fusha: يمكن للمتعلم لاحقًا البحث عن مثال حقيقي للذكاء الاصطناعي داخل مساحة الابتكار.
   hardware:
-  - name:
-      ar: محطة الشارات
-      en: Badge station
-    required: true
-    purpose:
-      ar: منح الشارة بعد إكمال البايت.
-      en: Award the badge after completing the Byte.
+    - name:
+        ar: محطة الشارات
+        en: Badge station
+        ar_fusha: محطة الشارات
+      required: true
+      purpose:
+        ar: منح الشارة بعد إكمال البايت.
+        en: Award the badge after completing the Byte.
+        ar_fusha: منح الشارة بعد إكمال البايت.
 screens:
-- id: intro
-  type: story
-  title:
-    ar: "ابدأ من هنا"
-    en: "Start Here"
-  content:
-    ar: "هذا هو البايت الأول في رحلتك. خذ وقتك، فكل شاشة تعطيك فكرة صغيرة وواضحة."
-    en: "This is the first Byte in your journey. Take your time; each screen gives you one small, clear idea."
-  bullets:
-    - ar: "ستتعلم ما هو الذكاء الاصطناعي، وما الذي لا يُعد ذكاءً اصطناعيًا."
-      en: "You will learn what AI is, and what does not count as AI."
-    - ar: "ستفهم كيف تستخدم الأنظمة البيانات والأنماط للتعرّف والتنبؤ والتوصية والتوليد والتصرف."
-      en: "You will see how systems use data and patterns to recognize, predict, recommend, generate, and act."
-    - ar: "ستعرف لماذا نتحقق من النتائج والمصادر، ومن يتحمل مسؤولية الاستخدام."
-      en: "You will learn why we verify outputs and sources, and who is responsible for use."
-    - ar: "في النهاية، ستشرح الفكرة لشخص جديد على الموضوع."
-      en: "At the end, you will explain the idea to someone new to the topic."
-    - ar: "عند إكمال البايت، ستحصل على شارة مستكشف الذكاء الاصطناعي."
-      en: "When you complete the Byte, you will earn the AI Explorer badge."
-  media:
-    - type: image
-      ref: ai_world_hook
-
-- id: intro_guess
-  type: micro_check
-  title:
-      ar: "تخمين سريع"
-      en: "Quick Guess"
-  question:
-      ar: "هل الذكاء الاصطناعي يعني صناعة الصور والنصوص فقط؟"
-      en: "Is AI only about making images and text?"
-  options:
+  - id: intro
+    type: story
+    title:
+      ar: ابدأ من هنا
+      en: Start Here
+      ar_fusha: ابدأ من هنا
+    content:
+      ar: هذا هو البايت الأول في رحلتك. خذ وقتك، فكل شاشة تعطيك فكرة صغيرة وواضحة.
+      en: This is the first Byte in your journey. Take your time; each screen gives you one small, clear idea.
+      ar_fusha: هذا هو البايت الأول في رحلتك. خذ وقتك، فكل شاشة تعطيك فكرة صغيرة وواضحة.
+    bullets:
+      - ar: ستتعلم ما هو الذكاء الاصطناعي، وما الذي لا يُعد ذكاءً اصطناعيًا.
+        en: You will learn what AI is, and what does not count as AI.
+        ar_fusha: ستتعلم ما هو الذكاء الاصطناعي، وما الذي لا يُعد ذكاءً اصطناعيًا.
+      - ar: ستفهم كيف تستخدم الأنظمة البيانات والأنماط للتعرّف والتنبؤ والتوصية والتوليد والتصرف.
+        en: You will see how systems use data and patterns to recognize, predict, recommend, generate, and act.
+        ar_fusha: ستفهم كيف تستخدم الأنظمة البيانات والأنماط للتعرّف والتنبؤ والتوصية والتوليد والتصرف.
+      - ar: ستعرف لماذا نتحقق من النتائج والمصادر، ومن يتحمل مسؤولية الاستخدام.
+        en: You will learn why we verify outputs and sources, and who is responsible for use.
+        ar_fusha: ستعرف لماذا نتحقق من النتائج والمصادر، ومن يتحمل مسؤولية الاستخدام.
+      - ar: في النهاية، ستشرح الفكرة لشخص جديد على الموضوع.
+        en: At the end, you will explain the idea to someone new to the topic.
+        ar_fusha: في النهاية، ستشرح الفكرة لشخص جديد على الموضوع.
+      - ar: عند إكمال البايت، ستحصل على شارة مستكشف الذكاء الاصطناعي.
+        en: When you complete the Byte, you will earn the AI Explorer badge.
+        ar_fusha: عند إكمال البايت، ستحصل على شارة مستكشف الذكاء الاصطناعي.
+    media:
+      - type: image
+        ref: ai_world_hook
+  - id: intro_guess
+    type: micro_check
+    title:
+      ar: تخمين سريع
+      en: Quick Guess
+      ar_fusha: تخمين سريع
+    question:
+      ar: هل الذكاء الاصطناعي يعني صناعة الصور والنصوص فقط؟
+      en: Is AI only about making images and text?
+      ar_fusha: هل الذكاء الاصطناعي يعني صناعة الصور والنصوص فقط؟
+    options:
       - id: yes
         label:
-          ar: "نعم"
-          en: "Yes"
+          ar: نعم
+          en: Yes
+          ar_fusha: نعم
       - id: no
         label:
-          ar: "لا"
-          en: "No"
-  correct_answer: no
-  feedback:
+          ar: لا
+          en: No
+          ar_fusha: لا
+    correct_answer: no
+    feedback:
       correct:
-        ar: "صحيح. التوليد قدرة واحدة فقط من قدرات كثيرة."
-        en: "Correct. Generation is only one of many capabilities."
+        ar: صحيح. التوليد قدرة واحدة فقط من قدرات كثيرة.
+        en: Correct. Generation is only one of many capabilities.
+        ar_fusha: صحيح. التوليد قدرة واحدة فقط من قدرات كثيرة.
       incorrect:
         ar: "فيه أكثر بكثير: يتعرف ويتنبأ ويوصي ويتصرف أيضًا."
         en: "There is much more: AI also recognizes, predicts, recommends, and acts."
-
-- id: ai_definition
-  type: concept
-  title:
-    ar: وش يعني ذكاء اصطناعي؟
-    en: What Does AI Mean?
-  content:
-    ar: "أنظمة تحاكي بعض قدرات الإنسان، مثل التعلّم والتعرّف والتوقّع والتوليد واتخاذ القرار. ونتائجها ليست ثابتة دائمًا؛ فقد تتغيّر حسب البيانات والسياق."
-    en: "Systems that imitate some human abilities, such as learning, recognizing, predicting, generating, and making decisions. Their results are not always fixed and may change with the data and context."
-  media:
-  - type: image
-    ref: ai_capabilities
-
-- id: ai_definition
-  type: reflection
-  title:
-    ar: أمثلة أخرى؟
-    en: More example?
-  prompt:
-    ar: أضف أمثلة أخرى لقدرات الذكاء الاصطناعي من حولك. 
-    en: Add more examples of AI capabilities from the world around you.
-  placeholder:
-    ar: 'مثال: أتحقق من المعلومات...'
-    en: 'Example: I would verify the information...'
-  minimum_characters: 8
-  required: true
-
-- id: ai_history
-  type: story
-  title:
-    ar: الفكرة أقدم مما تتوقع
-    en: Older Than You Think
-  content:
-    ar: ظهر اسم «الذكاء الاصطناعي» كمجال علمي في لقاء دارتموث عام 1956.
-    en: The name “artificial intelligence” emerged as a scientific field at Dartmouth in 1956.
-  media:
-  - type: image
-    ref: dartmouth_1956
-- id: not_every_software
-  type: concept
-  title:
-    ar: "مو كل برنامج ذكاء اصطناعي"
-    en: "Not Every Program Is AI"
-  content:
-    ar: "الآلة الحاسبة والمنبّه ومفتاح المصباح تعمل بناءً على برمجة وتعليمات ثابتة: إذا كررت نفس الأمر، تحصل عادةً على النتيجة نفسها. أما الذكاء الاصطناعي فيعتمد على البيانات والأنماط، لذلك قد تتغيّر نتائجه حسب البيانات والسياق."
-    en: "A calculator, alarm, and light switch work through programming and fixed instructions: repeat the same command, and you usually get the same result. AI, however, relies on data and patterns, so its results may change depending on the data and context."
-  media:
-  - type: image
-    ref: fixed_rules
-- id: ai_or_not
-  type: exercise
-  title:
-    ar: "أي واحد يستخدم الذكاء الاصطناعي؟"
-    en: "Which One Uses AI?"
-  question:
-    ar: "أي مثال يعتمد على البيانات والأنماط؟"
-    en: "Which example depends on data and patterns?"
-  options:
-    - id: calculator
-      label:
-        ar: "آلة حاسبة"
-        en: "Calculator"
-    - id: face_unlock
-      label:
-        ar: "فتح الجوال بالوجه"
-        en: "Face unlock"
-  correct_answer: face_unlock
-  feedback:
-    correct:
-      ar: "صح. فتح الجوال بالوجه يعتمد على التعرّف على أنماط في الصورة."
-      en: "Correct. Face unlock recognizes patterns in an image."
-
-    incorrect:
-      ar: "الآلة الحاسبة تتبع قواعد ثابتة، ولا تحتاج أن تتعرّف على نمط."
-      en: "A calculator follows fixed rules and does not need to recognize a pattern."
-- id: capability_recognize
-  type: story
-  title:
-    ar: الذكاء الاصطناعي يتعرّف
-    en: AI Recognizes
-  content:
-    ar: السيارة الذاتية القيادة تتعرّف على الطريق والمشاة والإشارات.
-    en: A self-driving car recognizes roads, pedestrians, and signs.
-  media:
-  - type: image
-    ref: self_driving_car
-- id: capability_predict
-  type: story
-  title:
-    ar: الذكاء الاصطناعي يتنبأ
-    en: AI Predicts
-  content:
-    ar: أنظمة الكوارث تحلل صور الأقمار والمجسات لتتوقع حريقًا أو فيضانًا مبكرًا.
-    en: Disaster systems analyze satellite and sensor data to predict fires or floods early.
-  media:
-  - type: image
-    ref: disaster_detection
-
-- id: capability_view_car
-  type: story
-  title:
-    ar: 'مثال ذكاء اصطناعي: سيارة ذكية'
-    en: 'AI Example: Smart Cars'
-  content:
-    ar: رأت السيارة شخص يقطع الشارع
-    en: The car sees a person crossing the road.
-  media:
-  - type: image
-    ref: self_driving_car
-- id: capability_quiz_car_action
-  type: exercise
-  title:
-    ar: وش تسوي السيارة؟
-    en: What Does the Car Do?
-  question:
-    ar: بعد أن رأت الشخص، ضغط النظام على الفرامل. ما الوظيفة التي يقوم بها الذكاء الاصطناعي هنا؟
-    en: After seeing the person, the system applied the brakes. What is the AI task here?
-  options:
-  - id: act
-    label:
-      ar: يتصرف
-      en: Act
-  - id: generate
-    label:
-      ar: يولّد
-      en: Generate
-  correct_answer: act
-  feedback:
-    correct:
-      ar: صح. النظام نفّذ فعلًا في العالم الحقيقي.
-      en: Correct. The system took an action in the real world.
-    incorrect:
-      ar: هو لم يصنع محتوى؛ بل نفّذ قرارًا بالفرملة.
-      en: It did not create content; it acted by braking.
-- id: capability_view_recommendation
-  type: story
-  title:
-    ar: 'مثال ذكاء اصطناعي: توصيات جديدة'
-    en: 'AI Example: A New recommendation'
-  content:
-    ar: التطبيق لاحظ ما شاهدته سابقًا، ثم عرض لك مقطعًا قد يعجبك.
-    en: The app noticed what you watched before, then showed you a clip you may like.
-  media:
-  - type: image
-    ref: recommendation
-- id: capability_quiz_recommendation
-  type: exercise
-  title:
-    ar: وش يسوي التطبيق؟
-    en: What Is the App Doing?
-  question:
-    ar: ما المهمة الأساسية للذكاء الاصطناعي في هذا التطبيق؟
-    en: What is the main AI task in this app?
-  options:
-  - id: recommend
-    label:
-      ar: يوصي
-      en: Recommend
-  - id: recognize
-    label:
-      ar: يتعرّف
-      en: Recognize
-  correct_answer: recommend
-  feedback:
-    correct:
-      ar: صح. اختار لك شيئًا قد يناسبك.
-      en: Correct. It selected something you may like.
-    incorrect:
-      ar: هو يستخدم ما يعرفه عن تفضيلاتك ليقترح شيئًا.
-      en: It uses your preferences to suggest something.
-- id: capability_view_fraud
-  type: story
-  title:
-    ar: 'عملية غريبة'
-    en: 'Example 3: An Unusual Transaction'
-  content:
-    ar: نظام الذكاء الاصطناعي لاحظ أن عملية الدفع مختلفة جدًا عن عادات صاحب الحساب.
-    en: The AI system notices that a payment is very different from the account holder’s usual behavior.
-  media:
-  - type: image
-    ref: fraud_detection
-- id: capability_quiz_fraud
-  type: exercise
-  title:
-    ar: وش مهمة الذكاء الاصطناعي في نظام البنك؟
-    en: What Is the AI task in this bank system?
-  question:
-    ar: ما المهمة الأساسية؟
-    en: What is the main task?
-  options:
-  - id: recognize
-    label:
-      ar: يتعرّف
-      en: Recognize
-  - id: generate
-    label:
-      ar: يولّد
-      en: Generate
-  correct_answer: recognize
-  feedback:
-    correct:
-      ar: صح. تعرّف على سلوك غير معتاد.
-      en: Correct. It recognized unusual behavior.
-    incorrect:
-      ar: لم ينشئ شيئًا جديدًا؛ بل اكتشف اختلافًا في البيانات.
-      en: It did not create something new; it detected a difference in the data.
-- id: data_definition
-  type: concept
-  title:
-    ar: طيب، وش هي البيانات؟
-    en: So, What Is Data?
-  content:
-    ar: 'البيانات هي المعلومات التي يتعامل معها الذكاء الاصطناعي: أرقام مثل الحرارة والنبض، وصور وفيديو، وأصوات
-      وكلام، ونصوص نكتبها ونقرأها.'
-    en: 'Data is the information AI works with: numbers such as temperature and heart rate, images and video, sounds
-      and speech, and text we write and read.'
-  media:
-  - type: image
-    ref: data_types
-- id: data_type_quiz_numbers
-  type: exercise
-  title:
-    ar: خمّن نوع البيانات
-    en: Guess the Data Type
-  question:
-    ar: قياسات نبض القلب تعد ...
-    en: Heart rate measurements are...
-  options:
-  - id: numbers
-    label:
-      ar: أرقام
-      en: Numbers
-  - id: images
-    label:
-      ar: صور
-      en: Images
-  correct_answer: numbers
-  feedback:
-    correct:
-      ar: صح. هي قياسات رقمية.
-      en: Correct. They are numerical measurements.
-    incorrect:
-      ar: هي قيم يمكن قياسها بالأرقام.
-      en: They are values measured as numbers.
-- id: data_type_quiz_camera
-  type: exercise
-  title:
-    ar: خمّن نوع البيانات
-    en: Guess the Data Type
-  question:
-    ar: كاميرا السيارة ترسل للنظام...
-    en: The car camera sends the system...
-  options:
-  - id: visual
-    label:
-      ar: صور وفيديو
-      en: Images and video
-  - id: audio
-    label:
-      ar: صوت
-      en: Audio
-  correct_answer: visual
-  feedback:
-    correct:
-      ar: صحيح. الكاميرا تنتج بيانات بصرية.
-      en: Correct. A camera produces visual data.
-    incorrect:
-      ar: الكاميرا تنقل ما تراه.
-      en: A camera sends what it sees.
-
-- id: data_sort_temperature
-  type: exercise
-  title:
-    ar: درجة الحرارة
-    en: Temperature
-  question:
-    ar: درجة الحرارة تنتمي إلى أي نوع؟
-    en: Which type does temperature belong to?
-  options:
-  - id: numbers
-    label:
-      ar: أرقام
-      en: Numbers
-  - id: images
-    label:
-      ar: صور
-      en: Images
-  correct_answer: numbers
-  feedback:
-    correct:
-      ar: صح. هي قيمة رقمية قابلة للقياس.
-      en: Correct. It is a measurable numerical value.
-    incorrect:
-      ar: درجة الحرارة تُسجل كرقم.
-      en: Temperature is recorded as a number.
-- id: data_sort_xray
-  type: exercise
-  title:
-    ar: صورة أشعة
-    en: An X-ray
-  question:
-    ar: نتائج الأشعة السينية تنتمي إلى أي نوع؟
-    en: Which type does an X-ray belong to?
-  options:
-  - id: images
-    label:
-      ar: صور
-      en: Images
-  - id: audio
-    label:
-      ar: صوت
-      en: Audio
-  correct_answer: images
-  feedback:
-    correct:
-      ar: صح. هي بيانات بصرية.
-      en: Correct. It is visual data.
-    incorrect:
-      ar: الأشعة تُعرض على شكل صورة.
-      en: An X-ray is displayed as an image.
-
-- id: pattern_definition
-  type: concept
-  title:
-    ar: وش يعني نمط؟
-    en: What Is a Pattern?
-  content:
-    ar: النمط تكرار أو علاقة تظهر في البيانات وتساعد النظام على التخمين.
-    en: A pattern is a repetition or relationship in data that helps a system make a guess.
-  media:
-  - type: image
-    ref: pattern_sort
-- id: pattern_cats_screen
-  type: story
-  title:
-    ar: نمط في الصور
-    en: A Pattern in Images
-  content:
-    ar: قد يلاحظ النظام آذانًا وشوارب وأشكالًا تتكرر في صور القطط.
-    en: A system may notice ears, whiskers, and shapes recurring in cat images.
-  media:
-  - type: image
-    ref: pattern_cats
-- id: pattern_traffic_screen
-  type: story
-  title:
-    ar: نمط في الوقت
-    en: A Pattern in Time
-  content:
-    ar: قد يتكرر الزحام قرب المدارس في وقت محدد كل صباح.
-    en: Traffic may repeat near schools at a certain time each morning.
-  media:
-  - type: image
-    ref: pattern_traffic
-- id: pattern_quiz
-  type: exercise
-  title:
-    ar: لقطت النمط؟
-    en: Did You Spot the Pattern?
-  question:
-    ar: زحام يتكرر كل يوم الساعة 7:30. ما النمط؟
-    en: Traffic repeats every day at 7:30. What is the pattern?
-  options:
-  - id: time
-    label:
-      ar: الوقت
-      en: Time
-  - id: color
-    label:
-      ar: لون السيارات
-      en: Car color
-  correct_answer: time
-  feedback:
-    correct:
-      ar: صح. العلاقة المتكررة هنا مرتبطة بالوقت.
-      en: Correct. The recurring relationship is linked to time.
-    incorrect:
-      ar: ركّز على الشيء الذي يتكرر يوميًا.
-      en: Focus on what repeats every day.
-- id: pattern_detective_spam
-  type: exercise
-  title:
-    ar: 'القضية الأولى: الرسائل'
-    en: 'Case One: Messages'
-  question:
-    ar: رسائل كثيرة مزعجة تحتوي على «اربح الآن» وروابط غريبة. ما النمط؟
-    en: Many spam messages contain “win now” and unusual links. What is the pattern?
-  options:
-  - id: phrases_links
-    label:
-      ar: عبارات وروابط متكررة
-      en: Repeated phrases and links
-  - id: message_color
-    label:
-      ar: لون الرسالة
-      en: Message color
-  correct_answer: phrases_links
-  feedback:
-    correct:
-      ar: بالضبط. النظام قد يتعلم من الكلمات والروابط المتكررة.
-      en: Exactly. The system may learn from recurring words and links.
-    incorrect:
-      ar: ركّز على الشيء المشترك بين الرسائل المزعجة.
-      en: Focus on what the spam messages have in common.
-- id: pattern_detective_traffic
-  type: exercise
-  title:
-    ar: 'القضية الثانية: الزحام'
-    en: 'Case Two: Traffic'
-  question:
-    ar: الزحام يزيد قرب المدرسة كل يوم بين 6 و 7 صباحًا. ما النمط؟
-    en: Traffic rises near the school every day between 6 and 7 a.m. What is the pattern?
-  options:
-  - id: time_place
-    label:
-      ar: الوقت والمكان
-      en: Time and place
-  - id: car_shape
-    label:
-      ar: شكل السيارات
-      en: Car shape
-  correct_answer: time_place
-  feedback:
-    correct:
-      ar: صح. الزيادة مرتبطة بوقت ومكان محددين.
-      en: Correct. The increase is linked to a specific time and place.
-    incorrect:
-      ar: 'اسأل: متى وأين يتكرر الزحام؟'
-      en: 'Ask: when and where does the traffic repeat?'
-- id: pattern_detective_health
-  type: exercise
-  title:
-    ar: 'القضية الثالثة: الصحة'
-    en: 'Case Three: Health'
-  question:
-    ar: 'عند عدد من المرضى تكرر: حرارة مرتفعة، سعال، وانخفاض الأكسجين. ما النمط؟'
-    en: Across several patients, high temperature, cough, and low oxygen repeat. What is the pattern?
-  options:
-  - id: symptoms_together
-    label:
-      ar: مؤشرات تظهر معًا
-      en: Indicators appearing together
-  - id: patient_names
-    label:
-      ar: أسماء المرضى
-      en: Patient names
-  correct_answer: symptoms_together
-  feedback:
-    correct:
-      ar: صح. النظام يلاحظ مجموعة مؤشرات تتكرر معًا، ثم ينبه المختص.
-      en: Correct. The system notices indicators recurring together, then alerts a specialist.
-    incorrect:
-      ar: الأسماء لا تصف الحالة؛ المؤشرات المتكررة هي المهمة.
-      en: Names do not describe the condition; the recurring indicators matter.
-- id: data_quality
-  type: concept
-  title:
-    ar: الكثرة مو كل شيء
-    en: More Is Not Always Better
-  content:
-    ar: حتى لو كانت البيانات كثيرة، لازم تكون متنوعة وتمثل الواقع.
-    en: Even with lots of data, it must be diverse and represent reality.
-  media:
-  - type: image
-    ref: diverse_examples
-- id: survivorship_story
-  type: story
-  title:
-    ar: لغز من الحرب العالمية
-    en: A World War II Puzzle
-  content:
-    ar: درس الباحثون الطائرات التي رجعت من المعارك، ولاحظوا أماكن ثقوب الرصاص.
-    en: Researchers studied planes that returned from battle and marked their bullet holes.
-  media:
-  - type: image
-    ref: survivorship_planes
-- id: survivorship_choice
-  type: exercise
-  title:
-    ar: وين تحط الدرع؟
-    en: Where Would You Add Armor?
-  question:
-    ar: أي منطقة تحمي أكثر؟
-    en: Which area would you protect more?
-  options:
-  - id: many_holes
-    label:
-      ar: حول الثقوب
-      en: Around the holes
-  - id: few_holes
-    label:
-      ar: الأماكن السليمة
-      en: The untouched areas
-  correct_answer: few_holes
-  feedback:
-    correct:
-      ar: بالضبط. الطائرات المصابة هناك غالبًا لم ترجع.
-      en: Exactly. Planes hit there often did not return.
-    incorrect:
-      ar: فكّر بالطائرات التي لم نرها لأنها لم تعد.
-      en: Think about the planes we never saw because they did not return.
-- id: survivorship_reveal_screen
-  type: story
-  title:
-    ar: المعلومة الناقصة غيّرت القرار
-    en: The Missing Information Changed the Decision
-  content:
-    ar: الطائرات العائدة نجت رغم إصابة مناطق معيّنة. الخطر الحقيقي كان في أماكن إصابة الطائرات التي لم تعد.
-    en: Returning planes survived hits in certain areas. The critical areas were where missing planes had been hit.
-  media:
-  - type: image
-    ref: survivorship_reveal
-- id: survivorship_simple
-  type: concept
-  title:
-    ar: هذا هو تحيّز الناجين
-    en: This Is Survivorship Bias
-  content:
-    ar: إذا نظرنا فقط إلى من نجح أو بقي، يمكن نفهم القصة بشكل غلط.
-    en: If we only look at those who succeeded or remained, we may misunderstand the story.
-  media:
-  - type: image
-    ref: missing_data_kids
-- id: survivorship_kids_quiz
-  type: exercise
-  title:
-    ar: وش الناقص؟
-    en: What Is Missing?
-  question:
-    ar: درست أفضل مشاريع المسابقة فقط. وش ينقصك لتفهم سبب النجاح؟
-    en: You studied only the best competition projects. What is missing?
-  options:
-  - id: failed
-    label:
-      ar: المشاريع التي تعثرت
-      en: Projects that struggled
-  - id: more_winners
-    label:
-      ar: فائزون أكثر
-      en: More winners
-  correct_answer: failed
-  feedback:
-    correct:
-      ar: صح. المقارنة مع التعثر تكشف عوامل النجاح الحقيقية.
-      en: Correct. Comparing with struggles reveals the real success factors.
-    incorrect:
-      ar: رؤية الفائزين فقط تعطيك نصف القصة.
-      en: Seeing only winners gives you half the story.
-- id: survivorship_ai_link
-  type: concept
-  title:
-    ar: وهنا يدخل الذكاء الاصطناعي
-    en: Now Connect It to AI
-  content:
-    ar: إذا لم تصل للنظام أمثلة مهمة، سيتعلم من نصف القصة فقط.
-    en: If important examples never reach the system, it learns from only half the story.
-  media:
-  - type: image
-    ref: diverse_examples
-- id: generated_media_joke
-  type: story
-  title:
-    ar: يمكن ما اختفى...
-    en: Maybe It Did Not Disappear...
-  content:
-    ar: 'تقول: أخيرًا اختفى المحتوى المولّد! بس يمكن ما اختفى... يمكن صار متقن لدرجة إنك ما عدت تميّزه. '
-    en: 'You say: AI-generated content finally disappeared! But maybe it did not... maybe it became so convincing
-      that you no longer notice it. '
-  media:
-  - type: image
-    ref: generated_image_pair
-- id: real_or_ai_video_01
-  type: story
-  title:
-    ar: شاهد المقطع
-    en: Watch the Clip
-  content:
-    ar: ركّز في التفاصيل. بنسألك عنه في الشاشة الجاية.
-    en: Watch the details. We will ask you about it next.
-  media:
-  - type: video
-    ref: mystery_video_01
-- id: real_or_ai_question_01
-  type: exercise
-  title:
-    ar: حقيقي أو مولّد؟
-    en: Real or Generated?
-  question:
-    ar: وش تتوقع؟
-    en: What do you think?
-  options:
-  - id: real
-    label:
-      ar: حقيقي
-      en: Real
-  - id: ai
-    label:
-      ar: مولّد
-      en: Generated
-  correct_answer: real
-  feedback:
-    correct:
-      ar: صح. هذا المقطع حقيقي.
-      en: Correct. This clip is real.
-    incorrect:
-      ar: اختيار مفهوم؛ صار التمييز أصعب.
-      en: An understandable choice; the distinction is getting harder.
-- id: real_or_ai_video_02
-  type: story
-  title:
-    ar: والحين هذا
-    en: Now Watch This
-  content:
-    ar: لا تستعجل بالحكم.
-    en: Do not rush your judgment.
-  media:
-  - type: video
-    ref: mystery_video_03
-- id: real_or_ai_question_02
-  type: exercise
-  title:
-    ar: حقيقي أو مولّد؟
-    en: Real or Generated?
-  question:
-    ar: وش تتوقع؟
-    en: What do you think?
-  options:
-  - id: real
-    label:
-      ar: حقيقي
-      en: Real
-  - id: ai
-    label:
-      ar: مولّد
-      en: Generated
-  correct_answer: ai
-  feedback:
-    correct:
-      ar: صح. هذا المقطع مولّد بالذكاء الاصطناعي.
-      en: Correct. This clip was generated by AI.
-    incorrect:
-      ar: طبيعي. المقطع متقن جدًا.
-      en: That is understandable. The clip is highly convincing.
-- id: real_or_ai_video_01
-  type: story
-  title:
-    ar: شاهد المقطع
-    en: Watch the Clip
-  content:
-    ar: ركّز في التفاصيل. بنسألك عنه في الشاشة الجاية.
-    en: Watch the details. We will ask you about it next.
-  media:
-  - type: video
-    ref: mystery_video_02
-- id: real_or_ai_question_03
-  type: exercise
-  title:
-    ar: حقيقي أو مولّد؟
-    en: Real or Generated?
-  question:
-    ar: وش تتوقع؟
-    en: What do you think?
-  options:
-  - id: real
-    label:
-      ar: حقيقي
-      en: Real
-  - id: ai
-    label:
-      ar: مولّد
-      en: Generated
-  correct_answer: ai
-  feedback:
-    correct:
-      ar: صح. هذا المقطع مولّد بالذكاء الاصطناعي.
-      en: Correct. This clip was generated by AI.
-    incorrect:
-      ar: طبيعي. المقطع متقن جدًا.
-      en: That is understandable. The clip is highly convincing.
-
-- id: real_or_ai_compare
-  type: story
-  title:
-    ar: واحد حقيقي والثاني مولّد
-    en: One Real, One Generated
-  content:
-    ar: المظهر وحده ما عاد يكفي للحكم.
-    en: Appearance alone is no longer enough.
-  media:
-  - type: video
-    ref: mystery_explained_video
-- id: image_real_or_ai_view
-  type: story
-  title:
-    ar: شوف الصورتين
-    en: Look at Both Images
-  content:
-    ar: واحدة حقيقية والثانية مولّدة. ركّز في التفاصيل، ثم انتقل للسؤال.
-    en: One is real and the other is generated. Study the details, then continue to the question.
-  media:
-  - type: image
-    ref: generated_image_pair
-- id: image_real_or_ai
-  type: exercise
-  title:
-    ar: والصورة؟
-    en: What About the Image?
-  question:
-    ar: أي صورة تعتقد أنها مولّدة؟
-    en: Which image do you think is generated?
-  options:
-  - id: first
-    label:
-      ar: الأولى
-      en: First
-  - id: second
-    label:
-      ar: الثانية
-      en: Second
-  correct_answer: non
-  feedback:
-    correct:
-      ar: ' حاول ثاني. أحيانًا يصعب جدًا التفريق بالعين فقط.'
-      en: Correct. More importantly, do not rely on your eyes alone.
-    incorrect:
-      ar: حاول ثاني. أحيانًا يصعب جدًا التفريق بالعين فقط.
-      en: That is understandable. Sometimes it is very hard to tell by eye alone.
-
-- id: image_real_or_ai_reveal
-  type: story
-  title:
-    ar: "الاثنتان مولّدتان بالذكاء الاصطناعي!"
-    en: "Both Images Were AI-Generated!"
-
-  content:
-    ar: "وقعت في المصيدة؟ أنا قلت لك إن واحدة حقيقية والثانية مولّدة، فبدأت تبحث عن الفرق بدل أن تشك في السؤال نفسه. أحيانًا المشكلة ليست في الصورة، بل في الافتراض الذي وُضع أمامك."
-
-    en: "Did you fall for it? I told you that one image was real and the other was generated, so you started looking for differences instead of questioning the claim itself. Sometimes the problem is not the image, but the assumption you were given."
-
-  media:
-    - type: image
-      ref: generated_image_pair
-
-- id: image_trap_to_bias
-  type: concept
-  title:
-    ar: "وش علاقة هذا بالتحيّز؟"
-    en: "What Does This Have to Do With Bias?"
-
-  content:
-    ar: "عندما تُعرض عليك معلومات ناقصة أو خيارات محدودة، قد تصل إلى نتيجة خاطئة بثقة. وهذا يشبه تحيّز الناجين: نحكم من الحالات التي نراها، وننسى الحالات الغائبة."
-
-    en: "When you are given incomplete information or limited choices, you may reach the wrong conclusion with confidence. This is similar to survivorship bias: we judge from the cases we can see and forget the cases that are missing."
-
-  media:
-    - type: image
-      ref: survivorship_planes
-
-- id: text_real_or_ai_view
-  type: exercise
-  title:
-    ar: وأنت تقرأ مراجعات تطبيق، لقيت تعليقين
-    en: Read Both Texts
-  question:
-    ar: أي تعليق تعتقد أنه كتبه إنسان؟
-    en: Which comment do you think was written by a human?
-  options:
-  - id: first
-    label:
-      ar: يا جماعة الصراحة التطبيق مره رهيب بس مدري ليه كل شوي يعلق،، جربته امس وطلع لي نتايج غريبه شوي بس عادي يمكن انا ماعرفت استخدمه زين
-      en: honestly this app is sooo good but idk why it keeps freezing,, i tried it yesterday and got kinda weird results but maybe i just didnt use it right
-  - id: second
-    label:
-      ar: وفّر التطبيق تجربة استخدام متقنة، ويعرض النتائج بأسلوب واضح ومنظّم. ومع ذلك، قد يحتاج المستخدم إلى مراجعة بعض الإعدادات لضمان الحصول على نتائج أكثر دقة واتساقًا.
-      en: The application provides a refined user experience and presents results in a clear, well-structured manner. However, users may need to review certain settings to ensure greater accuracy and consistency.
-  correct_answer: non
-  feedback:
-    correct:
-      ar: اقرأ جيدا. الأداة قد تقلّد العامية والأخطاء، والإنسان قد يكتب بأسلوب مثالي. 
-      en: Read carefully. The tool may imitate slang and mistakes, and a human may write in a perfect style.
-    incorrect:
-      ar: اقرأ جيدا. الأداة قد تقلّد العامية والأخطاء، والإنسان قد يكتب بأسلوب مثالي. 
-      en: Read carefully. The tool may imitate slang and mistakes, and a human may write in a perfect style.
-- id: text_real_or_ai
-  type: exercise
-  title:
-    ar: هل الأسلوب يكشف الكاتب؟
-    en: Does Style Reveal the Writer?
-  question:
-    ar: هل نقدر نجزم أن أحد التعليقين كتبه إنسان والآخر كتبه ذكاء اصطناعي من الأسلوب؟
-    en: Can we prove that one was written by a human and the other by AI from style alone?
-  options:
-  - id: 'yes'
-    label:
-      ar: نعم، أكيد
-      en: Yes, definitely
-  - id: 'no'
-    label:
-      ar: لا، ما يكفي
-      en: No, not enough
-  correct_answer: 'no'
-  feedback:
-    correct:
-      ar: صح. الإنسان قد يكتب بأسلوب مثالي، والذكاء الاصطناعي قد يقلّد العامية والأخطاء. نحتاج مصدرًا وسياقًا.
-      en: Correct. A human may write perfectly, and AI may imitate slang and mistakes. We need source and context.
-    incorrect:
-      ar: الأسلوب قد يخدعنا. الذكاء الاصطناعي يستطيع تقليد الفصحى والعامية وحتى الأخطاء.
-      en: Style can mislead us. AI can imitate formal language, slang, and even mistakes.
-- id: verification_action
-  type: exercise
-  title:
-    ar: وصلك محتوى صادم
-    en: You Receive Shocking Content
-  question:
-    ar: وش أول خطوة؟
-    en: What is the first step?
-  options:
-  - id: verify
-    label:
-      ar: أتحقق أولًا
-      en: Verify first
-  - id: share
-    label:
-      ar: أشاركه
-      en: Share it
-  - id: believe
-    label:
-      ar: أصدقه
-      en: Believe it
-  correct_answer: verify
-  feedback:
-    correct:
-      ar: صحيح. افحص المصدر والسياق قبل التصديق أو المشاركة.
-      en: Correct. Check the source and context before believing or sharing.
-    incorrect:
-      ar: تمهّل. المظهر المقنع ما يثبت الحقيقة.
-      en: Pause. Convincing appearance does not prove truth.
-- id: verification_visual
-  type: concept
-  title:
-    ar: ثلاث أسئلة تكفي كبداية
-    en: Three Good First Questions
-  content:
-    ar: من نشره؟ وين نُشر أول مرة؟ وهل أكده مصدر موثوق؟
-    en: Who posted it? Where did it first appear? Has a trusted source confirmed it?
-  media:
-  - type: image
-    ref: verify_source
-- id: responsible_intro
-  type: concept
-  title:
-    ar: لا يمكنك تحميل المسؤولية على الذكاء الاصطناعي
-    en: You cannot hold AI accountable
-  content:
-    ar: قد يتخذ النظام قرارًا أو ينفذ فعلًا، لكن البشر هم من يحددون الهدف والصلاحيات والضوابط.
-    en: A system may make a decision or take an action, but people define its goal, authority, and safeguards.
-  media:
-  - type: image
-    ref: responsible_ai
-- id: dangerous_scenario
-  type: scenario
-  title:
-    ar: تنبيه إخلاء مزيف
-    en: A Fake Evacuation Alert
-  content:
-    ar: شخص استخدم الذكاء الاصطناعي لتقليد صوت جهة رسمية، وصنع تنبيه إخلاء مزيفًا أثناء كارثة ثم نشره فتسبب في
-      ذعر وتوجيه الناس إلى طريق خطر.
-    en: Someone used AI to imitate an official voice, created a fake evacuation alert during a disaster, and shared
-      it, causing panic and directing people toward a dangerous route.
-  media:
-  - type: image
-    ref: emergency_alert
-- id: accountability_quiz
-  type: exercise
-  title:
-    ar: من المسؤول؟
-    en: Who Is Accountable?
-  question:
-    ar: في هذا المثال، من يتحمل مسؤولية الضرر؟
-    en: In this example, who is accountable for the harm?
-  options:
-  - id: person
-    label:
-      ar: مستخدم الذكاء الاصطناعي
-      en: The creator and sharer
-  - id: ai
-    label:
-      ar: الذكاء الاصطناعي 
-      en: The system alone
-  - id: nobody
-    label:
-      ar: مطور الذكاء الاصطناعي
-      en: No one
-  correct_answer: person
-  feedback:
-    correct:
-      ar: صحيح. الأداة نفذت، لكن الإنسان اختار الهدف وصنع المحتوى ونشره.
-      en: Correct. The tool executed, but a person chose the goal, created the content, and shared it.
-    incorrect:
-      ar: الذكاء الاصطناعي قد يتصرف ضمن صلاحياته، لكن المسؤولية لا تختفي عن من صممه أو وجّهه أو نشر نتيجته.
-      en: AI may act within its authority, but responsibility does not disappear from those who design, direct,
-        or deploy it.
-- id: accountability_explain
-  type: concept
-  title:
-    ar: المسؤولية لها سلسلة
-    en: Responsibility Has a Chain
-  content:
-    ar: المستخدم مسؤول عن قصده واستخدامه، والجهة الناشرة مسؤولة عن الضوابط، والمطورون مسؤولون عن تقليل المخاطر المتوقعة.
-    en: Users are responsible for intent and use, deploying organizations for safeguards, and developers for reducing
-      foreseeable risks.
-  media:
-  - type: image
-    ref: accountability_chain
-- id: project_choose
-  type: story
-  title:
-    ar: 'مهمتك: اكتشف الحريق مبكرًا'
-    en: 'Your Mission: Detect a Fire Early'
-  content:
-    ar: 'ستبني نظامًا بسيطًا من خمس قطع: الهدف، البيانات، النمط، النتيجة، وضابط الأمان.'
-    en: 'Build a simple system from five parts: goal, data, pattern, output, and safeguard.'
-  media:
-  - type: image
-    ref: disaster_detection
-- id: project_goal
-  type: exercise
-  title:
-    ar: '1 من 5: الهدف'
-    en: '1 of 5: Goal'
-  question:
-    ar: ما الهدف الصحيح للنظام؟
-    en: What is the correct goal for the system?
-  options:
-  - id: early_fire
-    label:
-      ar: اكتشاف الحريق مبكرًا
-      en: Detect fire early
-  - id: make_poster
-    label:
-      ar: تصميم ملصق
-      en: Design a poster
-  correct_answer: early_fire
-  feedback:
-    correct:
-      ar: صح. هذه هي المشكلة التي نريد حلها.
-      en: Correct. That is the problem we want to solve.
-    incorrect:
-      ar: المهمة هنا حماية المكان عبر اكتشاف الحريق مبكرًا.
-      en: The mission is to protect the area by detecting fire early.
-- id: project_data
-  type: exercise
-  title:
-    ar: '2 من 5: البيانات'
-    en: '2 of 5: Data'
-  question:
-    ar: أي بيانات تساعد أكثر؟
-    en: Which data would help most?
-  options:
-  - id: images_temp
-    label:
-      ar: صور وحرارة
-      en: Images and temperature
-  - id: music_names
-    label:
-      ar: موسيقى وأسماء
-      en: Music and names
-  correct_answer: images_temp
-  feedback:
-    correct:
-      ar: صح. الصور والحرارة قد تكشفان الدخان أو الارتفاع غير المعتاد.
-      en: Correct. Images and temperature may reveal smoke or unusual heat.
-    incorrect:
-      ar: نحتاج بيانات مرتبطة بعلامات الحريق.
-      en: We need data connected to signs of fire.
-- id: project_pattern
-  type: exercise
-  title:
-    ar: '3 من 5: النمط'
-    en: '3 of 5: Pattern'
-  question:
-    ar: أي نمط يبحث عنه النظام؟
-    en: Which pattern should the system look for?
-  options:
-  - id: smoke_heat
-    label:
-      ar: دخان مع حرارة مرتفعة
-      en: Smoke with rising heat
-  - id: people_colors
-    label:
-      ar: ألوان ملابس الناس
-      en: People’s clothing colors
-  correct_answer: smoke_heat
-  feedback:
-    correct:
-      ar: صح. اجتماع أكثر من علامة يجعل التنبيه أقوى.
-      en: Correct. Multiple signs together make the warning stronger.
-    incorrect:
-      ar: ابحث عن علاقة تشير فعلًا إلى احتمال وجود حريق.
-      en: Look for a relationship that actually signals possible fire.
-- id: project_output
-  type: exercise
-  title:
-    ar: '4 من 5: النتيجة'
-    en: '4 of 5: Output'
-  question:
-    ar: ماذا يجب أن يفعل النظام عند ارتفاع الخطر؟
-    en: What should the system do when risk rises?
-  options:
-  - id: alert_team
-    label:
-      ar: ينبّه فريق السلامة
-      en: Alert the safety team
-  - id: post_online
-    label:
-      ar: ينشر تنبيه الخطر للناس
-      en: Post automatically
-  correct_answer: alert_team
-  feedback:
-    correct:
-      ar: صح. يرسل تنبيهًا للجهة القادرة على التحقق والتصرف.
-      en: Correct. It alerts people who can verify and respond.
-    incorrect:
-      ar: النشر العام قد يسبب ذعرًا قبل التحقق.
-      en: Public posting may cause panic before verification.
-- id: project_safeguard
-  type: exercise
-  title:
-    ar: '5 من 5: ضابط الأمان'
-    en: '5 of 5: Safeguard'
-  question:
-    ar: ما ضابط الأمان الأفضل؟
-    en: What is the best safeguard?
-  options:
-  - id: human_verify
-    label:
-      ar: يتحقق شخص قبل الإخلاء
-      en: Human verifies before evacuation
-  - id: auto_evacuate
-    label:
-      ar: يأمر بالإخلاء فورًا
-      en: Order evacuation immediately
-  correct_answer: human_verify
-  feedback:
-    correct:
-      ar: صح. القرار عالي الخطورة يحتاج تحققًا ومسؤولًا واضحًا.
-      en: Correct. A high-stakes decision needs verification and clear accountability.
-    incorrect:
-      ar: التنبيه قد يخطئ؛ الإخلاء يحتاج تحققًا سريعًا من شخص مسؤول.
-      en: The alert may be wrong; evacuation needs fast verification by a responsible person.
-- id: project_result
-  type: project
-  title:
-    ar: بطاقة نظامك جاهزة
-    en: Your System Card Is Ready
-  content:
-    ar: 'الهدف: اكتشاف الحريق مبكرًا.
-
-      البيانات: صور ودرجات حرارة.
-
-      النمط: دخان مع ارتفاع غير معتاد في الحرارة.
-
-      النتيجة: تنبيه فريق السلامة.
-
-      ضابط الأمان: يتحقق شخص مسؤول قبل قرار الإخلاء.'
-    en: 'Goal: Detect fire early.
-
-      Data: Images and temperature readings.
-
-      Pattern: Smoke with an unusual rise in heat.
-
-      Output: Alert the safety team.
-
-      Safeguard: A responsible person verifies before an evacuation decision.'
-  media:
-  - type: image
-    ref: mission_builder
-  output:
-    type: ai_system_card
-    mission: fire_detection
-    goal: detect_fire_early
-    data:
-    - images
-    - temperature
-    pattern: smoke_and_rising_heat
-    output: alert_safety_team
-    safeguard: human_verification_before_evacuation
-  completion_message:
-    ar: 'أنجزت مشروعًا واضحًا: نظام له هدف وبيانات ونمط ونتيجة وضابط أمان.'
-    en: 'You completed a clear project: a system with a goal, data, pattern, output, and safeguard.'
-- id: reflection
-  type: reflection
-  title:
-    ar: آخر سؤال كتابي
-    en: One Written Question
-  prompt:
-    ar: باعتقادك، ايش هو أهم شيء تعلمته اليوم؟ وكيف راح تشرحه لشخص ماحضر معنا اليوم؟
-    en: In your opinion, what is the most important thing you learned today, and how would you explain it to someone who wasn’t here with us?
-  placeholder:
-    ar: 'مثال: أتحقق من المعلومات...'
-    en: 'Example: I would verify the information...'
-  minimum_characters: 8
-  required: true
-- id: connect_happened
-  type: connect_the_dots
-  title:
-    ar: وش تعلّمت؟
-    en: What Did You Learn?
-  what_happened:
-    ar: شفت أن الذكاء الاصطناعي يتعرّف ويتنبأ ويوصي ويولّد ويتصرف، وكل هذا يبدأ من البيانات والأنماط.
-    en: You saw that AI recognizes, predicts, recommends, generates, and acts, all beginning with data and patterns.
-  media:
-  - type: image
-    ref: ai_capabilities
-- id: connect_matters
-  type: connect_the_dots
-  title:
-    ar: لماذا تعلمت؟
-    en: Why Does It Matter?
-  why_it_matters:
-    ar: لأن البيانات الناقصة قد تضلل النظام، والمحتوى المقنع قد يضللنا، والمسؤولية تبقى على البشر الذين يبنون النظام
-      ويستخدمونه.
-    en: Because missing data can mislead a system, convincing content can mislead us, and responsibility remains
-      with the people who build and use it.
-  media:
-  - type: image
-    ref: accountability_chain
-- id: connect_leads
-  type: connect_the_dots
-  title:
-    ar: وين الطريق؟
-    en: What Comes Next?
-  where_it_leads:
-    ar: فتحت المستوى الأول. جرّب مسار المهندس أو الصانع أو المبدع أو المحترف، وخلك فضولي.
-    en: You unlocked Level 1. Explore the Engineer, Maker, Creative, or Professional pathway and stay curious.
-  media:
-  - type: image
-    ref: mission_builder
-- id: readiness_check
-  type: learner_feedback
-  title:
-    ar: جاهز تكمل؟
-    en: Ready to Continue?
-  content:
-    ar: اختر اللي يناسبك. تقدمك محفوظ.
-    en: Choose what works for you. Your progress is saved.
-  media:
-  - type: image
-    ref: ai_world_hook
-  feedback_ref: readiness_check
-- id: badge_award
-  type: badge_award
-  title:
-    ar: أخذت شارة المستكشف
-    en: You Earned the Explorer Badge
-  content:
-    ar: أكملت المستوى صفر وفتحت المستوى الأول.
-    en: You completed Level 0 and unlocked Level 1.
-  media:
-  - type: image
-    ref: badge_ai_explorer
-  badge_ref: badge
+        ar_fusha: "هناك أكثر بكثير: يتعرّف ويتنبأ ويوصي ويتصرف أيضًا."
+  - id: ai_definition
+    type: concept
+    title:
+      ar: وش يعني ذكاء اصطناعي؟
+      en: What Does AI Mean?
+      ar_fusha: ما معنى الذكاء الاصطناعي؟
+    content:
+      ar: أنظمة تحاكي بعض قدرات الإنسان، مثل التعلّم والتعرّف والتوقّع والتوليد واتخاذ القرار. ونتائجها ليست ثابتة دائمًا؛ فقد
+        تتغيّر حسب البيانات والسياق.
+      en: Systems that imitate some human abilities, such as learning, recognizing, predicting, generating, and making
+        decisions. Their results are not always fixed and may change with the data and context.
+      ar_fusha: أنظمة تحاكي بعض قدرات الإنسان، مثل التعلّم والتعرّف والتوقّع والتوليد واتخاذ القرار. ونتائجها ليست ثابتة
+        دائمًا؛ فقد تتغيّر حسب البيانات والسياق.
+    media:
+      - type: image
+        ref: ai_capabilities
+  - id: ai_definition
+    type: reflection
+    title:
+      ar: أمثلة أخرى؟
+      en: More example?
+      ar_fusha: أمثلة أخرى؟
+    prompt:
+      ar: أضف أمثلة أخرى لقدرات الذكاء الاصطناعي من حولك.
+      en: Add more examples of AI capabilities from the world around you.
+      ar_fusha: أضف أمثلة أخرى لقدرات الذكاء الاصطناعي من حولك.
+    placeholder:
+      ar: "مثال: أتحقق من المعلومات..."
+      en: "Example: I would verify the information..."
+      ar_fusha: "مثال: أتحقق من المعلومات..."
+    minimum_characters: 8
+    required: true
+  - id: ai_history
+    type: story
+    title:
+      ar: الفكرة أقدم مما تتوقع
+      en: Older Than You Think
+      ar_fusha: الفكرة أقدم مما تتوقع
+    content:
+      ar: ظهر اسم «الذكاء الاصطناعي» كمجال علمي في لقاء دارتموث عام 1956.
+      en: The name “artificial intelligence” emerged as a scientific field at Dartmouth in 1956.
+      ar_fusha: ظهر اسم «الذكاء الاصطناعي» كمجال علمي في لقاء دارتموث عام 1956.
+    media:
+      - type: image
+        ref: dartmouth_1956
+  - id: not_every_software
+    type: concept
+    title:
+      ar: مو كل برنامج ذكاء اصطناعي
+      en: Not Every Program Is AI
+      ar_fusha: ليس كل برنامج ذكاءً اصطناعيًا
+    content:
+      ar: "الآلة الحاسبة والمنبّه ومفتاح المصباح تعمل بناءً على برمجة وتعليمات ثابتة: إذا كررت نفس الأمر، تحصل عادةً على
+        النتيجة نفسها. أما الذكاء الاصطناعي فيعتمد على البيانات والأنماط، لذلك قد تتغيّر نتائجه حسب البيانات والسياق."
+      en: "A calculator, alarm, and light switch work through programming and fixed instructions: repeat the same command, and
+        you usually get the same result. AI, however, relies on data and patterns, so its results may change depending
+        on the data and context."
+      ar_fusha: "الآلة الحاسبة والمنبّه ومفتاح المصباح تعمل بناءً على برمجة وتعليمات ثابتة: إذا كررت نفس الأمر، تحصل عادةً على
+        النتيجة نفسها. أما الذكاء الاصطناعي فيعتمد على البيانات والأنماط، لذلك قد تتغيّر نتائجه حسب البيانات والسياق."
+    media:
+      - type: image
+        ref: fixed_rules
+  - id: ai_or_not
+    type: exercise
+    title:
+      ar: أي واحد يستخدم الذكاء الاصطناعي؟
+      en: Which One Uses AI?
+      ar_fusha: أي مثال يستخدم الذكاء الاصطناعي؟
+    question:
+      ar: أي مثال يعتمد على البيانات والأنماط؟
+      en: Which example depends on data and patterns?
+      ar_fusha: أي مثال يعتمد على البيانات والأنماط؟
+    options:
+      - id: calculator
+        label:
+          ar: آلة حاسبة
+          en: Calculator
+          ar_fusha: آلة حاسبة
+      - id: face_unlock
+        label:
+          ar: فتح الجوال بالوجه
+          en: Face unlock
+          ar_fusha: فتح الهاتف بالوجه
+    correct_answer: face_unlock
+    feedback:
+      correct:
+        ar: صح. فتح الجوال بالوجه يعتمد على التعرّف على أنماط في الصورة.
+        en: Correct. Face unlock recognizes patterns in an image.
+        ar_fusha: صحيح. فتح الهاتف بالوجه يعتمد على التعرّف على أنماط في الصورة.
+      incorrect:
+        ar: الآلة الحاسبة تتبع قواعد ثابتة، ولا تحتاج أن تتعرّف على نمط.
+        en: A calculator follows fixed rules and does not need to recognize a pattern.
+        ar_fusha: الآلة الحاسبة تتبع قواعد ثابتة، ولا تحتاج أن تتعرّف على نمط.
+  - id: capability_recognize
+    type: story
+    title:
+      ar: الذكاء الاصطناعي يتعرّف
+      en: AI Recognizes
+      ar_fusha: الذكاء الاصطناعي يتعرّف
+    content:
+      ar: السيارة الذاتية القيادة تتعرّف على الطريق والمشاة والإشارات.
+      en: A self-driving car recognizes roads, pedestrians, and signs.
+      ar_fusha: السيارة الذاتية القيادة تتعرّف على الطريق والمشاة والإشارات.
+    media:
+      - type: image
+        ref: self_driving_car
+  - id: capability_predict
+    type: story
+    title:
+      ar: الذكاء الاصطناعي يتنبأ
+      en: AI Predicts
+      ar_fusha: الذكاء الاصطناعي يتنبأ
+    content:
+      ar: أنظمة الكوارث تحلل صور الأقمار والمجسات لتتوقع حريقًا أو فيضانًا مبكرًا.
+      en: Disaster systems analyze satellite and sensor data to predict fires or floods early.
+      ar_fusha: أنظمة الكوارث تحلل صور الأقمار والمجسات لتتوقع حريقًا أو فيضانًا مبكرًا.
+    media:
+      - type: image
+        ref: disaster_detection
+  - id: capability_view_car
+    type: story
+    title:
+      ar: "مثال ذكاء اصطناعي: سيارة ذكية"
+      en: "AI Example: Smart Cars"
+      ar_fusha: "مثال ذكاء اصطناعي: سيارة ذكية"
+    content:
+      ar: رأت السيارة شخص يقطع الشارع
+      en: The car sees a person crossing the road.
+      ar_fusha: رأت السيارة شخص يقطع الشارع
+    media:
+      - type: image
+        ref: self_driving_car
+  - id: capability_quiz_car_action
+    type: exercise
+    title:
+      ar: وش تسوي السيارة؟
+      en: What Does the Car Do?
+      ar_fusha: ماذا تفعل السيارة؟
+    question:
+      ar: بعد أن رأت الشخص، ضغط النظام على الفرامل. ما الوظيفة التي يقوم بها الذكاء الاصطناعي هنا؟
+      en: After seeing the person, the system applied the brakes. What is the AI task here?
+      ar_fusha: بعد أن رأت الشخص، ضغط النظام على الفرامل. ما الوظيفة التي يقوم بها الذكاء الاصطناعي هنا؟
+    options:
+      - id: act
+        label:
+          ar: يتصرف
+          en: Act
+          ar_fusha: يتصرف
+      - id: generate
+        label:
+          ar: يولّد
+          en: Generate
+          ar_fusha: يولّد
+    correct_answer: act
+    feedback:
+      correct:
+        ar: صح. النظام نفّذ فعلًا في العالم الحقيقي.
+        en: Correct. The system took an action in the real world.
+        ar_fusha: صحيح. نفّذ النظام فعلًا في العالم الحقيقي.
+      incorrect:
+        ar: هو لم يصنع محتوى؛ بل نفّذ قرارًا بالفرملة.
+        en: It did not create content; it acted by braking.
+        ar_fusha: هو لم يصنع محتوى؛ بل نفّذ قرارًا بالفرملة.
+  - id: capability_view_recommendation
+    type: story
+    title:
+      ar: "مثال ذكاء اصطناعي: توصيات جديدة"
+      en: "AI Example: A New recommendation"
+      ar_fusha: "مثال ذكاء اصطناعي: توصيات جديدة"
+    content:
+      ar: التطبيق لاحظ ما شاهدته سابقًا، ثم عرض لك مقطعًا قد يعجبك.
+      en: The app noticed what you watched before, then showed you a clip you may like.
+      ar_fusha: التطبيق لاحظ ما شاهدته سابقًا، ثم عرض لك مقطعًا قد يعجبك.
+    media:
+      - type: image
+        ref: recommendation
+  - id: capability_quiz_recommendation
+    type: exercise
+    title:
+      ar: وش يسوي التطبيق؟
+      en: What Is the App Doing?
+      ar_fusha: ماذا يفعل التطبيق؟
+    question:
+      ar: ما المهمة الأساسية للذكاء الاصطناعي في هذا التطبيق؟
+      en: What is the main AI task in this app?
+      ar_fusha: ما المهمة الأساسية للذكاء الاصطناعي في هذا التطبيق؟
+    options:
+      - id: recommend
+        label:
+          ar: يوصي
+          en: Recommend
+          ar_fusha: يوصي
+      - id: recognize
+        label:
+          ar: يتعرّف
+          en: Recognize
+          ar_fusha: يتعرّف
+    correct_answer: recommend
+    feedback:
+      correct:
+        ar: صح. اختار لك شيئًا قد يناسبك.
+        en: Correct. It selected something you may like.
+        ar_fusha: صحيح. اختار لك شيئًا قد يناسبك.
+      incorrect:
+        ar: هو يستخدم ما يعرفه عن تفضيلاتك ليقترح شيئًا.
+        en: It uses your preferences to suggest something.
+        ar_fusha: هو يستخدم ما يعرفه عن تفضيلاتك ليقترح شيئًا.
+  - id: capability_view_fraud
+    type: story
+    title:
+      ar: عملية غريبة
+      en: "Example 3: An Unusual Transaction"
+      ar_fusha: عملية غريبة
+    content:
+      ar: نظام الذكاء الاصطناعي لاحظ أن عملية الدفع مختلفة جدًا عن عادات صاحب الحساب.
+      en: The AI system notices that a payment is very different from the account holder’s usual behavior.
+      ar_fusha: نظام الذكاء الاصطناعي لاحظ أن عملية الدفع مختلفة جدًا عن عادات صاحب الحساب.
+    media:
+      - type: image
+        ref: fraud_detection
+  - id: capability_quiz_fraud
+    type: exercise
+    title:
+      ar: وش مهمة الذكاء الاصطناعي في نظام البنك؟
+      en: What Is the AI task in this bank system?
+      ar_fusha: ما مهمة الذكاء الاصطناعي في نظام البنك؟
+    question:
+      ar: ما المهمة الأساسية؟
+      en: What is the main task?
+      ar_fusha: ما المهمة الأساسية؟
+    options:
+      - id: recognize
+        label:
+          ar: يتعرّف
+          en: Recognize
+          ar_fusha: يتعرّف
+      - id: generate
+        label:
+          ar: يولّد
+          en: Generate
+          ar_fusha: يولّد
+    correct_answer: recognize
+    feedback:
+      correct:
+        ar: صح. تعرّف على سلوك غير معتاد.
+        en: Correct. It recognized unusual behavior.
+        ar_fusha: صحيح. تعرّف على سلوك غير معتاد.
+      incorrect:
+        ar: لم ينشئ شيئًا جديدًا؛ بل اكتشف اختلافًا في البيانات.
+        en: It did not create something new; it detected a difference in the data.
+        ar_fusha: لم ينشئ شيئًا جديدًا؛ بل اكتشف اختلافًا في البيانات.
+  - id: data_definition
+    type: concept
+    title:
+      ar: طيب، وش هي البيانات؟
+      en: So, What Is Data?
+      ar_fusha: حسنًا، ما البيانات؟
+    content:
+      ar: "البيانات هي المعلومات التي يتعامل معها الذكاء الاصطناعي: أرقام مثل الحرارة والنبض، وصور وفيديو، وأصوات وكلام، ونصوص
+        نكتبها ونقرأها."
+      en: "Data is the information AI works with: numbers such as temperature and heart rate, images and video, sounds and
+        speech, and text we write and read."
+      ar_fusha: "البيانات هي المعلومات التي يتعامل معها الذكاء الاصطناعي: أرقام مثل الحرارة والنبض، وصور وفيديو، وأصوات وكلام،
+        ونصوص نكتبها ونقرأها."
+    media:
+      - type: image
+        ref: data_types
+  - id: data_type_quiz_numbers
+    type: exercise
+    title:
+      ar: خمّن نوع البيانات
+      en: Guess the Data Type
+      ar_fusha: خمّن نوع البيانات
+    question:
+      ar: قياسات نبض القلب تعد ...
+      en: Heart rate measurements are...
+      ar_fusha: قياسات نبض القلب تعد ...
+    options:
+      - id: numbers
+        label:
+          ar: أرقام
+          en: Numbers
+          ar_fusha: أرقام
+      - id: images
+        label:
+          ar: صور
+          en: Images
+          ar_fusha: صور
+    correct_answer: numbers
+    feedback:
+      correct:
+        ar: صح. هي قياسات رقمية.
+        en: Correct. They are numerical measurements.
+        ar_fusha: صحيح. هي قياسات رقمية.
+      incorrect:
+        ar: هي قيم يمكن قياسها بالأرقام.
+        en: They are values measured as numbers.
+        ar_fusha: هي قيم يمكن قياسها بالأرقام.
+  - id: data_type_quiz_camera
+    type: exercise
+    title:
+      ar: خمّن نوع البيانات
+      en: Guess the Data Type
+      ar_fusha: خمّن نوع البيانات
+    question:
+      ar: كاميرا السيارة ترسل للنظام...
+      en: The car camera sends the system...
+      ar_fusha: كاميرا السيارة ترسل للنظام...
+    options:
+      - id: visual
+        label:
+          ar: صور وفيديو
+          en: Images and video
+          ar_fusha: صور وفيديو
+      - id: audio
+        label:
+          ar: صوت
+          en: Audio
+          ar_fusha: صوت
+    correct_answer: visual
+    feedback:
+      correct:
+        ar: صحيح. الكاميرا تنتج بيانات بصرية.
+        en: Correct. A camera produces visual data.
+        ar_fusha: صحيح. الكاميرا تنتج بيانات بصرية.
+      incorrect:
+        ar: الكاميرا تنقل ما تراه.
+        en: A camera sends what it sees.
+        ar_fusha: الكاميرا تنقل ما تراه.
+  - id: data_sort_temperature
+    type: exercise
+    title:
+      ar: درجة الحرارة
+      en: Temperature
+      ar_fusha: درجة الحرارة
+    question:
+      ar: درجة الحرارة تنتمي إلى أي نوع؟
+      en: Which type does temperature belong to?
+      ar_fusha: درجة الحرارة تنتمي إلى أي نوع؟
+    options:
+      - id: numbers
+        label:
+          ar: أرقام
+          en: Numbers
+          ar_fusha: أرقام
+      - id: images
+        label:
+          ar: صور
+          en: Images
+          ar_fusha: صور
+    correct_answer: numbers
+    feedback:
+      correct:
+        ar: صح. هي قيمة رقمية قابلة للقياس.
+        en: Correct. It is a measurable numerical value.
+        ar_fusha: صحيح. هي قيمة رقمية قابلة للقياس.
+      incorrect:
+        ar: درجة الحرارة تُسجل كرقم.
+        en: Temperature is recorded as a number.
+        ar_fusha: درجة الحرارة تُسجل كرقم.
+  - id: data_sort_xray
+    type: exercise
+    title:
+      ar: صورة أشعة
+      en: An X-ray
+      ar_fusha: صورة أشعة
+    question:
+      ar: نتائج الأشعة السينية تنتمي إلى أي نوع؟
+      en: Which type does an X-ray belong to?
+      ar_fusha: نتائج الأشعة السينية تنتمي إلى أي نوع؟
+    options:
+      - id: images
+        label:
+          ar: صور
+          en: Images
+          ar_fusha: صور
+      - id: audio
+        label:
+          ar: صوت
+          en: Audio
+          ar_fusha: صوت
+    correct_answer: images
+    feedback:
+      correct:
+        ar: صح. هي بيانات بصرية.
+        en: Correct. It is visual data.
+        ar_fusha: صحيح. هي بيانات بصرية.
+      incorrect:
+        ar: الأشعة تُعرض على شكل صورة.
+        en: An X-ray is displayed as an image.
+        ar_fusha: الأشعة تُعرض على شكل صورة.
+  - id: pattern_definition
+    type: concept
+    title:
+      ar: وش يعني نمط؟
+      en: What Is a Pattern?
+      ar_fusha: ما معنى النمط؟
+    content:
+      ar: النمط تكرار أو علاقة تظهر في البيانات وتساعد النظام على التخمين.
+      en: A pattern is a repetition or relationship in data that helps a system make a guess.
+      ar_fusha: النمط تكرار أو علاقة تظهر في البيانات وتساعد النظام على التخمين.
+    media:
+      - type: image
+        ref: pattern_sort
+  - id: pattern_cats_screen
+    type: story
+    title:
+      ar: نمط في الصور
+      en: A Pattern in Images
+      ar_fusha: نمط في الصور
+    content:
+      ar: قد يلاحظ النظام آذانًا وشوارب وأشكالًا تتكرر في صور القطط.
+      en: A system may notice ears, whiskers, and shapes recurring in cat images.
+      ar_fusha: قد يلاحظ النظام آذانًا وشوارب وأشكالًا تتكرر في صور القطط.
+    media:
+      - type: image
+        ref: pattern_cats
+  - id: pattern_traffic_screen
+    type: story
+    title:
+      ar: نمط في الوقت
+      en: A Pattern in Time
+      ar_fusha: نمط في الوقت
+    content:
+      ar: قد يتكرر الزحام قرب المدارس في وقت محدد كل صباح.
+      en: Traffic may repeat near schools at a certain time each morning.
+      ar_fusha: قد يتكرر الزحام قرب المدارس في وقت محدد كل صباح.
+    media:
+      - type: image
+        ref: pattern_traffic
+  - id: pattern_quiz
+    type: exercise
+    title:
+      ar: لقطت النمط؟
+      en: Did You Spot the Pattern?
+      ar_fusha: هل لاحظت النمط؟
+    question:
+      ar: زحام يتكرر كل يوم الساعة 7:30. ما النمط؟
+      en: Traffic repeats every day at 7:30. What is the pattern?
+      ar_fusha: زحام يتكرر كل يوم الساعة 7:30. ما النمط؟
+    options:
+      - id: time
+        label:
+          ar: الوقت
+          en: Time
+          ar_fusha: الوقت
+      - id: color
+        label:
+          ar: لون السيارات
+          en: Car color
+          ar_fusha: لون السيارات
+    correct_answer: time
+    feedback:
+      correct:
+        ar: صح. العلاقة المتكررة هنا مرتبطة بالوقت.
+        en: Correct. The recurring relationship is linked to time.
+        ar_fusha: صحيح. العلاقة المتكررة هنا مرتبطة بالوقت.
+      incorrect:
+        ar: ركّز على الشيء الذي يتكرر يوميًا.
+        en: Focus on what repeats every day.
+        ar_fusha: ركّز على الشيء الذي يتكرر يوميًا.
+  - id: pattern_detective_spam
+    type: exercise
+    title:
+      ar: "القضية الأولى: الرسائل"
+      en: "Case One: Messages"
+      ar_fusha: "القضية الأولى: الرسائل"
+    question:
+      ar: رسائل كثيرة مزعجة تحتوي على «اربح الآن» وروابط غريبة. ما النمط؟
+      en: Many spam messages contain “win now” and unusual links. What is the pattern?
+      ar_fusha: رسائل كثيرة مزعجة تحتوي على «اربح الآن» وروابط غريبة. ما النمط؟
+    options:
+      - id: phrases_links
+        label:
+          ar: عبارات وروابط متكررة
+          en: Repeated phrases and links
+          ar_fusha: عبارات وروابط متكررة
+      - id: message_color
+        label:
+          ar: لون الرسالة
+          en: Message color
+          ar_fusha: لون الرسالة
+    correct_answer: phrases_links
+    feedback:
+      correct:
+        ar: بالضبط. النظام قد يتعلم من الكلمات والروابط المتكررة.
+        en: Exactly. The system may learn from recurring words and links.
+        ar_fusha: بالضبط. النظام قد يتعلم من الكلمات والروابط المتكررة.
+      incorrect:
+        ar: ركّز على الشيء المشترك بين الرسائل المزعجة.
+        en: Focus on what the spam messages have in common.
+        ar_fusha: ركّز على الشيء المشترك بين الرسائل المزعجة.
+  - id: pattern_detective_traffic
+    type: exercise
+    title:
+      ar: "القضية الثانية: الزحام"
+      en: "Case Two: Traffic"
+      ar_fusha: "القضية الثانية: الزحام"
+    question:
+      ar: الزحام يزيد قرب المدرسة كل يوم بين 6 و 7 صباحًا. ما النمط؟
+      en: Traffic rises near the school every day between 6 and 7 a.m. What is the pattern?
+      ar_fusha: الزحام يزيد قرب المدرسة كل يوم بين 6 و 7 صباحًا. ما النمط؟
+    options:
+      - id: time_place
+        label:
+          ar: الوقت والمكان
+          en: Time and place
+          ar_fusha: الوقت والمكان
+      - id: car_shape
+        label:
+          ar: شكل السيارات
+          en: Car shape
+          ar_fusha: شكل السيارات
+    correct_answer: time_place
+    feedback:
+      correct:
+        ar: صح. الزيادة مرتبطة بوقت ومكان محددين.
+        en: Correct. The increase is linked to a specific time and place.
+        ar_fusha: صحيح. الزيادة مرتبطة بوقت ومكان محددين.
+      incorrect:
+        ar: "اسأل: متى وأين يتكرر الزحام؟"
+        en: "Ask: when and where does the traffic repeat?"
+        ar_fusha: "اسأل: متى وأين يتكرر الزحام؟"
+  - id: pattern_detective_health
+    type: exercise
+    title:
+      ar: "القضية الثالثة: الصحة"
+      en: "Case Three: Health"
+      ar_fusha: "القضية الثالثة: الصحة"
+    question:
+      ar: "عند عدد من المرضى تكرر: حرارة مرتفعة، سعال، وانخفاض الأكسجين. ما النمط؟"
+      en: Across several patients, high temperature, cough, and low oxygen repeat. What is the pattern?
+      ar_fusha: "عند عدد من المرضى تكرر: حرارة مرتفعة، سعال، وانخفاض الأكسجين. ما النمط؟"
+    options:
+      - id: symptoms_together
+        label:
+          ar: مؤشرات تظهر معًا
+          en: Indicators appearing together
+          ar_fusha: مؤشرات تظهر معًا
+      - id: patient_names
+        label:
+          ar: أسماء المرضى
+          en: Patient names
+          ar_fusha: أسماء المرضى
+    correct_answer: symptoms_together
+    feedback:
+      correct:
+        ar: صح. النظام يلاحظ مجموعة مؤشرات تتكرر معًا، ثم ينبه المختص.
+        en: Correct. The system notices indicators recurring together, then alerts a specialist.
+        ar_fusha: صحيح. يلاحظ النظام مجموعة مؤشرات تتكرر معًا، ثم ينبه المختص.
+      incorrect:
+        ar: الأسماء لا تصف الحالة؛ المؤشرات المتكررة هي المهمة.
+        en: Names do not describe the condition; the recurring indicators matter.
+        ar_fusha: الأسماء لا تصف الحالة؛ المؤشرات المتكررة هي المهمة.
+  - id: data_quality
+    type: concept
+    title:
+      ar: الكثرة مو كل شيء
+      en: More Is Not Always Better
+      ar_fusha: الكثرة ليست كل شيء
+    content:
+      ar: حتى لو كانت البيانات كثيرة، لازم تكون متنوعة وتمثل الواقع.
+      en: Even with lots of data, it must be diverse and represent reality.
+      ar_fusha: حتى لو كانت البيانات كثيرة، يجب أن تكون متنوعة وتمثل الواقع.
+    media:
+      - type: image
+        ref: diverse_examples
+  - id: survivorship_story
+    type: story
+    title:
+      ar: لغز من الحرب العالمية
+      en: A World War II Puzzle
+      ar_fusha: لغز من الحرب العالمية
+    content:
+      ar: درس الباحثون الطائرات التي رجعت من المعارك، ولاحظوا أماكن ثقوب الرصاص.
+      en: Researchers studied planes that returned from battle and marked their bullet holes.
+      ar_fusha: درس الباحثون الطائرات التي عادت من المعارك، ولاحظوا أماكن ثقوب الرصاص.
+    media:
+      - type: image
+        ref: survivorship_planes
+  - id: survivorship_choice
+    type: exercise
+    title:
+      ar: وين تحط الدرع؟
+      en: Where Would You Add Armor?
+      ar_fusha: أين تضع الدرع؟
+    question:
+      ar: أي منطقة تحمي أكثر؟
+      en: Which area would you protect more?
+      ar_fusha: أي منطقة تحمي أكثر؟
+    options:
+      - id: many_holes
+        label:
+          ar: حول الثقوب
+          en: Around the holes
+          ar_fusha: حول الثقوب
+      - id: few_holes
+        label:
+          ar: الأماكن السليمة
+          en: The untouched areas
+          ar_fusha: الأماكن السليمة
+    correct_answer: few_holes
+    feedback:
+      correct:
+        ar: بالضبط. الطائرات المصابة هناك غالبًا لم ترجع.
+        en: Exactly. Planes hit there often did not return.
+        ar_fusha: بالضبط. الطائرات المصابة هناك غالبًا لم ترجع.
+      incorrect:
+        ar: فكّر بالطائرات التي لم نرها لأنها لم تعد.
+        en: Think about the planes we never saw because they did not return.
+        ar_fusha: فكّر بالطائرات التي لم نرها لأنها لم تعد.
+  - id: survivorship_reveal_screen
+    type: story
+    title:
+      ar: المعلومة الناقصة غيّرت القرار
+      en: The Missing Information Changed the Decision
+      ar_fusha: المعلومة الناقصة غيّرت القرار
+    content:
+      ar: الطائرات العائدة نجت رغم إصابة مناطق معيّنة. الخطر الحقيقي كان في أماكن إصابة الطائرات التي لم تعد.
+      en: Returning planes survived hits in certain areas. The critical areas were where missing planes had been hit.
+      ar_fusha: الطائرات العائدة نجت رغم إصابة مناطق معيّنة. الخطر الحقيقي كان في أماكن إصابة الطائرات التي لم تعد.
+    media:
+      - type: image
+        ref: survivorship_reveal
+  - id: survivorship_simple
+    type: concept
+    title:
+      ar: هذا هو تحيّز الناجين
+      en: This Is Survivorship Bias
+      ar_fusha: هذا هو تحيّز الناجين
+    content:
+      ar: إذا نظرنا فقط إلى من نجح أو بقي، يمكن نفهم القصة بشكل غلط.
+      en: If we only look at those who succeeded or remained, we may misunderstand the story.
+      ar_fusha: إذا نظرنا فقط إلى من نجح أو بقي، فقد نفهم القصة بشكل خاطئ.
+    media:
+      - type: image
+        ref: missing_data_kids
+  - id: survivorship_kids_quiz
+    type: exercise
+    title:
+      ar: وش الناقص؟
+      en: What Is Missing?
+      ar_fusha: ما الناقص؟
+    question:
+      ar: درست أفضل مشاريع المسابقة فقط. وش ينقصك لتفهم سبب النجاح؟
+      en: You studied only the best competition projects. What is missing?
+      ar_fusha: درست أفضل مشاريع المسابقة فقط. ما الذي ينقصك لتفهم سبب النجاح؟
+    options:
+      - id: failed
+        label:
+          ar: المشاريع التي تعثرت
+          en: Projects that struggled
+          ar_fusha: المشاريع التي تعثرت
+      - id: more_winners
+        label:
+          ar: فائزون أكثر
+          en: More winners
+          ar_fusha: فائزون أكثر
+    correct_answer: failed
+    feedback:
+      correct:
+        ar: صح. المقارنة مع التعثر تكشف عوامل النجاح الحقيقية.
+        en: Correct. Comparing with struggles reveals the real success factors.
+        ar_fusha: صحيح. المقارنة مع حالات التعثر تكشف عوامل النجاح الحقيقية.
+      incorrect:
+        ar: رؤية الفائزين فقط تعطيك نصف القصة.
+        en: Seeing only winners gives you half the story.
+        ar_fusha: رؤية الفائزين فقط تمنحك نصف القصة.
+  - id: survivorship_ai_link
+    type: concept
+    title:
+      ar: وهنا يدخل الذكاء الاصطناعي
+      en: Now Connect It to AI
+      ar_fusha: وهنا يدخل الذكاء الاصطناعي
+    content:
+      ar: إذا لم تصل للنظام أمثلة مهمة، سيتعلم من نصف القصة فقط.
+      en: If important examples never reach the system, it learns from only half the story.
+      ar_fusha: إذا لم تصل للنظام أمثلة مهمة، سيتعلم من نصف القصة فقط.
+    media:
+      - type: image
+        ref: diverse_examples
+  - id: generated_media_joke
+    type: story
+    title:
+      ar: يمكن ما اختفى...
+      en: Maybe It Did Not Disappear...
+      ar_fusha: ربما لم يختفِ...
+    content:
+      ar: "تقول: أخيرًا اختفى المحتوى المولّد! بس يمكن ما اختفى... يمكن صار متقن لدرجة إنك ما عدت تميّزه. "
+      en: "You say: AI-generated content finally disappeared! But maybe it did not... maybe it became so convincing that you
+        no longer notice it. "
+      ar_fusha: "تقول: أخيرًا اختفى المحتوى المولّد! لكن ربما لم يختفِ... ربما أصبح متقنًا لدرجة أنك لم تعد تميّزه."
+    media:
+      - type: image
+        ref: generated_image_pair
+  - id: real_or_ai_video_01
+    type: story
+    title:
+      ar: شاهد المقطع
+      en: Watch the Clip
+      ar_fusha: شاهد المقطع
+    content:
+      ar: ركّز في التفاصيل. بنسألك عنه في الشاشة الجاية.
+      en: Watch the details. We will ask you about it next.
+      ar_fusha: ركّز في التفاصيل. سنسألك عنه في الشاشة التالية.
+    media:
+      - type: video
+        ref: mystery_video_01
+  - id: real_or_ai_question_01
+    type: exercise
+    title:
+      ar: حقيقي أو مولّد؟
+      en: Real or Generated?
+      ar_fusha: حقيقي أم مولّد؟
+    question:
+      ar: وش تتوقع؟
+      en: What do you think?
+      ar_fusha: ماذا تتوقع؟
+    options:
+      - id: real
+        label:
+          ar: حقيقي
+          en: Real
+          ar_fusha: حقيقي
+      - id: ai
+        label:
+          ar: مولّد
+          en: Generated
+          ar_fusha: مولّد
+    correct_answer: real
+    feedback:
+      correct:
+        ar: صح. هذا المقطع حقيقي.
+        en: Correct. This clip is real.
+        ar_fusha: صحيح. هذا المقطع حقيقي.
+      incorrect:
+        ar: اختيار مفهوم؛ صار التمييز أصعب.
+        en: An understandable choice; the distinction is getting harder.
+        ar_fusha: اختيار مفهوم؛ صار التمييز أصعب.
+  - id: real_or_ai_video_02
+    type: story
+    title:
+      ar: والحين هذا
+      en: Now Watch This
+      ar_fusha: والآن هذا
+    content:
+      ar: لا تستعجل بالحكم.
+      en: Do not rush your judgment.
+      ar_fusha: لا تتعجل في الحكم.
+    media:
+      - type: video
+        ref: mystery_video_03
+  - id: real_or_ai_question_02
+    type: exercise
+    title:
+      ar: حقيقي أو مولّد؟
+      en: Real or Generated?
+      ar_fusha: حقيقي أم مولّد؟
+    question:
+      ar: وش تتوقع؟
+      en: What do you think?
+      ar_fusha: ماذا تتوقع؟
+    options:
+      - id: real
+        label:
+          ar: حقيقي
+          en: Real
+          ar_fusha: حقيقي
+      - id: ai
+        label:
+          ar: مولّد
+          en: Generated
+          ar_fusha: مولّد
+    correct_answer: ai
+    feedback:
+      correct:
+        ar: صح. هذا المقطع مولّد بالذكاء الاصطناعي.
+        en: Correct. This clip was generated by AI.
+        ar_fusha: صحيح. هذا المقطع مولّد بالذكاء الاصطناعي.
+      incorrect:
+        ar: طبيعي. المقطع متقن جدًا.
+        en: That is understandable. The clip is highly convincing.
+        ar_fusha: طبيعي. المقطع متقن جدًا.
+  - id: real_or_ai_video_01
+    type: story
+    title:
+      ar: شاهد المقطع
+      en: Watch the Clip
+      ar_fusha: شاهد المقطع
+    content:
+      ar: ركّز في التفاصيل. بنسألك عنه في الشاشة الجاية.
+      en: Watch the details. We will ask you about it next.
+      ar_fusha: ركّز في التفاصيل. سنسألك عنه في الشاشة التالية.
+    media:
+      - type: video
+        ref: mystery_video_02
+  - id: real_or_ai_question_03
+    type: exercise
+    title:
+      ar: حقيقي أو مولّد؟
+      en: Real or Generated?
+      ar_fusha: حقيقي أم مولّد؟
+    question:
+      ar: وش تتوقع؟
+      en: What do you think?
+      ar_fusha: ماذا تتوقع؟
+    options:
+      - id: real
+        label:
+          ar: حقيقي
+          en: Real
+          ar_fusha: حقيقي
+      - id: ai
+        label:
+          ar: مولّد
+          en: Generated
+          ar_fusha: مولّد
+    correct_answer: ai
+    feedback:
+      correct:
+        ar: صح. هذا المقطع مولّد بالذكاء الاصطناعي.
+        en: Correct. This clip was generated by AI.
+        ar_fusha: صحيح. هذا المقطع مولّد بالذكاء الاصطناعي.
+      incorrect:
+        ar: طبيعي. المقطع متقن جدًا.
+        en: That is understandable. The clip is highly convincing.
+        ar_fusha: طبيعي. المقطع متقن جدًا.
+  - id: real_or_ai_compare
+    type: story
+    title:
+      ar: واحد حقيقي والثاني مولّد
+      en: One Real, One Generated
+      ar_fusha: أحدهما حقيقي والآخر مولّد
+    content:
+      ar: المظهر وحده ما عاد يكفي للحكم.
+      en: Appearance alone is no longer enough.
+      ar_fusha: لم يعد المظهر وحده كافيًا للحكم.
+    media:
+      - type: video
+        ref: mystery_explained_video
+  - id: image_real_or_ai_view
+    type: story
+    title:
+      ar: شوف الصورتين
+      en: Look at Both Images
+      ar_fusha: انظر إلى الصورتين
+    content:
+      ar: واحدة حقيقية والثانية مولّدة. ركّز في التفاصيل، ثم انتقل للسؤال.
+      en: One is real and the other is generated. Study the details, then continue to the question.
+      ar_fusha: واحدة حقيقية والثانية مولّدة. ركّز في التفاصيل، ثم انتقل للسؤال.
+    media:
+      - type: image
+        ref: generated_image_pair
+  - id: image_real_or_ai
+    type: exercise
+    title:
+      ar: والصورة؟
+      en: What About the Image?
+      ar_fusha: والصورة؟
+    question:
+      ar: أي صورة تعتقد أنها مولّدة؟
+      en: Which image do you think is generated?
+      ar_fusha: أي صورة تعتقد أنها مولّدة؟
+    options:
+      - id: first
+        label:
+          ar: الأولى
+          en: First
+          ar_fusha: الأولى
+      - id: second
+        label:
+          ar: الثانية
+          en: Second
+          ar_fusha: الثانية
+    correct_answer: non
+    feedback:
+      correct:
+        ar: " حاول ثاني. أحيانًا يصعب جدًا التفريق بالعين فقط."
+        en: Correct. More importantly, do not rely on your eyes alone.
+        ar_fusha: حاول مرة أخرى. أحيانًا يصعب جدًا التفريق بالعين فقط.
+      incorrect:
+        ar: حاول ثاني. أحيانًا يصعب جدًا التفريق بالعين فقط.
+        en: That is understandable. Sometimes it is very hard to tell by eye alone.
+        ar_fusha: حاول مرة أخرى. أحيانًا يصعب جدًا التفريق بالعين فقط.
+  - id: image_real_or_ai_reveal
+    type: story
+    title:
+      ar: الاثنتان مولّدتان بالذكاء الاصطناعي!
+      en: Both Images Were AI-Generated!
+      ar_fusha: الاثنتان مولّدتان بالذكاء الاصطناعي!
+    content:
+      ar: وقعت في المصيدة؟ أنا قلت لك إن واحدة حقيقية والثانية مولّدة، فبدأت تبحث عن الفرق بدل أن تشك في السؤال نفسه. أحيانًا
+        المشكلة ليست في الصورة، بل في الافتراض الذي وُضع أمامك.
+      en: Did you fall for it? I told you that one image was real and the other was generated, so you started looking for
+        differences instead of questioning the claim itself. Sometimes the problem is not the image, but the assumption
+        you were given.
+      ar_fusha: هل وقعت في المصيدة؟ قلت لك إن واحدة حقيقية والأخرى مولّدة، فبدأت تبحث عن الفرق بدل أن تشك في السؤال نفسه.
+        أحيانًا لا تكون المشكلة في الصورة، بل في الافتراض الذي وُضع أمامك.
+    media:
+      - type: image
+        ref: generated_image_pair
+  - id: image_trap_to_bias
+    type: concept
+    title:
+      ar: وش علاقة هذا بالتحيّز؟
+      en: What Does This Have to Do With Bias?
+      ar_fusha: ما علاقة هذا بالتحيّز؟
+    content:
+      ar: "عندما تُعرض عليك معلومات ناقصة أو خيارات محدودة، قد تصل إلى نتيجة خاطئة بثقة. وهذا يشبه تحيّز الناجين: نحكم من
+        الحالات التي نراها، وننسى الحالات الغائبة."
+      en: "When you are given incomplete information or limited choices, you may reach the wrong conclusion with confidence.
+        This is similar to survivorship bias: we judge from the cases we can see and forget the cases that are missing."
+      ar_fusha: "عندما تُعرض عليك معلومات ناقصة أو خيارات محدودة، قد تصل إلى نتيجة خاطئة بثقة. وهذا يشبه تحيّز الناجين: نحكم
+        من الحالات التي نراها، وننسى الحالات الغائبة."
+    media:
+      - type: image
+        ref: survivorship_planes
+  - id: text_real_or_ai_view
+    type: exercise
+    title:
+      ar: وأنت تقرأ مراجعات تطبيق، لقيت تعليقين
+      en: Read Both Texts
+      ar_fusha: وأنت تقرأ مراجعات تطبيق، لقيت تعليقين
+    question:
+      ar: أي تعليق تعتقد أنه كتبه إنسان؟
+      en: Which comment do you think was written by a human?
+      ar_fusha: أي تعليق تعتقد أنه كتبه إنسان؟
+    options:
+      - id: first
+        label:
+          ar: يا جماعة الصراحة التطبيق مره رهيب بس مدري ليه كل شوي يعلق،، جربته امس وطلع لي نتايج غريبه شوي بس عادي يمكن انا
+            ماعرفت استخدمه زين
+          en: honestly this app is sooo good but idk why it keeps freezing,, i tried it yesterday and got kinda weird results but
+            maybe i just didnt use it right
+          ar_fusha: بصراحة، التطبيق رائع جدًا، لكنني لا أعرف لماذا يتوقف كثيرًا. جربته أمس وظهرت لي نتائج غريبة قليلًا، وربما لم
+            أستخدمه بالطريقة الصحيحة.
+      - id: second
+        label:
+          ar: وفّر التطبيق تجربة استخدام متقنة، ويعرض النتائج بأسلوب واضح ومنظّم. ومع ذلك، قد يحتاج المستخدم إلى مراجعة بعض
+            الإعدادات لضمان الحصول على نتائج أكثر دقة واتساقًا.
+          en: The application provides a refined user experience and presents results in a clear, well-structured manner. However,
+            users may need to review certain settings to ensure greater accuracy and consistency.
+          ar_fusha: وفّر التطبيق تجربة استخدام متقنة، ويعرض النتائج بأسلوب واضح ومنظّم. ومع ذلك، قد يحتاج المستخدم إلى مراجعة بعض
+            الإعدادات لضمان الحصول على نتائج أكثر دقة واتساقًا.
+    correct_answer: non
+    feedback:
+      correct:
+        ar: اقرأ جيدا. الأداة قد تقلّد العامية والأخطاء، والإنسان قد يكتب بأسلوب مثالي.
+        en: Read carefully. The tool may imitate slang and mistakes, and a human may write in a perfect style.
+        ar_fusha: اقرأ جيدًا. قد تقلّد الأداة العامية والأخطاء، وقد يكتب الإنسان بأسلوب مثالي.
+      incorrect:
+        ar: اقرأ جيدا. الأداة قد تقلّد العامية والأخطاء، والإنسان قد يكتب بأسلوب مثالي.
+        en: Read carefully. The tool may imitate slang and mistakes, and a human may write in a perfect style.
+        ar_fusha: اقرأ جيدًا. قد تقلّد الأداة العامية والأخطاء، وقد يكتب الإنسان بأسلوب مثالي.
+  - id: text_real_or_ai
+    type: exercise
+    title:
+      ar: هل الأسلوب يكشف الكاتب؟
+      en: Does Style Reveal the Writer?
+      ar_fusha: هل الأسلوب يكشف الكاتب؟
+    question:
+      ar: هل نقدر نجزم أن أحد التعليقين كتبه إنسان والآخر كتبه ذكاء اصطناعي من الأسلوب؟
+      en: Can we prove that one was written by a human and the other by AI from style alone?
+      ar_fusha: هل نستطيع الجزم من الأسلوب بأن أحد التعليقين كتبه إنسان والآخر كتبه ذكاء اصطناعي؟
+    options:
+      - id: yes
+        label:
+          ar: نعم، أكيد
+          en: Yes, definitely
+          ar_fusha: نعم، أكيد
+      - id: no
+        label:
+          ar: لا، ما يكفي
+          en: No, not enough
+          ar_fusha: لا، لا يكفي
+    correct_answer: no
+    feedback:
+      correct:
+        ar: صح. الإنسان قد يكتب بأسلوب مثالي، والذكاء الاصطناعي قد يقلّد العامية والأخطاء. نحتاج مصدرًا وسياقًا.
+        en: Correct. A human may write perfectly, and AI may imitate slang and mistakes. We need source and context.
+        ar_fusha: صحيح. قد يكتب الإنسان بأسلوب مثالي، وقد يقلّد الذكاء الاصطناعي العامية والأخطاء. نحتاج إلى مصدر وسياق.
+      incorrect:
+        ar: الأسلوب قد يخدعنا. الذكاء الاصطناعي يستطيع تقليد الفصحى والعامية وحتى الأخطاء.
+        en: Style can mislead us. AI can imitate formal language, slang, and even mistakes.
+        ar_fusha: الأسلوب قد يخدعنا. الذكاء الاصطناعي يستطيع تقليد الفصحى والعامية وحتى الأخطاء.
+  - id: verification_action
+    type: exercise
+    title:
+      ar: وصلك محتوى صادم
+      en: You Receive Shocking Content
+      ar_fusha: وصلك محتوى صادم
+    question:
+      ar: وش أول خطوة؟
+      en: What is the first step?
+      ar_fusha: ما أول خطوة؟
+    options:
+      - id: verify
+        label:
+          ar: أتحقق أولًا
+          en: Verify first
+          ar_fusha: أتحقق أولًا
+      - id: share
+        label:
+          ar: أشاركه
+          en: Share it
+          ar_fusha: أشاركه
+      - id: believe
+        label:
+          ar: أصدقه
+          en: Believe it
+          ar_fusha: أصدقه
+    correct_answer: verify
+    feedback:
+      correct:
+        ar: صحيح. افحص المصدر والسياق قبل التصديق أو المشاركة.
+        en: Correct. Check the source and context before believing or sharing.
+        ar_fusha: صحيح. افحص المصدر والسياق قبل التصديق أو المشاركة.
+      incorrect:
+        ar: تمهّل. المظهر المقنع ما يثبت الحقيقة.
+        en: Pause. Convincing appearance does not prove truth.
+        ar_fusha: تمهّل. المظهر المقنع ما يثبت الحقيقة.
+  - id: verification_visual
+    type: concept
+    title:
+      ar: ثلاث أسئلة تكفي كبداية
+      en: Three Good First Questions
+      ar_fusha: ثلاث أسئلة تكفي كبداية
+    content:
+      ar: من نشره؟ وين نُشر أول مرة؟ وهل أكده مصدر موثوق؟
+      en: Who posted it? Where did it first appear? Has a trusted source confirmed it?
+      ar_fusha: من نشره؟ أين نُشر أول مرة؟ وهل أكده مصدر موثوق؟
+    media:
+      - type: image
+        ref: verify_source
+  - id: responsible_intro
+    type: concept
+    title:
+      ar: لا يمكنك تحميل المسؤولية على الذكاء الاصطناعي
+      en: You cannot hold AI accountable
+      ar_fusha: لا يمكنك تحميل المسؤولية على الذكاء الاصطناعي
+    content:
+      ar: قد يتخذ النظام قرارًا أو ينفذ فعلًا، لكن البشر هم من يحددون الهدف والصلاحيات والضوابط.
+      en: A system may make a decision or take an action, but people define its goal, authority, and safeguards.
+      ar_fusha: قد يتخذ النظام قرارًا أو ينفذ فعلًا، لكن البشر هم من يحددون الهدف والصلاحيات والضوابط.
+    media:
+      - type: image
+        ref: responsible_ai
+  - id: dangerous_scenario
+    type: scenario
+    title:
+      ar: تنبيه إخلاء مزيف
+      en: A Fake Evacuation Alert
+      ar_fusha: تنبيه إخلاء مزيف
+    content:
+      ar: شخص استخدم الذكاء الاصطناعي لتقليد صوت جهة رسمية، وصنع تنبيه إخلاء مزيفًا أثناء كارثة ثم نشره فتسبب في ذعر وتوجيه
+        الناس إلى طريق خطر.
+      en: Someone used AI to imitate an official voice, created a fake evacuation alert during a disaster, and shared it,
+        causing panic and directing people toward a dangerous route.
+      ar_fusha: شخص استخدم الذكاء الاصطناعي لتقليد صوت جهة رسمية، وصنع تنبيه إخلاء مزيفًا أثناء كارثة ثم نشره فتسبب في ذعر
+        وتوجيه الناس إلى طريق خطر.
+    media:
+      - type: image
+        ref: emergency_alert
+  - id: accountability_quiz
+    type: exercise
+    title:
+      ar: من المسؤول؟
+      en: Who Is Accountable?
+      ar_fusha: من المسؤول؟
+    question:
+      ar: في هذا المثال، من يتحمل مسؤولية الضرر؟
+      en: In this example, who is accountable for the harm?
+      ar_fusha: في هذا المثال، من يتحمل مسؤولية الضرر؟
+    options:
+      - id: person
+        label:
+          ar: مستخدم الذكاء الاصطناعي
+          en: The creator and sharer
+          ar_fusha: مستخدم الذكاء الاصطناعي
+      - id: ai
+        label:
+          ar: الذكاء الاصطناعي
+          en: The system alone
+          ar_fusha: الذكاء الاصطناعي
+      - id: nobody
+        label:
+          ar: مطور الذكاء الاصطناعي
+          en: No one
+          ar_fusha: مطور الذكاء الاصطناعي
+    correct_answer: person
+    feedback:
+      correct:
+        ar: صحيح. الأداة نفذت، لكن الإنسان اختار الهدف وصنع المحتوى ونشره.
+        en: Correct. The tool executed, but a person chose the goal, created the content, and shared it.
+        ar_fusha: صحيح. الأداة نفذت، لكن الإنسان اختار الهدف وصنع المحتوى ونشره.
+      incorrect:
+        ar: الذكاء الاصطناعي قد يتصرف ضمن صلاحياته، لكن المسؤولية لا تختفي عن من صممه أو وجّهه أو نشر نتيجته.
+        en: AI may act within its authority, but responsibility does not disappear from those who design, direct, or deploy it.
+        ar_fusha: الذكاء الاصطناعي قد يتصرف ضمن صلاحياته، لكن المسؤولية لا تختفي عن من صممه أو وجّهه أو نشر نتيجته.
+  - id: accountability_explain
+    type: concept
+    title:
+      ar: المسؤولية لها سلسلة
+      en: Responsibility Has a Chain
+      ar_fusha: المسؤولية لها سلسلة
+    content:
+      ar: المستخدم مسؤول عن قصده واستخدامه، والجهة الناشرة مسؤولة عن الضوابط، والمطورون مسؤولون عن تقليل المخاطر المتوقعة.
+      en: Users are responsible for intent and use, deploying organizations for safeguards, and developers for reducing
+        foreseeable risks.
+      ar_fusha: المستخدم مسؤول عن قصده واستخدامه، والجهة الناشرة مسؤولة عن الضوابط، والمطورون مسؤولون عن تقليل المخاطر المتوقعة.
+    media:
+      - type: image
+        ref: accountability_chain
+  - id: project_choose
+    type: story
+    title:
+      ar: "مهمتك: اكتشف الحريق مبكرًا"
+      en: "Your Mission: Detect a Fire Early"
+      ar_fusha: "مهمتك: اكتشف الحريق مبكرًا"
+    content:
+      ar: "ستبني نظامًا بسيطًا من خمس قطع: الهدف، البيانات، النمط، النتيجة، وضابط الأمان."
+      en: "Build a simple system from five parts: goal, data, pattern, output, and safeguard."
+      ar_fusha: "ستبني نظامًا بسيطًا من خمس قطع: الهدف، البيانات، النمط، النتيجة، وضابط الأمان."
+    media:
+      - type: image
+        ref: disaster_detection
+  - id: project_goal
+    type: exercise
+    title:
+      ar: "1 من 5: الهدف"
+      en: "1 of 5: Goal"
+      ar_fusha: "1 من 5: الهدف"
+    question:
+      ar: ما الهدف الصحيح للنظام؟
+      en: What is the correct goal for the system?
+      ar_fusha: ما الهدف الصحيح للنظام؟
+    options:
+      - id: early_fire
+        label:
+          ar: اكتشاف الحريق مبكرًا
+          en: Detect fire early
+          ar_fusha: اكتشاف الحريق مبكرًا
+      - id: make_poster
+        label:
+          ar: تصميم ملصق
+          en: Design a poster
+          ar_fusha: تصميم ملصق
+    correct_answer: early_fire
+    feedback:
+      correct:
+        ar: صح. هذه هي المشكلة التي نريد حلها.
+        en: Correct. That is the problem we want to solve.
+        ar_fusha: صحيح. هذه هي المشكلة التي نريد حلها.
+      incorrect:
+        ar: المهمة هنا حماية المكان عبر اكتشاف الحريق مبكرًا.
+        en: The mission is to protect the area by detecting fire early.
+        ar_fusha: المهمة هنا حماية المكان عبر اكتشاف الحريق مبكرًا.
+  - id: project_data
+    type: exercise
+    title:
+      ar: "2 من 5: البيانات"
+      en: "2 of 5: Data"
+      ar_fusha: "2 من 5: البيانات"
+    question:
+      ar: أي بيانات تساعد أكثر؟
+      en: Which data would help most?
+      ar_fusha: أي بيانات تساعد أكثر؟
+    options:
+      - id: images_temp
+        label:
+          ar: صور وحرارة
+          en: Images and temperature
+          ar_fusha: صور وحرارة
+      - id: music_names
+        label:
+          ar: موسيقى وأسماء
+          en: Music and names
+          ar_fusha: موسيقى وأسماء
+    correct_answer: images_temp
+    feedback:
+      correct:
+        ar: صح. الصور والحرارة قد تكشفان الدخان أو الارتفاع غير المعتاد.
+        en: Correct. Images and temperature may reveal smoke or unusual heat.
+        ar_fusha: صحيح. قد تكشف الصور والحرارة الدخان أو الارتفاع غير المعتاد.
+      incorrect:
+        ar: نحتاج بيانات مرتبطة بعلامات الحريق.
+        en: We need data connected to signs of fire.
+        ar_fusha: نحتاج بيانات مرتبطة بعلامات الحريق.
+  - id: project_pattern
+    type: exercise
+    title:
+      ar: "3 من 5: النمط"
+      en: "3 of 5: Pattern"
+      ar_fusha: "3 من 5: النمط"
+    question:
+      ar: أي نمط يبحث عنه النظام؟
+      en: Which pattern should the system look for?
+      ar_fusha: أي نمط يبحث عنه النظام؟
+    options:
+      - id: smoke_heat
+        label:
+          ar: دخان مع حرارة مرتفعة
+          en: Smoke with rising heat
+          ar_fusha: دخان مع حرارة مرتفعة
+      - id: people_colors
+        label:
+          ar: ألوان ملابس الناس
+          en: People’s clothing colors
+          ar_fusha: ألوان ملابس الناس
+    correct_answer: smoke_heat
+    feedback:
+      correct:
+        ar: صح. اجتماع أكثر من علامة يجعل التنبيه أقوى.
+        en: Correct. Multiple signs together make the warning stronger.
+        ar_fusha: صحيح. اجتماع أكثر من علامة يجعل التنبيه أقوى.
+      incorrect:
+        ar: ابحث عن علاقة تشير فعلًا إلى احتمال وجود حريق.
+        en: Look for a relationship that actually signals possible fire.
+        ar_fusha: ابحث عن علاقة تشير فعلًا إلى احتمال وجود حريق.
+  - id: project_output
+    type: exercise
+    title:
+      ar: "4 من 5: النتيجة"
+      en: "4 of 5: Output"
+      ar_fusha: "4 من 5: النتيجة"
+    question:
+      ar: ماذا يجب أن يفعل النظام عند ارتفاع الخطر؟
+      en: What should the system do when risk rises?
+      ar_fusha: ماذا يجب أن يفعل النظام عند ارتفاع الخطر؟
+    options:
+      - id: alert_team
+        label:
+          ar: ينبّه فريق السلامة
+          en: Alert the safety team
+          ar_fusha: ينبّه فريق السلامة
+      - id: post_online
+        label:
+          ar: ينشر تنبيه الخطر للناس
+          en: Post automatically
+          ar_fusha: ينشر تنبيه الخطر للناس
+    correct_answer: alert_team
+    feedback:
+      correct:
+        ar: صح. يرسل تنبيهًا للجهة القادرة على التحقق والتصرف.
+        en: Correct. It alerts people who can verify and respond.
+        ar_fusha: صحيح. يرسل تنبيهًا إلى الجهة القادرة على التحقق والتصرف.
+      incorrect:
+        ar: النشر العام قد يسبب ذعرًا قبل التحقق.
+        en: Public posting may cause panic before verification.
+        ar_fusha: النشر العام قد يسبب ذعرًا قبل التحقق.
+  - id: project_safeguard
+    type: exercise
+    title:
+      ar: "5 من 5: ضابط الأمان"
+      en: "5 of 5: Safeguard"
+      ar_fusha: "5 من 5: ضابط الأمان"
+    question:
+      ar: ما ضابط الأمان الأفضل؟
+      en: What is the best safeguard?
+      ar_fusha: ما ضابط الأمان الأفضل؟
+    options:
+      - id: human_verify
+        label:
+          ar: يتحقق شخص قبل الإخلاء
+          en: Human verifies before evacuation
+          ar_fusha: يتحقق شخص قبل الإخلاء
+      - id: auto_evacuate
+        label:
+          ar: يأمر بالإخلاء فورًا
+          en: Order evacuation immediately
+          ar_fusha: يأمر بالإخلاء فورًا
+    correct_answer: human_verify
+    feedback:
+      correct:
+        ar: صح. القرار عالي الخطورة يحتاج تحققًا ومسؤولًا واضحًا.
+        en: Correct. A high-stakes decision needs verification and clear accountability.
+        ar_fusha: صحيح. القرار عالي الخطورة يحتاج إلى تحقق ومسؤول واضح.
+      incorrect:
+        ar: التنبيه قد يخطئ؛ الإخلاء يحتاج تحققًا سريعًا من شخص مسؤول.
+        en: The alert may be wrong; evacuation needs fast verification by a responsible person.
+        ar_fusha: التنبيه قد يخطئ؛ الإخلاء يحتاج تحققًا سريعًا من شخص مسؤول.
+  - id: project_result
+    type: project
+    title:
+      ar: بطاقة نظامك جاهزة
+      en: Your System Card Is Ready
+      ar_fusha: بطاقة نظامك جاهزة
+    content:
+      ar: |-
+        الهدف: اكتشاف الحريق مبكرًا.
+        البيانات: صور ودرجات حرارة.
+        النمط: دخان مع ارتفاع غير معتاد في الحرارة.
+        النتيجة: تنبيه فريق السلامة.
+        ضابط الأمان: يتحقق شخص مسؤول قبل قرار الإخلاء.
+      en: |-
+        Goal: Detect fire early.
+        Data: Images and temperature readings.
+        Pattern: Smoke with an unusual rise in heat.
+        Output: Alert the safety team.
+        Safeguard: A responsible person verifies before an evacuation decision.
+      ar_fusha: |-
+        الهدف: اكتشاف الحريق مبكرًا.
+        البيانات: صور ودرجات حرارة.
+        النمط: دخان مع ارتفاع غير معتاد في الحرارة.
+        النتيجة: تنبيه فريق السلامة.
+        ضابط الأمان: يتحقق شخص مسؤول قبل قرار الإخلاء.
+    media:
+      - type: image
+        ref: mission_builder
+    output:
+      type: ai_system_card
+      mission: fire_detection
+      goal: detect_fire_early
+      data:
+        - images
+        - temperature
+      pattern: smoke_and_rising_heat
+      output: alert_safety_team
+      safeguard: human_verification_before_evacuation
+    completion_message:
+      ar: "أنجزت مشروعًا واضحًا: نظام له هدف وبيانات ونمط ونتيجة وضابط أمان."
+      en: "You completed a clear project: a system with a goal, data, pattern, output, and safeguard."
+      ar_fusha: "أنجزت مشروعًا واضحًا: نظام له هدف وبيانات ونمط ونتيجة وضابط أمان."
+  - id: reflection
+    type: reflection
+    title:
+      ar: آخر سؤال كتابي
+      en: One Written Question
+      ar_fusha: آخر سؤال كتابي
+    prompt:
+      ar: باعتقادك، ايش هو أهم شيء تعلمته اليوم؟ وكيف راح تشرحه لشخص ماحضر معنا اليوم؟
+      en: In your opinion, what is the most important thing you learned today, and how would you explain it to someone who
+        wasn’t here with us?
+      ar_fusha: برأيك، ما أهم شيء تعلمته اليوم؟ وكيف ستشرحه لشخص لم يحضر معنا اليوم؟
+    placeholder:
+      ar: "مثال: أتحقق من المعلومات..."
+      en: "Example: I would verify the information..."
+      ar_fusha: "مثال: أتحقق من المعلومات..."
+    minimum_characters: 8
+    required: true
+  - id: connect_happened
+    type: connect_the_dots
+    title:
+      ar: وش تعلّمت؟
+      en: What Did You Learn?
+      ar_fusha: ماذا تعلمت؟
+    what_happened:
+      ar: شفت أن الذكاء الاصطناعي يتعرّف ويتنبأ ويوصي ويولّد ويتصرف، وكل هذا يبدأ من البيانات والأنماط.
+      en: You saw that AI recognizes, predicts, recommends, generates, and acts, all beginning with data and patterns.
+      ar_fusha: رأيت أن الذكاء الاصطناعي يتعرّف ويتنبأ ويوصي ويولّد ويتصرف، وكل ذلك يبدأ من البيانات والأنماط.
+    media:
+      - type: image
+        ref: ai_capabilities
+  - id: connect_matters
+    type: connect_the_dots
+    title:
+      ar: لماذا تعلمت؟
+      en: Why Does It Matter?
+      ar_fusha: لماذا تعلمت؟
+    why_it_matters:
+      ar: لأن البيانات الناقصة قد تضلل النظام، والمحتوى المقنع قد يضللنا، والمسؤولية تبقى على البشر الذين يبنون النظام
+        ويستخدمونه.
+      en: Because missing data can mislead a system, convincing content can mislead us, and responsibility remains with the
+        people who build and use it.
+      ar_fusha: لأن البيانات الناقصة قد تضلل النظام، والمحتوى المقنع قد يضللنا، والمسؤولية تبقى على البشر الذين يبنون النظام
+        ويستخدمونه.
+    media:
+      - type: image
+        ref: accountability_chain
+  - id: connect_leads
+    type: connect_the_dots
+    title:
+      ar: وين الطريق؟
+      en: What Comes Next?
+      ar_fusha: إلى أين يقودك الطريق؟
+    where_it_leads:
+      ar: فتحت المستوى الأول. جرّب مسار المهندس أو الصانع أو المبدع أو المحترف، وخلك فضولي.
+      en: You unlocked Level 1. Explore the Engineer, Maker, Creative, or Professional pathway and stay curious.
+      ar_fusha: فتحت المستوى الأول. جرّب مسار المهندس أو الصانع أو المبدع أو المحترف، وابقَ فضوليًا.
+    media:
+      - type: image
+        ref: mission_builder
+  - id: readiness_check
+    type: learner_feedback
+    title:
+      ar: جاهز تكمل؟
+      en: Ready to Continue?
+      ar_fusha: هل أنت جاهز للمتابعة؟
+    content:
+      ar: اختر اللي يناسبك. تقدمك محفوظ.
+      en: Choose what works for you. Your progress is saved.
+      ar_fusha: اختر ما يناسبك. تقدمك محفوظ.
+    media:
+      - type: image
+        ref: ai_world_hook
+    feedback_ref: readiness_check
+  - id: badge_award
+    type: badge_award
+    title:
+      ar: أخذت شارة المستكشف
+      en: You Earned the Explorer Badge
+      ar_fusha: حصلت على شارة المستكشف
+    content:
+      ar: أكملت المستوى صفر وفتحت المستوى الأول.
+      en: You completed Level 0 and unlocked Level 1.
+      ar_fusha: أكملت المستوى صفر وفتحت المستوى الأول.
+    media:
+      - type: image
+        ref: badge_ai_explorer
+    badge_ref: badge
 assessment:
   completion_rules:
     required_screens:
-    - intro_video
-    - ai_definition
-    - ai_history
-    - not_every_software
-    - ai_or_not
-    - capability_recognize
-    - capability_predict
-    - capability_recommend
-    - capability_view_car
-    - capability_quiz_car_action
-    - capability_view_recommendation
-    - capability_quiz_recommendation
-    - capability_view_fraud
-    - capability_quiz_fraud
-    - data_definition
-    - data_type_quiz_numbers
-    - data_type_quiz_camera
-    - data_audio_listen
-    - data_type_quiz_audio
-    - data_sort_temperature
-    - data_sort_xray
-    - data_sort_voice
-    - pattern_definition
-    - pattern_cats_screen
-    - pattern_traffic_screen
-    - pattern_quiz
-    - pattern_detective_spam
-    - pattern_detective_traffic
-    - pattern_detective_health
-    - data_quality
-    - survivorship_story
-    - survivorship_choice
-    - survivorship_reveal_screen
-    - survivorship_simple
-    - survivorship_kids_quiz
-    - survivorship_ai_link
-    - generated_media_joke
-    - real_or_ai_video_01
-    - real_or_ai_question_01
-    - real_or_ai_video_02
-    - real_or_ai_question_02
-    - real_or_ai_compare
-    - image_real_or_ai_view
-    - image_real_or_ai
-    - text_real_or_ai_view
-    - text_real_or_ai
-    - verification_action
-    - verification_visual
-    - responsible_intro
-    - dangerous_scenario
-    - accountability_quiz
-    - accountability_explain
-    - project_choose
-    - project_goal
-    - project_data
-    - project_pattern
-    - project_output
-    - project_safeguard
-    - project_result
-    - reflection
-    - connect_happened
-    - connect_matters
-    - connect_leads
-    - readiness_check
-    - badge_award
+      - intro_video
+      - ai_definition
+      - ai_history
+      - not_every_software
+      - ai_or_not
+      - capability_recognize
+      - capability_predict
+      - capability_recommend
+      - capability_view_car
+      - capability_quiz_car_action
+      - capability_view_recommendation
+      - capability_quiz_recommendation
+      - capability_view_fraud
+      - capability_quiz_fraud
+      - data_definition
+      - data_type_quiz_numbers
+      - data_type_quiz_camera
+      - data_audio_listen
+      - data_type_quiz_audio
+      - data_sort_temperature
+      - data_sort_xray
+      - data_sort_voice
+      - pattern_definition
+      - pattern_cats_screen
+      - pattern_traffic_screen
+      - pattern_quiz
+      - pattern_detective_spam
+      - pattern_detective_traffic
+      - pattern_detective_health
+      - data_quality
+      - survivorship_story
+      - survivorship_choice
+      - survivorship_reveal_screen
+      - survivorship_simple
+      - survivorship_kids_quiz
+      - survivorship_ai_link
+      - generated_media_joke
+      - real_or_ai_video_01
+      - real_or_ai_question_01
+      - real_or_ai_video_02
+      - real_or_ai_question_02
+      - real_or_ai_compare
+      - image_real_or_ai_view
+      - image_real_or_ai
+      - text_real_or_ai_view
+      - text_real_or_ai
+      - verification_action
+      - verification_visual
+      - responsible_intro
+      - dangerous_scenario
+      - accountability_quiz
+      - accountability_explain
+      - project_choose
+      - project_goal
+      - project_data
+      - project_pattern
+      - project_output
+      - project_safeguard
+      - project_result
+      - reflection
+      - connect_happened
+      - connect_matters
+      - connect_leads
+      - readiness_check
+      - badge_award
     minimum_score: 70
     project_required: true
     reflection_required: true
     readiness_check_required: true
   evidence_collected:
-  - exercise_scores
-  - capability_sort_result
-  - data_type_sort_result
-  - pattern_detective_result
-  - project_output
-  - reflection_response
-  - readiness_choice
+    - exercise_scores
+    - capability_sort_result
+    - data_type_sort_result
+    - pattern_detective_result
+    - project_output
+    - reflection_response
+    - readiness_choice
 learner_feedback:
   readiness_check:
     required: true
@@ -1629,86 +1964,111 @@ learner_feedback:
     title:
       ar: هل تشعر أنك جاهز للخطوة التالية؟
       en: Do you feel ready for the next step?
+      ar_fusha: هل تشعر أنك جاهز للخطوة التالية؟
     prompt:
       ar: وش تبي تسوي الآن؟
       en: What would you like to do now?
+      ar_fusha: ماذا تريد أن تفعل الآن؟
     options:
-    - id: ready
-      label:
-        ar: جاهز أكمل
-        en: Ready to continue
-      action: continue_to_unlocked_bytes
-      result_message:
-        ar: تم. المستوى الأول مفتوح.
-        en: Done. Level 1 is unlocked.
-    - id: review
-      label:
-        ar: أراجع البايت
-        en: Review the Byte
-      action: restart_byte_or_review_mode
-      result_message:
-        ar: أكيد. راجع اللي تحتاجه بدون ما يروح تقدمك.
-        en: Of course. Review what you need without losing progress.
-    - id: unsure
-      label:
-        ar: أبغى ملخص
-        en: Show me a recap
-      action: show_quick_recap
-      result_message:
-        ar: 'تذكّر: وش الهدف؟ وش البيانات؟ وش النمط؟ وش ضابط الأمان؟'
-        en: 'Remember: what is the goal, data, pattern, and safety check?'
+      - id: ready
+        label:
+          ar: جاهز أكمل
+          en: Ready to continue
+          ar_fusha: جاهز للمتابعة
+        action: continue_to_unlocked_bytes
+        result_message:
+          ar: تم. المستوى الأول مفتوح.
+          en: Done. Level 1 is unlocked.
+          ar_fusha: تم. المستوى الأول مفتوح.
+      - id: review
+        label:
+          ar: أراجع البايت
+          en: Review the Byte
+          ar_fusha: أريد مراجعة البايت
+        action: restart_byte_or_review_mode
+        result_message:
+          ar: أكيد. راجع اللي تحتاجه بدون ما يروح تقدمك.
+          en: Of course. Review what you need without losing progress.
+          ar_fusha: بالطبع. راجع ما تحتاج إليه دون أن تفقد تقدمك.
+      - id: unsure
+        label:
+          ar: أبغى ملخص
+          en: Show me a recap
+          ar_fusha: أريد ملخصًا
+        action: show_quick_recap
+        result_message:
+          ar: "تذكّر: وش الهدف؟ وش البيانات؟ وش النمط؟ وش ضابط الأمان؟"
+          en: "Remember: what is the goal, data, pattern, and safety check?"
+          ar_fusha: "تذكّر: ما الهدف؟ ما البيانات؟ ما النمط؟ ما ضابط الأمان؟"
     self_decision_note:
       ar: ما فيه اختيار غلط هنا.
       en: There is no wrong choice here.
+      ar_fusha: لا يوجد اختيار خاطئ هنا.
 facilitator_notes:
   setup_time_minutes: 8
   materials:
-  - ar: جهاز لوحي أو لابتوب وسماعات عند الحاجة
-    en: Tablet or laptop, with headphones if needed
-  - ar: شارة مستكشف الذكاء الاصطناعي
-    en: AI Explorer badge
+    - ar: جهاز لوحي أو لابتوب وسماعات عند الحاجة
+      en: Tablet or laptop, with headphones if needed
+      ar_fusha: جهاز لوحي أو حاسوب محمول وسماعات عند الحاجة
+    - ar: شارة مستكشف الذكاء الاصطناعي
+      en: AI Explorer badge
+      ar_fusha: شارة مستكشف الذكاء الاصطناعي
   delivery_notes:
-  - ar: لا تعرض شاشة بلا صورة أو صوت أو تفاعل.
-    en: Do not present a screen without an image, sound, or interaction.
-  - ar: لا تقرأ النصوص للمتعلم؛ دع الشاشة تقوده.
-    en: Do not read the text to the learner; let the screen guide them.
-  - ar: في قصة الطائرات، دع المتعلم يختار قبل الكشف.
-    en: In the plane story, let the learner choose before the reveal.
-  - ar: في أسئلة الحقيقي والمولّد، لا تُظهر الحل قبل الاختيار.
-    en: In real-versus-generated questions, do not reveal the answer before selection.
+    - ar: لا تعرض شاشة بلا صورة أو صوت أو تفاعل.
+      en: Do not present a screen without an image, sound, or interaction.
+      ar_fusha: لا تعرض شاشة بلا صورة أو صوت أو تفاعل.
+    - ar: لا تقرأ النصوص للمتعلم؛ دع الشاشة تقوده.
+      en: Do not read the text to the learner; let the screen guide them.
+      ar_fusha: لا تقرأ النصوص للمتعلم؛ دع الشاشة تقوده.
+    - ar: في قصة الطائرات، دع المتعلم يختار قبل الكشف.
+      en: In the plane story, let the learner choose before the reveal.
+      ar_fusha: في قصة الطائرات، دع المتعلم يختار قبل الكشف.
+    - ar: في أسئلة الحقيقي والمولّد، لا تُظهر الحل قبل الاختيار.
+      en: In real-versus-generated questions, do not reveal the answer before selection.
+      ar_fusha: في أسئلة الحقيقي والمولّد، لا تُظهر الحل قبل الاختيار.
   common_misconceptions:
-  - misconception:
-      ar: الذكاء الاصطناعي يعني ChatGPT وصناعة الصور فقط.
-      en: AI only means ChatGPT and image generation.
-    correction:
-      ar: الذكاء الاصطناعي يتعرف ويتنبأ ويوصي ويكتشف ويتصرف أيضًا.
-      en: AI also recognizes, predicts, recommends, detects, and acts.
-  - misconception:
-      ar: كل برنامج ذكاء اصطناعي.
-      en: Every program is AI.
-    correction:
-      ar: البرامج التقليدية تتبع تعليمات ثابتة، بينما تستخدم أنظمة الذكاء الاصطناعي البيانات والأنماط للاستنتاج.
-      en: Traditional programs follow fixed instructions, while AI systems use data and patterns to infer.
-  - misconception:
-      ar: البيانات الكثيرة تكفي.
-      en: Lots of data is enough.
-    correction:
-      ar: البيانات يجب أن تكون مناسبة ومتنوعة وتمثل الواقع.
-      en: Data must be relevant, diverse, and representative.
-  - misconception:
-      ar: الذكاء الاصطناعي هو المسؤول وحده عن أفعاله.
-      en: AI alone is responsible for its actions.
-    correction:
-      ar: قد يتخذ النظام قرارات، لكن المسؤولية تبقى موزعة على من يصممه وينشره ويوجهه ويستخدم نتائجه.
-      en: A system may make decisions, but accountability remains with those who design, deploy, direct, and use
-        its outputs.
+    - misconception:
+        ar: الذكاء الاصطناعي يعني ChatGPT وصناعة الصور فقط.
+        en: AI only means ChatGPT and image generation.
+        ar_fusha: الذكاء الاصطناعي يعني ChatGPT وصناعة الصور فقط.
+      correction:
+        ar: الذكاء الاصطناعي يتعرف ويتنبأ ويوصي ويكتشف ويتصرف أيضًا.
+        en: AI also recognizes, predicts, recommends, detects, and acts.
+        ar_fusha: الذكاء الاصطناعي يتعرف ويتنبأ ويوصي ويكتشف ويتصرف أيضًا.
+    - misconception:
+        ar: كل برنامج ذكاء اصطناعي.
+        en: Every program is AI.
+        ar_fusha: كل برنامج ذكاء اصطناعي.
+      correction:
+        ar: البرامج التقليدية تتبع تعليمات ثابتة، بينما تستخدم أنظمة الذكاء الاصطناعي البيانات والأنماط للاستنتاج.
+        en: Traditional programs follow fixed instructions, while AI systems use data and patterns to infer.
+        ar_fusha: البرامج التقليدية تتبع تعليمات ثابتة، بينما تستخدم أنظمة الذكاء الاصطناعي البيانات والأنماط للاستنتاج.
+    - misconception:
+        ar: البيانات الكثيرة تكفي.
+        en: Lots of data is enough.
+        ar_fusha: البيانات الكثيرة تكفي.
+      correction:
+        ar: البيانات يجب أن تكون مناسبة ومتنوعة وتمثل الواقع.
+        en: Data must be relevant, diverse, and representative.
+        ar_fusha: البيانات يجب أن تكون مناسبة ومتنوعة وتمثل الواقع.
+    - misconception:
+        ar: الذكاء الاصطناعي هو المسؤول وحده عن أفعاله.
+        en: AI alone is responsible for its actions.
+        ar_fusha: الذكاء الاصطناعي هو المسؤول وحده عن أفعاله.
+      correction:
+        ar: قد يتخذ النظام قرارات، لكن المسؤولية تبقى موزعة على من يصممه وينشره ويوجهه ويستخدم نتائجه.
+        en: A system may make decisions, but accountability remains with those who design, deploy, direct, and use its outputs.
+        ar_fusha: قد يتخذ النظام قرارات، لكن المسؤولية تبقى موزعة على من يصممه وينشره ويوجهه ويستخدم نتائجه.
   discussion_prompts:
-  - ar: وش مثال ذكاء اصطناعي مو توليدي شفته اليوم؟
-    en: What non-generative AI example did you see today?
-  - ar: وش نوع البيانات اللي يستخدمها؟
-    en: What type of data does it use?
-  - ar: وش ضابط الأمان المناسب له؟
-    en: What safety check would be appropriate?
+    - ar: وش مثال ذكاء اصطناعي مو توليدي شفته اليوم؟
+      en: What non-generative AI example did you see today?
+      ar_fusha: ما مثال الذكاء الاصطناعي غير التوليدي الذي رأيته اليوم؟
+    - ar: وش نوع البيانات اللي يستخدمها؟
+      en: What type of data does it use?
+      ar_fusha: ما نوع البيانات التي يستخدمها؟
+    - ar: وش ضابط الأمان المناسب له؟
+      en: What safety check would be appropriate?
+      ar_fusha: ما ضابط الأمان المناسب له؟
 developer_notes:
   content_owner: ByteSize AI Team
   technical_owner: Platform Team
@@ -1723,56 +2083,55 @@ developer_notes:
     max_options_per_question: 3
     prefer_two_options: true
   screen_requirements:
-  - Every screen must include media, audio, a quiz, a reveal, or an interactive component.
-  - Do not render feedback, hints, or correctness states before an answer is selected.
-  - Reset selectedAnswer, feedback state, and retry state whenever screen.id changes.
-  - Video screens and their questions remain separate screens.
-  - Missing media must render a clean placeholder without breaking the screen.
-  - 'Interactive components marked implementation_status: required must not ship as developer-info placeholder cards
-    in production.'
+    - Every screen must include media, audio, a quiz, a reveal, or an interactive component.
+    - Do not render feedback, hints, or correctness states before an answer is selected.
+    - Reset selectedAnswer, feedback state, and retry state whenever screen.id changes.
+    - Video screens and their questions remain separate screens.
+    - Missing media must render a clean placeholder without breaking the screen.
+    - "Interactive components marked implementation_status: required must not ship as developer-info placeholder cards
+      in production."
   interactive_components_to_build:
-  - component_key: ai-capability-sorter
-    behavior: Drag or tap six AI examples into recognize, predict, recommend, generate, or act.
-  - component_key: data-type-sorter
-    behavior: Sort examples into numbers, image/video, audio, or text.
-  - component_key: pattern-detective
-    behavior: Three short rounds where the learner identifies the repeated relationship.
-  - component_key: ai-mission-builder
-    behavior: Choose one mission, then match goal, data, pattern, output, and safeguard; generate an AI System Card.
+    - component_key: ai-capability-sorter
+      behavior: Drag or tap six AI examples into recognize, predict, recommend, generate, or act.
+    - component_key: data-type-sorter
+      behavior: Sort examples into numbers, image/video, audio, or text.
+    - component_key: pattern-detective
+      behavior: Three short rounds where the learner identifies the repeated relationship.
+    - component_key: ai-mission-builder
+      behavior: Choose one mission, then match goal, data, pattern, output, and safeguard; generate an AI System Card.
   visualization_contract:
     expected_inputs:
-    - learner_id
-    - byte_id
-    - screen_id
-    - language
-    - direction
-    - config
-    - media_refs
-    - stage
+      - learner_id
+      - byte_id
+      - screen_id
+      - language
+      - direction
+      - config
+      - media_refs
+      - stage
     expected_outputs:
-    - score
-    - completed
-    - learner_choices
-    - project_output
-    - event_log
+      - score
+      - completed
+      - learner_choices
+      - project_output
+      - event_log
   tracking_events:
-  - byte_started
-  - screen_completed
-  - exercise_attempted
-  - media_played
-  - visualization_completed
-  - project_started
-  - project_submitted
-  - reflection_submitted
-  - readiness_choice_selected
-  - badge_earned
-  - byte_completed
-
+    - byte_started
+    - screen_completed
+    - exercise_attempted
+    - media_played
+    - visualization_completed
+    - project_started
+    - project_submitted
+    - reflection_submitted
+    - readiness_choice_selected
+    - badge_earned
+    - byte_completed
   screen_design:
     screen_count: 65
   media_rules:
-    - "All media paths are relative to the Byte folder."
-    - "Use media refs inside screens instead of raw paths."
-    - "Missing files should render clean placeholders."
-    - "Videos should include captions and transcripts where possible."
-    - "Audio must have a visible play control and transcript or caption."
+    - All media paths are relative to the Byte folder.
+    - Use media refs inside screens instead of raw paths.
+    - Missing files should render clean placeholders.
+    - Videos should include captions and transcripts where possible.
+    - Audio must have a visible play control and transcript or caption.
