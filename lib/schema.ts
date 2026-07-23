@@ -67,6 +67,27 @@ export type ScreenInteraction = {
   config?: Record<string, unknown>;
 };
 
+export type TimerStimulusMode = "low" | "standard" | "high";
+export type TimerAlertIntensity = "none" | "soft" | "standard" | "high";
+
+export type TimerAlertSettings = {
+  visual?: boolean;
+  audio?: boolean;
+  intensity?: TimerAlertIntensity;
+  message?: LocalizedText;
+};
+
+export type TimerAlertConfig = TimerAlertSettings & {
+  stimulus?: Partial<Record<TimerStimulusMode, TimerAlertSettings>>;
+};
+
+export type TimerConfig = {
+  duration_seconds: number;
+  completion_required?: boolean;
+  completion_feedback?: LocalizedText;
+  alert?: TimerAlertConfig;
+};
+
 export type ByteScreenType =
   | "story"
   | "media_gallery"
@@ -83,6 +104,7 @@ export type ByteScreenType =
   | "learner_feedback"
   | "badge_award"
   | "section_transition"
+  | "timer"
   | string;
 
 export type ByteScreen = {
@@ -105,6 +127,11 @@ export type ByteScreen = {
   cards?: Array<Record<string, unknown>>;
   interaction_ref?: string;
   interaction?: ScreenInteraction;
+  timer?: TimerConfig;
+  duration_seconds?: number;
+  completion_required?: boolean;
+  completion_feedback?: LocalizedText;
+  alert?: TimerAlertConfig;
   placeholder_note?: LocalizedText;
   reflection_prompt?: LocalizedText;
   exercise?: Record<string, unknown>;
