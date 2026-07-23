@@ -8,6 +8,7 @@ import { ExperienceControls } from "./ExperienceProvider";
 import { LanguageToggle, useLanguage } from "./LanguageProvider";
 import { useProgress } from "./ProgressProvider";
 import { t } from "@/lib/i18n";
+import { normalizeTimerConfig } from "@/lib/timer";
 import type { ArabicVariantCode, Byte, ByteScreen as ByteScreenData, LanguageCode, LocalizedText } from "@/lib/schema";
 
 const MIN_SCREEN_TIME_SECONDS = 0.5;
@@ -24,6 +25,7 @@ function screenRequiresAnswer(screen: ByteScreenData): boolean {
   const exercise = asRecord(screen.exercise);
   const microCheck = asRecord(screen.micro_check);
   const input = asRecord(screen.input);
+  const timer = normalizeTimerConfig(screen.timer ?? screen, screen.duration_seconds);
   const directOptions = Array.isArray(screen.options) && screen.options.length > 0;
   const exerciseOptions = Array.isArray(exercise.options) && exercise.options.length > 0;
   const microCheckOptions = Array.isArray(microCheck.options) && microCheck.options.length > 0;
@@ -33,6 +35,10 @@ function screenRequiresAnswer(screen: ByteScreenData): boolean {
     screen.response_type === "written" ||
     input.type === "text" ||
     input.type === "textarea";
+
+  if (timer) {
+    return screen.required !== false && timer.completion_required !== false;
+  }
 
   return directOptions || exerciseOptions || microCheckOptions || isWrittenQuestion;
 }

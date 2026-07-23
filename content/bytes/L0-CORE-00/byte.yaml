@@ -1807,6 +1807,54 @@ screens:
       ar_fusha: "مثال: أتحقق من المعلومات..."
     minimum_characters: 8
     required: true
+  - id: explain_takeaway_timer
+    type: timer
+    title:
+      ar: اشرحها في دقيقة
+      en: Explain It in One Minute
+      ar_fusha: اشرحها في دقيقة واحدة
+    content:
+      ar: اختر شخص قريب منك، واضغط ابدأ. عندك دقيقة تشرح فيها أهم شيء تعلمته اليوم.
+      en: Pick someone near you and press Start. You have one minute to explain the most important thing you learned today.
+      ar_fusha: اختر شخصًا قريبًا منك، واضغط ابدأ. لديك دقيقة واحدة لتشرح أهم شيء تعلمته اليوم.
+    timer:
+      duration_seconds: 60
+      completion_required: true
+      completion_feedback:
+        ar: انتهت الدقيقة. ممتاز، الآن تقدر تكمل.
+        en: The minute is done. Nice work, you can continue now.
+        ar_fusha: انتهت الدقيقة. أحسنت، يمكنك المتابعة الآن.
+      alert:
+        stimulus:
+          low:
+            visual: true
+            audio: false
+            intensity: soft
+            message:
+              ar: انتهى الوقت بهدوء. تقدر تكمل الآن.
+              en: Time is up. You can continue now.
+              ar_fusha: انتهى الوقت بهدوء. يمكنك المتابعة الآن.
+          standard:
+            visual: true
+            audio: true
+            intensity: standard
+            message:
+              ar: انتهت الدقيقة. شارك آخر فكرة وتابع.
+              en: One minute is up. Share your last thought, then continue.
+              ar_fusha: انتهت الدقيقة. شارك فكرتك الأخيرة ثم تابع.
+          high:
+            visual: true
+            audio: true
+            intensity: high
+            message:
+              ar: انتهى الوقت! خذ نفس وتابع للخطوة الأخيرة.
+              en: Time is up! Take a breath and move to the final step.
+              ar_fusha: انتهى الوقت! خذ نفسًا وتابع إلى الخطوة الأخيرة.
+    required: true
+    continue_label:
+      ar: كملت الشرح
+      en: I explained it
+      ar_fusha: أكملت الشرح
   - id: connect_happened
     type: connect_the_dots
     title:
@@ -1940,6 +1988,7 @@ assessment:
       - project_safeguard
       - project_result
       - reflection
+      - explain_takeaway_timer
       - connect_happened
       - connect_matters
       - connect_leads
@@ -2128,7 +2177,7 @@ developer_notes:
     - badge_earned
     - byte_completed
   screen_design:
-    screen_count: 65
+    screen_count: 66
   media_rules:
     - All media paths are relative to the Byte folder.
     - Use media refs inside screens instead of raw paths.

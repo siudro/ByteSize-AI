@@ -3,9 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { InteractivePlaceholder } from "./InteractivePlaceholder";
 import { MediaBlock } from "./MediaBlock";
+import { TimerInteraction } from "./TimerInteraction";
 import { useProgress } from "./ProgressProvider";
 import { t } from "@/lib/i18n";
 import { getMediaIndex, getVisualization } from "@/lib/media";
+import { normalizeTimerConfig } from "@/lib/timer";
 import type { ArabicVariantCode, Byte, ByteScreen as ByteScreenData, LanguageCode, LocalizedField, ScreenInteraction, ScreenMedia } from "@/lib/schema";
 
 type ByteScreenProps = {
@@ -258,7 +260,7 @@ export function ByteScreen({
         <textarea
           className="text-field"
           aria-label={t(screen.prompt, language, arabicVariant)}
-          placeholder={t(screen.prompt, language, arabicVariant)}
+          placeholder={t(localized(screen.placeholder) ?? screen.prompt, language, arabicVariant)}
           value={reflection}
           onChange={(event) => {
             const value = event.target.value;
@@ -268,6 +270,27 @@ export function ByteScreen({
           }}
         />
       </div>
+    );
+  }
+
+  function renderTimer() {
+    const timer = normalizeTimerConfig(screen.timer ?? screen, screen.duration_seconds);
+
+    if (!timer) {
+      return (
+        <div className="placeholder-card">
+          <p>{t({ ar: "هذا المؤقت يحتاج مدة صالحة في المحتوى.", ar_fusha: "هذا المؤقت يحتاج مدة صالحة في المحتوى.", en: "This timer needs a valid duration in the content." }, language, arabicVariant)}</p>
+        </div>
+      );
+    }
+
+    return (
+      <TimerInteraction
+        timer={timer}
+        language={language}
+        arabicVariant={arabicVariant}
+        onCompletedChange={(completed) => onAnswerStateChange?.(timer.completion_required === false ? true : completed)}
+      />
     );
   }
 
@@ -376,6 +399,8 @@ export function ByteScreen({
     if (screen.interaction_ref || screen.interaction) return renderInteraction();
 
     switch (screen.type) {
+      case "timer":
+        return renderTimer();
       case "section_transition":
         return renderSectionTransition();
       case "media_gallery":
