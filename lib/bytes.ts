@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
 import type { Byte, ByteScreen, ByteSummary, LocalizedText } from "./schema";
@@ -23,6 +23,9 @@ function warnContent(byte: Byte) {
     for (const [field, value] of localizedFields(screen)) {
       if (value.ar && value.ar.length > 220) {
         console.warn(`${prefix}: Arabic ${field} is longer than 220 characters.`);
+      }
+      if (value.ar_fusha && value.ar_fusha.length > 220) {
+        console.warn(`${prefix}: Standard Arabic ${field} is longer than 220 characters.`);
       }
       if (value.en && value.en.length > 260) {
         console.warn(`${prefix}: English ${field} is longer than 260 characters.`);
@@ -96,3 +99,5 @@ export function getAllBytes(): ByteSummary[] {
       return (a.map?.position?.order ?? 0) - (b.map?.position?.order ?? 0);
     });
 }
+
+

@@ -1,48 +1,77 @@
-﻿"use client";
+"use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { DEFAULT_LANGUAGE, dirForLanguage } from "@/lib/i18n";
-import type { LanguageCode } from "@/lib/schema";
+import {
+  DEFAULT_ARABIC_VARIANT,
+  DEFAULT_LANGUAGE,
+  dirForLanguage,
+  htmlLangForLanguage,
+  isArabicVariantCode,
+  isLanguageCode
+} from "@/lib/i18n";
+import type { ArabicVariantCode, LanguageCode } from "@/lib/schema";
 
 type LanguageContextValue = {
   language: LanguageCode;
+  arabicVariant: ArabicVariantCode;
   direction: "rtl" | "ltr";
   setLanguage: (language: LanguageCode) => void;
+  setArabicVariant: (variant: ArabicVariantCode) => void;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
-const STORAGE_KEY = "bytesize-ai-language-v2";
+const LANGUAGE_STORAGE_KEY = "bytesize-ai-language-v2";
+const ARABIC_VARIANT_STORAGE_KEY = "bytesize-ai-arabic-variant-v1";
+
+function applyDocumentLanguage(language: LanguageCode, arabicVariant: ArabicVariantCode) {
+  document.documentElement.lang = htmlLangForLanguage(language, arabicVariant);
+  document.documentElement.dir = dirForLanguage(language);
+}
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<LanguageCode>(DEFAULT_LANGUAGE);
+  const [arabicVariant, setArabicVariantState] = useState<ArabicVariantCode>(DEFAULT_ARABIC_VARIANT);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "ar" || stored === "en") {
-      setLanguageState(stored);
-    }
+    const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    const storedArabicVariant = window.localStorage.getItem(ARABIC_VARIANT_STORAGE_KEY);
+
+    const nextLanguage = isLanguageCode(storedLanguage) ? storedLanguage : DEFAULT_LANGUAGE;
+    const nextArabicVariant = isArabicVariantCode(storedArabicVariant) ? storedArabicVariant : DEFAULT_ARABIC_VARIANT;
+
+    setLanguageState(nextLanguage);
+    setArabicVariantState(nextArabicVariant);
+    applyDocumentLanguage(nextLanguage, nextArabicVariant);
   }, []);
 
   const setLanguage = (nextLanguage: LanguageCode) => {
     setLanguageState(nextLanguage);
-    window.localStorage.setItem(STORAGE_KEY, nextLanguage);
-    document.documentElement.lang = nextLanguage;
-    document.documentElement.dir = dirForLanguage(nextLanguage);
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    applyDocumentLanguage(nextLanguage, arabicVariant);
+  };
+
+  const setArabicVariant = (nextArabicVariant: ArabicVariantCode) => {
+    setArabicVariantState(nextArabicVariant);
+    setLanguageState("ar");
+    window.localStorage.setItem(ARABIC_VARIANT_STORAGE_KEY, nextArabicVariant);
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, "ar");
+    applyDocumentLanguage("ar", nextArabicVariant);
   };
 
   const value = useMemo(
     () => ({
       language,
+      arabicVariant,
       direction: dirForLanguage(language),
-      setLanguage
+      setLanguage,
+      setArabicVariant
     }),
-    [language]
+    [arabicVariant, language]
   );
 
   useEffect(() => {
-    document.documentElement.lang = language;
-    document.documentElement.dir = dirForLanguage(language);
-  }, [language]);
+    applyDocumentLanguage(language, arabicVariant);
+  }, [arabicVariant, language]);
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
@@ -56,24 +85,78 @@ export function useLanguage() {
 }
 
 export function LanguageToggle() {
-  const { language, setLanguage } = useLanguage();
+  const { language, arabicVariant, setLanguage, setArabicVariant } = useLanguage();
+  const [arabicMenuOpen, setArabicMenuOpen] = useState(false);
+  const isArabic = language === "ar";
+
+  function chooseArabicVariant(nextVariant: ArabicVariantCode) {
+    setArabicVariant(nextVariant);
+    setArabicMenuOpen(false);
+  }
 
   return (
-    <div className="button-row" role="group" aria-label="Language">
-      <button
-        className={`button ${language === "ar" ? "primary" : ""}`}
-        type="button"
-        onClick={() => setLanguage("ar")}
-      >
-        العربية
-      </button>
-      <button
-        className={`button ${language === "en" ? "primary" : ""}`}
-        type="button"
-        onClick={() => setLanguage("en")}
-      >
-        English
-      </button>
+    <div className="language-toggle" role="group" aria-label={isArabic ? "اللغة ونمط العربية" : "Language"}>
+      <div className="language-control">
+        <div
+          className="language-arabic-wrap"
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+              setArabicMenuOpen(false);
+            }
+          }}
+        >
+          <button
+            aria-expanded={arabicMenuOpen}
+            aria-haspopup="menu"
+            aria-pressed={isArabic}
+            className="language-choice language-choice-arabic"
+            type="button"
+            onClick={() => {
+              setLanguage("ar");
+              setArabicMenuOpen((open) => !open);
+            }}
+          >
+            <span>العربية</span>
+            <span className="language-chevron" aria-hidden="true" />
+          </button>
+
+          {arabicMenuOpen ? (
+            <div className="arabic-variant-menu" role="menu" aria-label="نمط العربية">
+              <button
+                aria-checked={isArabic && arabicVariant === "saudi"}
+                className="arabic-variant-menu-item"
+                role="menuitemradio"
+                type="button"
+                onClick={() => chooseArabicVariant("saudi")}
+              >
+                عامية
+              </button>
+
+              <button
+                aria-checked={isArabic && arabicVariant === "standard"}
+                className="arabic-variant-menu-item"
+                role="menuitemradio"
+                type="button"
+                onClick={() => chooseArabicVariant("standard")}
+              >
+                فصحى
+              </button>
+            </div>
+          ) : null}
+        </div>
+
+        <button
+          aria-pressed={language === "en"}
+          className="language-choice"
+          type="button"
+          onClick={() => {
+            setLanguage("en");
+            setArabicMenuOpen(false);
+          }}
+        >
+          English
+        </button>
+      </div>
     </div>
   );
 }

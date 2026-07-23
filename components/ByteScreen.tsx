@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { InteractivePlaceholder } from "./InteractivePlaceholder";
@@ -6,12 +6,13 @@ import { MediaBlock } from "./MediaBlock";
 import { useProgress } from "./ProgressProvider";
 import { t } from "@/lib/i18n";
 import { getMediaIndex, getVisualization } from "@/lib/media";
-import type { Byte, ByteScreen as ByteScreenData, LanguageCode, LocalizedField, ScreenInteraction, ScreenMedia } from "@/lib/schema";
+import type { ArabicVariantCode, Byte, ByteScreen as ByteScreenData, LanguageCode, LocalizedField, ScreenInteraction, ScreenMedia } from "@/lib/schema";
 
 type ByteScreenProps = {
   byte: Byte;
   screen: ByteScreenData;
   language: LanguageCode;
+  arabicVariant: ArabicVariantCode;
   onReady?: () => void;
   onReview?: () => void;
   onAnswerStateChange?: (answered: boolean) => void;
@@ -57,12 +58,12 @@ function hasInlineExercise(screen: ByteScreenData) {
   return Boolean(screen.question && Array.isArray(screen.options) && screen.correct_answer);
 }
 
-function feedbackText(feedback: unknown, selectedIsCorrect: boolean, language: LanguageCode) {
+function feedbackText(feedback: unknown, selectedIsCorrect: boolean, language: LanguageCode, arabicVariant: ArabicVariantCode) {
   if (!feedback) return "";
   if (typeof feedback === "string") return feedback;
   if (isRecord(feedback)) {
     const branch = selectedIsCorrect ? feedback.correct : feedback.incorrect;
-    return t(localized(branch), language) || t(localized(feedback), language);
+    return t(localized(branch), language, arabicVariant) || t(localized(feedback), language, arabicVariant);
   }
   return "";
 }
@@ -75,6 +76,7 @@ export function ByteScreen({
   byte,
   screen,
   language,
+  arabicVariant,
   onReady,
   onReview,
   onAnswerStateChange
@@ -86,9 +88,9 @@ export function ByteScreen({
   const [reflection, setReflection] = useState(progress.reflections[storageKey] ?? "");
   const [projectOutput, setProjectOutput] = useState<Record<string, string>>(progress.projectOutputs[storageKey] ?? {});
   const mediaIndex = useMemo(() => getMediaIndex(byte), [byte]);
-  const title = t(screen.title, language);
-  const intro = t(screen.content ?? screen.instruction ?? screen.prompt, language);
-  const bullets = Array.isArray(screen.bullets) ? screen.bullets.map((item) => t(localized(item), language)).filter(Boolean) : [];
+  const title = t(screen.title, language, arabicVariant);
+  const intro = t(screen.content ?? screen.instruction ?? screen.prompt, language, arabicVariant);
+  const bullets = Array.isArray(screen.bullets) ? screen.bullets.map((item) => t(localized(item), language, arabicVariant)).filter(Boolean) : [];
 
   useEffect(() => {
     const savedReflection = progress.reflections[storageKey] ?? "";
@@ -115,6 +117,7 @@ export function ByteScreen({
               byteId={byte.id}
               key={`${item.type}-${item.ref}`}
               language={language}
+              arabicVariant={arabicVariant}
               media={item}
               mediaItem={mediaIndex[item.ref]}
             />
@@ -132,9 +135,9 @@ export function ByteScreen({
           const media = screenMediaFromRecord(item);
           return (
             <div className="info-block" key={`${stringValue(item.ref) ?? index}`}>
-              {media ? <MediaBlock byteId={byte.id} language={language} media={media} mediaItem={mediaIndex[media.ref]} /> : null}
-              <h3>{t(localized(item.label), language)}</h3>
-              <p>{t(localized(item.explanation), language)}</p>
+              {media ? <MediaBlock byteId={byte.id} language={language} arabicVariant={arabicVariant} media={media} mediaItem={mediaIndex[media.ref]} /> : null}
+              <h3>{t(localized(item.label), language, arabicVariant)}</h3>
+              <p>{t(localized(item.explanation), language, arabicVariant)}</p>
             </div>
           );
         })}
@@ -147,24 +150,36 @@ export function ByteScreen({
     const options = records(exercise.options);
     const correctAnswer = stringValue(exercise.correct_answer);
     const requireCorrectAnswer = booleanValue(exercise.require_correct_answer);
-    const question = t(localized(exercise.question), language);
+    const question = t(localized(exercise.question), language, arabicVariant);
     const hasSelection = Boolean(selectedAnswer);
     const selectedIsCorrect = correctAnswer ? selectedAnswer === correctAnswer : hasSelection;
     const fallbackFeedback = selectedIsCorrect
-      ? language === "ar"
-        ? "صحيح. لاحظت الفكرة المطلوبة وربطتها بالدليل في الشاشة."
-        : "Correct. You noticed the key idea and connected it to the evidence on this screen."
-      : language === "ar"
-        ? "اقتربت. جرّب مرة أخرى وابحث عن الدليل المرتبط بالبيانات أو النمط."
-        : "Close. Try again and look for the evidence tied to the data or pattern.";
-    const feedback = feedbackText(exercise.feedback, selectedIsCorrect, language) || fallbackFeedback;
+      ? t(
+          {
+            ar: "صحيح. لاحظت الفكرة المطلوبة وربطتها بالدليل في الشاشة.",
+            ar_fusha: "صحيح. لاحظت الفكرة المطلوبة وربطتها بالدليل في الشاشة.",
+            en: "Correct. You noticed the key idea and connected it to the evidence on this screen."
+          },
+          language,
+          arabicVariant
+        )
+      : t(
+          {
+            ar: "اقتربت. جرّب مرة أخرى وابحث عن الدليل المرتبط بالبيانات أو النمط.",
+            ar_fusha: "اقتربت. جرّب مرة أخرى وابحث عن الدليل المرتبط بالبيانات أو النمط.",
+            en: "Close. Try again and look for the evidence tied to the data or pattern."
+          },
+          language,
+          arabicVariant
+        );
+    const feedback = feedbackText(exercise.feedback, selectedIsCorrect, language, arabicVariant) || fallbackFeedback;
 
     return (
       <div className="screen-content">
         {question ? <h2>{question}</h2> : null}
         <div className="option-grid">
           {options.map((option) => {
-            const id = stringValue(option.id) ?? t(localized(option.label), language);
+            const id = stringValue(option.id) ?? t(localized(option.label), language, arabicVariant);
 
             return (
               <button
@@ -180,7 +195,7 @@ export function ByteScreen({
                   onAnswerStateChange?.(requireCorrectAnswer ? correct : true);
                 }}
               >
-                {t(localized(option.label), language)}
+                {t(localized(option.label), language, arabicVariant)}
               </button>
             );
           })}
@@ -197,9 +212,9 @@ export function ByteScreen({
     return (
       <div className="screen-content">
         {cards.map((card) => (
-          <div className="info-block" key={stringValue(card.id) ?? t(localized(card.title), language)}>
-            <h3>{t(localized(card.title), language)}</h3>
-            <p>{t(localized(card.body), language)}</p>
+          <div className="info-block" key={stringValue(card.id) ?? t(localized(card.title), language, arabicVariant)}>
+            <h3>{t(localized(card.title), language, arabicVariant)}</h3>
+            <p>{t(localized(card.body), language, arabicVariant)}</p>
           </div>
         ))}
       </div>
@@ -214,8 +229,8 @@ export function ByteScreen({
         {renderMedia(screen.media)}
         <div className="field-grid">
           {fields.map((field) => {
-            const id = stringValue(field.id) ?? t(localized(field.label), language);
-            const label = t(localized(field.label), language);
+            const id = stringValue(field.id) ?? t(localized(field.label), language, arabicVariant);
+            const label = t(localized(field.label), language, arabicVariant);
             return (
               <label className="info-block" key={id}>
                 <strong>{label}</strong>
@@ -242,8 +257,8 @@ export function ByteScreen({
       <div className="screen-content">
         <textarea
           className="text-field"
-          aria-label={t(screen.prompt, language)}
-          placeholder={t(screen.prompt, language)}
+          aria-label={t(screen.prompt, language, arabicVariant)}
+          placeholder={t(screen.prompt, language, arabicVariant)}
           value={reflection}
           onChange={(event) => {
             const value = event.target.value;
@@ -266,11 +281,11 @@ export function ByteScreen({
 
     return (
       <div className="screen-content">
-        <h2>{t(localized(feedback.title), language)}</h2>
-        <p>{t(localized(feedback.prompt), language)}</p>
+        <h2>{t(localized(feedback.title), language, arabicVariant)}</h2>
+        <p>{t(localized(feedback.prompt), language, arabicVariant)}</p>
         <div className="option-grid">
           {options.map((option) => {
-            const id = stringValue(option.id) ?? t(localized(option.label), language);
+            const id = stringValue(option.id) ?? t(localized(option.label), language, arabicVariant);
             return (
               <button
                 className="option-button"
@@ -285,30 +300,30 @@ export function ByteScreen({
                   if (id === "review") onReview?.();
                 }}
               >
-                {t(localized(option.label), language)}
+                {t(localized(option.label), language, arabicVariant)}
               </button>
             );
           })}
         </div>
-        {chosenOption ? <div className="feedback correct">{t(localized(chosenOption.result_message), language)}</div> : null}
-        <p>{t(localized(feedback.self_decision_note), language)}</p>
+        {chosenOption ? <div className="feedback correct">{t(localized(chosenOption.result_message), language, arabicVariant)}</div> : null}
+        <p>{t(localized(feedback.self_decision_note), language, arabicVariant)}</p>
       </div>
     );
   }
 
   function renderConnectTheDots() {
     const blocks = [
-      { label: { ar: "ما الذي حدث؟", en: "What happened?" }, value: screen.what_happened },
-      { label: { ar: "لماذا يهم؟", en: "Why it matters" }, value: screen.why_it_matters },
-      { label: { ar: "إلى أين يقود؟", en: "Where it leads" }, value: screen.where_it_leads }
-    ].filter((block) => t(block.value, language));
+      { label: { ar: "ما الذي حدث؟", ar_fusha: "ما الذي حدث؟", en: "What happened?" }, value: screen.what_happened },
+      { label: { ar: "لماذا يهم؟", ar_fusha: "لماذا يهم؟", en: "Why it matters" }, value: screen.why_it_matters },
+      { label: { ar: "إلى أين يقود؟", ar_fusha: "إلى أين يقود؟", en: "Where it leads" }, value: screen.where_it_leads }
+    ].filter((block) => t(block.value, language, arabicVariant));
 
     return (
       <div className="screen-content">
         {blocks.map((block) => (
-          <div className="info-block" key={t(block.label, language)}>
-            <h3>{t(block.label, language)}</h3>
-            <p>{t(block.value, language)}</p>
+          <div className="info-block" key={t(block.label, language, arabicVariant)}>
+            <h3>{t(block.label, language, arabicVariant)}</h3>
+            <p>{t(block.value, language, arabicVariant)}</p>
           </div>
         ))}
       </div>
@@ -318,8 +333,8 @@ export function ByteScreen({
   function renderSectionTransition() {
     const sectionNumber = numberValue(screen.section_number) ?? 1;
     const totalSections = numberValue(screen.total_sections) ?? sectionNumber;
-    const learned = t(screen.learned, language);
-    const next = t(screen.next, language);
+    const learned = t(screen.learned, language, arabicVariant);
+    const next = t(screen.next, language, arabicVariant);
     const partLabel = language === "ar" ? `الجزء ${sectionNumber} من ${totalSections}` : `Part ${sectionNumber} of ${totalSections}`;
 
     return (
@@ -328,12 +343,12 @@ export function ByteScreen({
         <div className="section-transition-ring" aria-hidden="true" />
         <div className="section-transition-grid">
           <div className="info-block section-learned">
-            <h3>{language === "ar" ? "ما تعلمته" : "What you learned"}</h3>
+            <h3>{t({ ar: "ما تعلمته", ar_fusha: "ما تعلمته", en: "What you learned" }, language, arabicVariant)}</h3>
             <p>{learned}</p>
           </div>
           {next ? (
             <div className="info-block section-next">
-              <h3>{language === "ar" ? "ما التالي" : "What comes next"}</h3>
+              <h3>{t({ ar: "ما التالي", ar_fusha: "ما التالي", en: "What comes next" }, language, arabicVariant)}</h3>
               <p>{next}</p>
             </div>
           ) : null}
@@ -350,8 +365,8 @@ export function ByteScreen({
 
     return (
       <div className="screen-content">
-        <InteractivePlaceholder interaction={interaction} language={language} mediaRefs={mediaRefs} visualization={visualization} />
-        {screen.reflection_prompt ? <p>{t(screen.reflection_prompt, language)}</p> : null}
+        <InteractivePlaceholder interaction={interaction} language={language} arabicVariant={arabicVariant} mediaRefs={mediaRefs} visualization={visualization} />
+        {screen.reflection_prompt ? <p>{t(screen.reflection_prompt, language, arabicVariant)}</p> : null}
       </div>
     );
   }
@@ -395,9 +410,15 @@ export function ByteScreen({
           <div className="screen-content">
             {renderMedia(screen.media)}
             <div className="feedback correct">
-              {language === "ar"
-                ? "أنهيت هذا البايت وحفظت تقدمك. أصبح البايت التالي جاهز عندما تعود إلى الخارطة."
-                : "You completed this Byte and saved your progress. The next node is ready when you return to the map."}
+              {t(
+                {
+                  ar: "أنهيت هذا البايت وحفظت تقدمك. أصبح البايت التالي جاهزًا عندما تعود إلى الخارطة.",
+                  ar_fusha: "أنهيت هذا البايت وحفظت تقدمك. أصبح البايت التالي جاهزًا عندما تعود إلى الخريطة.",
+                  en: "You completed this Byte and saved your progress. The next node is ready when you return to the map."
+                },
+                language,
+                arabicVariant
+              )}
             </div>
           </div>
         );
@@ -422,5 +443,6 @@ export function ByteScreen({
     </article>
   );
 }
+
 
 

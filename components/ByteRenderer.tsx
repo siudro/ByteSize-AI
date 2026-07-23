@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { ExperienceControls } from "./ExperienceProvider";
 import { LanguageToggle, useLanguage } from "./LanguageProvider";
 import { useProgress } from "./ProgressProvider";
 import { t } from "@/lib/i18n";
-import type { Byte, ByteScreen as ByteScreenData } from "@/lib/schema";
+import type { ArabicVariantCode, Byte, ByteScreen as ByteScreenData, LanguageCode, LocalizedText } from "@/lib/schema";
 
 const MIN_SCREEN_TIME_SECONDS = 0.5;
 
@@ -37,9 +37,13 @@ function screenRequiresAnswer(screen: ByteScreenData): boolean {
   return directOptions || exerciseOptions || microCheckOptions || isWrittenQuestion;
 }
 
+function uiText(value: LocalizedText, language: LanguageCode, arabicVariant: ArabicVariantCode) {
+  return t(value, language, arabicVariant);
+}
+
 export function ByteRenderer({ byte }: ByteRendererProps) {
   const router = useRouter();
-  const { language, direction } = useLanguage();
+  const { language, arabicVariant, direction } = useLanguage();
   const { loaded, isUnlocked, isCompleted, completeByte } = useProgress();
 
   const [index, setIndex] = useState(0);
@@ -51,6 +55,7 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
 
   const progressPercent = screens.length ? ((index + 1) / screens.length) * 100 : 0;
   const blocked = loaded && !isUnlocked(byte.id) && !isCompleted(byte.id);
+  const backToMapLabel = uiText({ ar: "العودة إلى الخارطة", ar_fusha: "العودة إلى الخريطة", en: "Back to map" }, language, arabicVariant);
 
   useEffect(() => {
     if (!currentScreen) {
@@ -93,10 +98,10 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
     return (
       <main className="byte-shell">
         <div className="screen-panel">
-          <h1>{language === "ar" ? "لا توجد شاشات لهذا البايت" : "This Byte has no screens"}</h1>
+          <h1>{uiText({ ar: "لا توجد شاشات لهذا البايت", ar_fusha: "لا توجد شاشات لهذا البايت", en: "This Byte has no screens" }, language, arabicVariant)}</h1>
 
           <Link className="button primary" href="/map">
-            {language === "ar" ? "العودة إلى الخارطة" : "Back to map"}
+            {backToMapLabel}
           </Link>
         </div>
       </main>
@@ -107,16 +112,22 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
     return (
       <main className="byte-shell">
         <div className="screen-panel">
-          <h1>{language === "ar" ? "هذا البايت مغلق الآن" : "This Byte is currently locked"}</h1>
+          <h1>{uiText({ ar: "هذا البايت مغلق الآن", ar_fusha: "هذا البايت مغلق حاليًا", en: "This Byte is currently locked" }, language, arabicVariant)}</h1>
 
           <p>
-            {language === "ar"
-              ? "أكمل البايت السابق لفتح هذه العقدة."
-              : "Complete the previous Byte to unlock this node."}
+            {uiText(
+              {
+                ar: "أكمل البايت السابق لفتح هذه العقدة.",
+                ar_fusha: "أكمل البايت السابق لفتح هذه العقدة.",
+                en: "Complete the previous Byte to unlock this node."
+              },
+              language,
+              arabicVariant
+            )}
           </p>
 
           <Link className="button primary" href="/map">
-            {language === "ar" ? "العودة إلى الخارطة" : "Back to map"}
+            {backToMapLabel}
           </Link>
         </div>
       </main>
@@ -131,11 +142,11 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
         <div className="topbar">
           <div>
             <Link className="eyebrow" href="/map">
-              {language === "ar" ? "العودة إلى الخارطة" : "Back to map"}
+              {backToMapLabel}
             </Link>
 
-            <h1>{t(byte.title, language)}</h1>
-            <p>{t(byte.subtitle, language)}</p>
+            <h1>{t(byte.title, language, arabicVariant)}</h1>
+            <p>{t(byte.subtitle, language, arabicVariant)}</p>
           </div>
 
           <div className="topbar-controls">
@@ -144,7 +155,7 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
           </div>
         </div>
 
-        <div className="progress-track" aria-label={language === "ar" ? "تقدم البايت" : "Byte progress"}>
+        <div className="progress-track" aria-label={uiText({ ar: "تقدم البايت", ar_fusha: "تقدّم البايت", en: "Byte progress" }, language, arabicVariant)}>
           <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
         </div>
       </header>
@@ -153,15 +164,16 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
         key={`${index}-${currentScreen.id}`}
         byte={byte}
         language={language}
+        arabicVariant={arabicVariant}
         screen={currentScreen}
         onReady={markComplete}
         onReview={() => setIndex(0)}
         onAnswerStateChange={setScreenAnswered}
       />
 
-      <nav className="byte-nav" aria-label={language === "ar" ? "تنقل البايت" : "Byte navigation"}>
+      <nav className="byte-nav" aria-label={uiText({ ar: "تنقل البايت", ar_fusha: "التنقل داخل البايت", en: "Byte navigation" }, language, arabicVariant)}>
         <button className="button" type="button" onClick={() => setIndex((current) => Math.max(0, current - 1))} disabled={index === 0}>
-          {language === "ar" ? "السابق" : "Back"}
+          {uiText({ ar: "السابق", ar_fusha: "السابق", en: "Back" }, language, arabicVariant)}
         </button>
 
         {!timePassed && (
@@ -172,21 +184,18 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
 
         {timePassed && !screenAnswered && (
           <span className="continue-wait" aria-live="polite">
-            {language === "ar" ? "أجب أولًا للمتابعة" : "Answer before continuing"}
+            {uiText({ ar: "أجب أولًا للمتابعة", ar_fusha: "أجب أولًا للمتابعة", en: "Answer before continuing" }, language, arabicVariant)}
           </span>
         )}
 
         {canContinue && (
           <button className="button primary" type="button" onClick={goNext}>
             {index === screens.length - 1
-              ? language === "ar"
-                ? "العودة إلى الخارطة"
-                : "Back to map"
-              : t(currentScreen.continue_label, language) || (language === "ar" ? "التالي" : "Next")}
+              ? backToMapLabel
+              : t(currentScreen.continue_label, language, arabicVariant) || uiText({ ar: "التالي", ar_fusha: "التالي", en: "Next" }, language, arabicVariant)}
           </button>
         )}
       </nav>
     </main>
   );
 }
-

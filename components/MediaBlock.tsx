@@ -1,19 +1,20 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { t } from "@/lib/i18n";
-import type { LanguageCode, MediaReference, ScreenMedia } from "@/lib/schema";
+import type { ArabicVariantCode, LanguageCode, MediaReference, ScreenMedia } from "@/lib/schema";
 
 type MediaBlockProps = {
   byteId: string;
   media: ScreenMedia;
   mediaItem?: MediaReference & { type: ScreenMedia["type"] };
   language: LanguageCode;
+  arabicVariant: ArabicVariantCode;
 };
 
-export function MediaBlock({ byteId, media, mediaItem, language }: MediaBlockProps) {
+export function MediaBlock({ byteId, media, mediaItem, language, arabicVariant }: MediaBlockProps) {
   const [failed, setFailed] = useState(false);
-  const label = t(mediaItem?.label ?? mediaItem?.caption ?? mediaItem?.alt, language) || media.ref;
+  const label = t(mediaItem?.label ?? mediaItem?.caption ?? mediaItem?.alt, language, arabicVariant) || media.ref;
   const expectedPath = mediaItem ? `content/bytes/${byteId}/media/${mediaItem.path}` : `content/bytes/${byteId}/media/<missing ref>`;
   const url = mediaItem ? `/content-media/${byteId}/media/${mediaItem.path}` : "";
 
@@ -21,10 +22,10 @@ export function MediaBlock({ byteId, media, mediaItem, language }: MediaBlockPro
     return (
       <div className="media-preview">
         <div>
-          <strong>{language === "ar" ? "وسيط مؤقت" : "Media placeholder"}</strong>
+          <strong>{t({ ar: "وسيط مؤقت", ar_fusha: "وسيط مؤقت", en: "Media placeholder" }, language, arabicVariant)}</strong>
           <p>{label}</p>
           <small>
-            {language === "ar" ? "النوع" : "Type"}: <code>{media.type}</code>
+            {t({ ar: "النوع", ar_fusha: "النوع", en: "Type" }, language, arabicVariant)}: <code>{media.type}</code>
           </small>
           <br />
           <small>
@@ -32,7 +33,7 @@ export function MediaBlock({ byteId, media, mediaItem, language }: MediaBlockPro
           </small>
           <br />
           <small>
-            {language === "ar" ? "المسار المتوقع" : "Expected path"}: <code>{expectedPath}</code>
+            {t({ ar: "المسار المتوقع", ar_fusha: "المسار المتوقع", en: "Expected path" }, language, arabicVariant)}: <code>{expectedPath}</code>
           </small>
         </div>
       </div>
@@ -45,7 +46,7 @@ export function MediaBlock({ byteId, media, mediaItem, language }: MediaBlockPro
         renderPlaceholder()
       ) : media.type === "image" ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={url} alt={t(mediaItem.alt, language) || label} onError={() => setFailed(true)} />
+        <img src={url} alt={t(mediaItem.alt, language, arabicVariant) || label} onError={() => setFailed(true)} />
       ) : media.type === "video" ? (
         <video src={url} controls onError={() => setFailed(true)} />
       ) : media.type === "audio" ? (
@@ -61,7 +62,7 @@ export function MediaBlock({ byteId, media, mediaItem, language }: MediaBlockPro
       )}
       <div className="media-meta">
         <strong>{label}</strong>
-        {mediaItem?.caption ? <p>{t(mediaItem.caption, language)}</p> : null}
+        {mediaItem?.caption ? <p>{t(mediaItem.caption, language, arabicVariant)}</p> : null}
       </div>
     </div>
   );
