@@ -1,0 +1,17 @@
+{
+  "component_keys": [
+    "tung-pixel-zoom",
+    "matrix-basics",
+    "pixel-character",
+    "saudi-cafe-matrix",
+    "pixel-transform",
+    "ai-compute-scale"
+  ],
+  "operation_estimate": 3720000000000000,
+  "requests": [
+    1,
+    100,
+    10000,
+    1000000
+  ]
+}

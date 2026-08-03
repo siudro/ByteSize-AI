@@ -35,11 +35,18 @@ map:
     level_band: 0
     order: 1
   unlocks:
+    - L1-ENG-MATRIX-RAM
     - L1-ENG-01
     - L1-MAK-01
     - L1-CRE-01
     - L1-PRO-01
   connections:
+    - target_byte_id: L1-ENG-MATRIX-RAM
+      type: ladder
+      reason:
+        ar: فهم البيانات والأنماط يفتح طريق المصفوفات والحسابات في مسار المهندس.
+        en: Understanding data and patterns opens the path to matrices and computation in the Engineering pathway.
+        ar_fusha: فهم البيانات والأنماط يفتح طريق المصفوفات والحسابات في مسار المهندس.
     - target_byte_id: L1-ENG-01
       type: ladder
       reason:

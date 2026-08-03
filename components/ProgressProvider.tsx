@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import {
@@ -15,6 +15,7 @@ type ProgressContextValue = {
   saveReadinessChoice: (byteId: string, choiceId: string) => void;
   saveReflection: (key: string, value: string) => void;
   saveProjectOutput: (key: string, value: Record<string, string>) => void;
+  saveInteractionState: (key: string, value: Record<string, unknown>) => void;
   saveExerciseAttempt: (key: string, selected: string, correct: boolean) => void;
   resetProgress: () => void;
   isUnlocked: (byteId: string) => boolean;
@@ -90,6 +91,17 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
             ...current,
             projectOutputs: {
               ...current.projectOutputs,
+              [key]: value
+            }
+          })
+        );
+      },
+      saveInteractionState(key, value) {
+        setProgress((current) =>
+          normalizeProgress({
+            ...current,
+            interactionStates: {
+              ...current.interactionStates,
               [key]: value
             }
           })
