@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { InteractivePlaceholder } from "./InteractivePlaceholder";
+import { InteractionRenderer } from "./interactions/InteractionRenderer";
 import { MediaBlock } from "./MediaBlock";
 import { TimerInteraction } from "./TimerInteraction";
 import { useProgress } from "./ProgressProvider";
@@ -15,6 +15,7 @@ type ByteScreenProps = {
   screen: ByteScreenData;
   language: LanguageCode;
   arabicVariant: ArabicVariantCode;
+  direction: "rtl" | "ltr";
   onReady?: () => void;
   onReview?: () => void;
   onAnswerStateChange?: (answered: boolean) => void;
@@ -79,6 +80,7 @@ export function ByteScreen({
   screen,
   language,
   arabicVariant,
+  direction,
   onReady,
   onReview,
   onAnswerStateChange
@@ -86,7 +88,7 @@ export function ByteScreen({
   const storageKey = `${byte.id}:${screen.id}`;
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [selectedReadiness, setSelectedReadiness] = useState<string | null>(null);
-  const { progress, saveReadinessChoice, saveReflection, saveProjectOutput, saveExerciseAttempt } = useProgress();
+  const { progress, saveReadinessChoice, saveReflection, saveProjectOutput, saveInteractionState, saveExerciseAttempt } = useProgress();
   const [reflection, setReflection] = useState(progress.reflections[storageKey] ?? "");
   const [projectOutput, setProjectOutput] = useState<Record<string, string>>(progress.projectOutputs[storageKey] ?? {});
   const mediaIndex = useMemo(() => getMediaIndex(byte), [byte]);
@@ -384,16 +386,27 @@ export function ByteScreen({
     const interaction = interactionFromRecord(screen.interaction);
     const visualizationRef = screen.interaction_ref ?? interaction?.visualization_ref;
     const visualization = getVisualization(byte, visualizationRef);
-    const mediaRefs = (visualization?.media_refs ?? []).map((ref) => mediaIndex[ref]).filter(Boolean);
+    const interactionState = progress.interactionStates[storageKey] ?? {};
 
     return (
       <div className="screen-content">
-        <InteractivePlaceholder interaction={interaction} language={language} arabicVariant={arabicVariant} mediaRefs={mediaRefs} visualization={visualization} />
+        <InteractionRenderer
+          interaction={interaction}
+          visualization={visualization}
+          language={language}
+          arabicVariant={arabicVariant}
+          direction={direction}
+          savedState={interactionState}
+          onStateChange={(state) => saveInteractionState(storageKey, state)}
+          onComplete={(state) => {
+            saveInteractionState(storageKey, { ...interactionState, ...state, completed: true });
+            onAnswerStateChange?.(true);
+          }}
+        />
         {screen.reflection_prompt ? <p>{t(screen.reflection_prompt, language, arabicVariant)}</p> : null}
       </div>
     );
   }
-
   function renderByType() {
     if (hasInlineExercise(screen)) return renderExercise(screen);
     if (screen.interaction_ref || screen.interaction) return renderInteraction();

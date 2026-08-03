@@ -1,9 +1,10 @@
-﻿export type StoredProgress = {
+export type StoredProgress = {
   completedBytes: string[];
   unlockedBytes: string[];
   readinessChoices: Record<string, string>;
   reflections: Record<string, string>;
   projectOutputs: Record<string, Record<string, string>>;
+  interactionStates: Record<string, Record<string, unknown>>;
   exerciseAttempts: Record<string, { selected: string; correct: boolean }>;
 };
 
@@ -17,6 +18,7 @@ export function createInitialProgress(): StoredProgress {
     readinessChoices: {},
     reflections: {},
     projectOutputs: {},
+    interactionStates: {},
     exerciseAttempts: {}
   };
 }
@@ -29,6 +31,7 @@ export function normalizeProgress(value: Partial<StoredProgress> | null): Stored
     readinessChoices: value?.readinessChoices ?? {},
     reflections: value?.reflections ?? {},
     projectOutputs: value?.projectOutputs ?? {},
+    interactionStates: value?.interactionStates ?? {},
     exerciseAttempts: value?.exerciseAttempts ?? {}
   };
 }

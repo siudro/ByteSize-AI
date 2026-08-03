@@ -19,5 +19,8 @@ export function getMediaIndex(byte: Byte): Record<string, MediaReference & { typ
 
 export function getVisualization(byte: Byte, id?: string | null) {
   if (!id) return undefined;
-  return byte.tools?.internal_visualizations?.find((item) => item.id === id);
+  return byte.tools?.internal_visualizations?.find((item) => {
+    const componentKey = (item as { component_key?: unknown }).component_key;
+    return item.id === id || (typeof componentKey === "string" && componentKey === id);
+  });
 }

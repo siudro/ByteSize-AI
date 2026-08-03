@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -29,6 +29,7 @@ function screenRequiresAnswer(screen: ByteScreenData): boolean {
   const directOptions = Array.isArray(screen.options) && screen.options.length > 0;
   const exerciseOptions = Array.isArray(exercise.options) && exercise.options.length > 0;
   const microCheckOptions = Array.isArray(microCheck.options) && microCheck.options.length > 0;
+  const requiredInteraction = Boolean((screen.interaction_ref || screen.interaction) && (screen.completion_required === true || screen.required === true || screen.interaction?.required === true));
 
   const isWrittenQuestion =
     screen.type === "reflection" ||
@@ -40,7 +41,7 @@ function screenRequiresAnswer(screen: ByteScreenData): boolean {
     return screen.required !== false && timer.completion_required !== false;
   }
 
-  return directOptions || exerciseOptions || microCheckOptions || isWrittenQuestion;
+  return directOptions || exerciseOptions || microCheckOptions || isWrittenQuestion || requiredInteraction;
 }
 
 function uiText(value: LocalizedText, language: LanguageCode, arabicVariant: ArabicVariantCode) {
@@ -171,6 +172,7 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
         byte={byte}
         language={language}
         arabicVariant={arabicVariant}
+        direction={direction}
         screen={currentScreen}
         onReady={markComplete}
         onReview={() => setIndex(0)}

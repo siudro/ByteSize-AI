@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="A 2 by 3 matrix with the cell 5 highlighted at row 2 column 2">
+  <rect width="640" height="360" fill="#ffffff"/>
+  <rect x="270" y="98" width="100" height="164" fill="#e7f4ee"/>
+  <rect x="170" y="183" width="300" height="80" fill="#fff3d8"/>
+  <rect x="270" y="183" width="100" height="80" fill="#f4c95d" stroke="#24211b" stroke-width="3"/>
+  <path d="M170 100 H128 V260 H170" fill="none" stroke="#24211b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M470 100 H512 V260 H470" fill="none" stroke="#24211b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#24211b" text-anchor="middle" dominant-baseline="middle">
+    <text x="220" y="143">1</text>
+    <text x="320" y="143">2</text>
+    <text x="420" y="143">3</text>
+    <text x="220" y="223">4</text>
+    <text x="320" y="223">5</text>
+    <text x="420" y="223">6</text>
+  </g>
+  <g font-family="Arial, Tahoma, sans-serif" font-size="22" font-weight="800" fill="#5f4632" text-anchor="middle">
+    <text x="320" y="74">&#x627;&#x644;&#x639;&#x645;&#x648;&#x62F; 2</text>
+    <text x="92" y="229">&#x627;&#x644;&#x635;&#x641; 2</text>
+    <text x="320" y="318">&#x627;&#x644;&#x62E;&#x644;&#x64A;&#x629; = 5</text>
+  </g>
+</svg>

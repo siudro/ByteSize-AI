@@ -1,12 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
-import type { Byte, ByteScreen, ByteSummary, LocalizedText } from "./schema";
+import type { Byte, ByteScreen, ByteSummary, LocalizedText, MediaReference } from "./schema";
 
 const BYTES_ROOT = path.join(process.cwd(), "content", "bytes");
 
 function warnContent(byte: Byte) {
   if (process.env.NODE_ENV === "production") return;
+
+  warnDuplicateScreens(byte);
+  warnMissingReferences(byte);
 
   for (const screen of byte.screens ?? []) {
     const prefix = `[ByteSize content warning] ${byte.id}/${screen.id}`;
@@ -32,6 +35,51 @@ function warnContent(byte: Byte) {
       }
     }
   }
+}
+
+function warnDuplicateScreens(byte: Byte) {
+  const seen = new Set<string>();
+  for (const screen of byte.screens ?? []) {
+    if (seen.has(screen.id)) {
+      console.warn(`[ByteSize content warning] ${byte.id}: duplicate screen id "${screen.id}".`);
+    }
+    seen.add(screen.id);
+  }
+}
+
+function warnMissingReferences(byte: Byte) {
+  const mediaIds = new Set(allMedia(byte).map((item) => item.id));
+  const visualizationIds = new Set<string>();
+
+  for (const visualization of byte.tools?.internal_visualizations ?? []) {
+    visualizationIds.add(visualization.id);
+    const componentKey = (visualization as { component_key?: unknown }).component_key;
+    if (typeof componentKey === "string") visualizationIds.add(componentKey);
+  }
+
+  for (const screen of byte.screens ?? []) {
+    const prefix = `[ByteSize content warning] ${byte.id}/${screen.id}`;
+    for (const item of screen.media ?? []) {
+      if (!mediaIds.has(item.ref)) {
+        console.warn(`${prefix}: missing media ref "${item.ref}".`);
+      }
+    }
+
+    const interaction = screen.interaction;
+    const visualizationRef = screen.interaction_ref ?? interaction?.visualization_ref;
+    const componentKey = interaction?.config && typeof interaction.config.component_key === "string" ? interaction.config.component_key : undefined;
+    if (visualizationRef && !visualizationIds.has(visualizationRef)) {
+      console.warn(`${prefix}: missing interaction visualization "${visualizationRef}".`);
+    }
+    if (componentKey && !visualizationIds.has(componentKey)) {
+      console.warn(`${prefix}: missing interaction component "${componentKey}".`);
+    }
+  }
+}
+
+function allMedia(byte: Byte): MediaReference[] {
+  const media = byte.media ?? {};
+  return [...(media.images ?? []), ...(media.videos ?? []), ...(media.audio ?? []), ...(media.downloads ?? [])];
 }
 
 function getOptionCount(screen: ByteScreen) {
@@ -99,5 +147,3 @@ export function getAllBytes(): ByteSummary[] {
       return (a.map?.position?.order ?? 0) - (b.map?.position?.order ?? 0);
     });
 }
-
-

@@ -1,0 +1,1932 @@
+{
+  "id": "L1-ENG-MATRIX-RAM",
+  "title":
+    {
+      "ar": "المصفوفات لبنات الذكاء الاصطناعي",
+      "ar_fusha": "المصفوفات خلف الذكاء الاصطناعي",
+      "en": "The Matrices Behind AI",
+    },
+  "subtitle":
+    {
+      "ar": "العمليات الحسابية اللي تخلي الذكاء الاصطناعي يشتغل.",
+      "ar_fusha": "العمليات الحسابية التي تجعل الذكاء الاصطناعي يعمل.",
+      "en": "The building blocks of computation that make AI work.",
+    },
+  "level": 1,
+  "primary_pathway": "engineering",
+  "estimated_duration_minutes": 40,
+  "status": "draft",
+  "version": 0.2,
+  "language":
+    {
+      "default": "ar",
+      "direction": "rtl",
+      "supported": ["ar", "en"],
+      "fallback": "ar",
+      "default_arabic_variant": "saudi",
+      "supported_arabic_variants": ["saudi", "standard"],
+      "fallback_arabic_variant": "saudi",
+    },
+  "prerequisite_byte_ids": ["L0-CORE-00"],
+  "map":
+    {
+      "node_label":
+        {
+          "ar": "المصفوفات خلف AI",
+          "ar_fusha": "المصفوفات خلف الذكاء الاصطناعي",
+          "en": "Matrices Behind AI",
+        },
+      "node_icon": "matrix-grid",
+      "pathway_color": "blue",
+      "position": { "level_band": 1, "order": 30 },
+      "unlocks": ["L2-ENG-NEURAL-NETWORKS"],
+      "connections":
+        [
+          {
+            "target_byte_id": "L2-ENG-NEURAL-NETWORKS",
+            "type": "ladder",
+            "reason":
+              {
+                "ar": "فهم تنظيم الأعداد وربطها يفتح طريق الشبكات العصبية.",
+                "ar_fusha": "فهم تنظيم الأعداد وربطها يفتح طريق الشبكات العصبية.",
+                "en": "Understanding organized numbers and connections opens the path to neural networks.",
+              },
+          },
+        ],
+    },
+  "badge":
+    {
+      "name":
+        {
+          "ar": "باني المصفوفات",
+          "ar_fusha": "باني المصفوفات",
+          "en": "Matrix Builder",
+        },
+      "type": "physical",
+      "icon": "media/images/matrix-builder-badge.svg",
+      "approval_required": true,
+    },
+  "learning_design":
+    {
+      "one_concept":
+        {
+          "ar": "المصفوفة تنظم الأعداد في صفوف وأعمدة ذات معنى، وضرب المصفوفات يربط هذه الأعداد أو يحولها.",
+          "ar_fusha": "المصفوفة تنظم الأعداد في صفوف وأعمدة ذات معنى، وضرب المصفوفات يربط هذه الأعداد أو يحولها.",
+          "en": "A matrix organizes numbers into meaningful rows and columns, and matrix multiplication connects or transforms them.",
+        },
+      "learner_takeaway":
+        {
+          "ar": "يبني مصفوفة ويفسر خلية ويحسب خلية ناتجة ويربط ذلك بالذكاء الاصطناعي.",
+          "ar_fusha": "يبني مصفوفة ويفسر خلية ويحسب خلية ناتجة ويربط ذلك بالذكاء الاصطناعي.",
+          "en": "Build a matrix, explain a cell, calculate an output cell, and connect that to AI.",
+        },
+    },
+  "media":
+    {
+      "base_path": "./media",
+      "images":
+        [
+          {
+            "id": "tripe-t-ram",
+            "path": "images/triple-t-ram.png",
+            "alt":
+              {
+                "ar": "تونغ تونغ تونغ سحور و أسعار قطع الذاكرة",
+                "ar_fusha": "تونغ تونغ تونغ سحور و أسعار قطع الذاكرة",
+                "en": "Triple-T and RAM Prices",
+              },
+          },
+          {
+            "id": "investigation_board",
+            "path": "images/pixelated-triple-t-hd.jpg",
+            "alt":
+              {
+                "ar": "تونغ تونغ تونغ سحور",
+                "ar_fusha": "تونغ تونغ تونغ سحور",
+                "en": "Tung tung tung sahur",
+              },
+          },
+          {
+            "id": "matrix_examples",
+            "path": "images/matrix-examples.png",
+            "alt":
+              {
+                "ar": "كل ذي الأشياء المختلفة بينهم شيء مشترك!",
+                "ar_fusha": "كل هذه الأشياء المختلفة بينها شيء مشترك!",
+                "en": "All these different things share something in common!",
+              },
+          },
+         {
+            "id": "matrix_diagram",
+            "path": "images/matrix-diagram.svg",
+            "alt":
+              {
+                "ar": "رسم صفوف وأعمدة.",
+                "ar_fusha": "رسم صفوف وأعمدة.",
+                "en": "Rows and columns diagram.",
+              },
+          },
+          {
+            "id": "majlis_orders",
+            "path": "images/majlis-orders.png",
+            "alt":
+              {
+                "ar": "قهوة سعودية وكرك على طاولة المجلس.",
+                "ar_fusha": "قهوة سعودية وكرك على طاولة المجلس.",
+                "en": "Saudi coffee and karak on a majlis table.",
+              },
+          },
+          {
+            "id": "matrix_latex_example",
+            "path": "images/matrix-latex-example.svg",
+            "alt":
+              {
+                "ar": "\u0645\u0635\u0641\u0648\u0641\u0629 \u0628\u0635\u0641\u064a\u0646 \u0648\u062b\u0644\u0627\u062b\u0629 \u0623\u0639\u0645\u062f\u0629 \u062a\u062d\u062a\u0648\u064a \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u0645\u0646 1 \u0625\u0644\u0649 6.",
+                "ar_fusha": "\u0645\u0635\u0641\u0648\u0641\u0629 \u0628\u0635\u0641\u064a\u0646 \u0648\u062b\u0644\u0627\u062b\u0629 \u0623\u0639\u0645\u062f\u0629 \u062a\u062d\u062a\u0648\u064a \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u0645\u0646 1 \u0625\u0644\u0649 6.",
+                "en": "A 2 by 3 matrix with the numbers 1 to 6.",
+              },
+          },
+          {
+            "id": "matrix_cell_example",
+            "path": "images/matrix-cell-example.svg",
+            "alt":
+              {
+                "ar": "\u0645\u0635\u0641\u0648\u0641\u0629 \u062a\u0648\u0636\u062d \u062e\u0644\u064a\u0629 \u0648\u0627\u062d\u062f\u0629: \u0627\u0644\u0631\u0642\u0645 5 \u0641\u064a \u0627\u0644\u0635\u0641 \u0627\u0644\u062b\u0627\u0646\u064a \u0648\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u062b\u0627\u0646\u064a.",
+                "ar_fusha": "\u0645\u0635\u0641\u0648\u0641\u0629 \u062a\u0648\u0636\u062d \u062e\u0644\u064a\u0629 \u0648\u0627\u062d\u062f\u0629: \u0627\u0644\u0639\u062f\u062f 5 \u0641\u064a \u0627\u0644\u0635\u0641 \u0627\u0644\u062b\u0627\u0646\u064a \u0648\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u062b\u0627\u0646\u064a.",
+                "en": "A matrix showing one cell: the number 5 in row 2, column 2.",
+              },
+          },
+          {
+            "id": "pixel_array_8",
+            "path": "images/img-pixel-array.jpg",
+            "alt":
+              {
+                "ar": "\u0631\u0642\u0645 8 \u0628\u062e\u0637 \u0627\u0644\u064a\u062f \u0645\u0639 \u0628\u0643\u0633\u0644\u0627\u062a \u0631\u0645\u0627\u062f\u064a\u0629 \u0648\u0645\u0635\u0641\u0648\u0641\u0629 \u0623\u0631\u0642\u0627\u0645.",
+                "ar_fusha": "\u0631\u0642\u0645 8 \u0645\u0643\u062a\u0648\u0628 \u0628\u062e\u0637 \u0627\u0644\u064a\u062f \u0645\u0639 \u0628\u0643\u0633\u0644\u0627\u062a \u0631\u0645\u0627\u062f\u064a\u0629 \u0648\u0645\u0635\u0641\u0648\u0641\u0629 \u0623\u0631\u0642\u0627\u0645.",
+                "en": "A handwritten 8 shown as grayscale pixels and a matrix of numbers.",
+              },
+          },
+          {
+            "id": "project_card",
+            "path": "images/project-card.svg",
+            "alt":
+              {
+                "ar": "بطاقة تحويل بكسلية.",
+                "ar_fusha": "بطاقة تحويل بكسلية.",
+                "en": "Pixel transformation card.",
+              },
+          },
+          {
+            "id": "matrix_badge",
+            "path": "images/matrix-builder-badge.svg",
+            "alt":
+              {
+                "ar": "شارة باني المصفوفات.",
+                "ar_fusha": "شارة باني المصفوفات.",
+                "en": "Matrix Builder badge.",
+              },
+          },
+        ],
+      "downloads":
+        [
+          {
+            "id": "pixel_transformation_card",
+            "path": "downloads/pixel-transformation-card.pdf",
+            "type": "download",
+            "label":
+              {
+                "ar": "بطاقة التحويل البكسلية",
+                "ar_fusha": "بطاقة التحويل البكسلية",
+                "en": "Pixel transformation card",
+              },
+          },
+        ],
+    },
+  "tools":
+    {
+      "internal_visualizations":
+        [
+          {
+            "id": "tung-pixel-zoom",
+            "component_key": "tung-pixel-zoom",
+            "title":
+              {
+                "ar": "tung-pixel-zoom",
+                "ar_fusha": "tung-pixel-zoom",
+                "en": "tung-pixel-zoom",
+              },
+            "type": "TungPixelZoom",
+            "category": "manipulation",
+            "kind": "interactive",
+            "path": "./interactive",
+            "config_path": "./interactive/config.json",
+            "purpose":
+              {
+                "ar": "تفاعل محلي يعمل داخل المنصة.",
+                "ar_fusha": "تفاعل محلي يعمل داخل المنصة.",
+                "en": "Local in-platform interaction.",
+              },
+          },
+          {
+            "id": "matrix-basics",
+            "component_key": "matrix-basics",
+            "title":
+              {
+                "ar": "matrix-basics",
+                "ar_fusha": "matrix-basics",
+                "en": "matrix-basics",
+              },
+            "type": "MatrixBasicsLab",
+            "category": "manipulation",
+            "kind": "interactive",
+            "path": "./interactive",
+            "config_path": "./interactive/config.json",
+            "purpose":
+              {
+                "ar": "تفاعل محلي يعمل داخل المنصة.",
+                "ar_fusha": "تفاعل محلي يعمل داخل المنصة.",
+                "en": "Local in-platform interaction.",
+              },
+          },
+          {
+            "id": "pixel-character",
+            "component_key": "pixel-character",
+            "title":
+              {
+                "ar": "pixel-character",
+                "ar_fusha": "pixel-character",
+                "en": "pixel-character",
+              },
+            "type": "GuidedPixelCharacter",
+            "category": "manipulation",
+            "kind": "interactive",
+            "path": "./interactive",
+            "config_path": "./interactive/config.json",
+            "purpose":
+              {
+                "ar": "تفاعل محلي يعمل داخل المنصة.",
+                "ar_fusha": "تفاعل محلي يعمل داخل المنصة.",
+                "en": "Local in-platform interaction.",
+              },
+          },
+          {
+            "id": "saudi-cafe-matrix",
+            "component_key": "saudi-cafe-matrix",
+            "title":
+              {
+                "ar": "saudi-cafe-matrix",
+                "ar_fusha": "saudi-cafe-matrix",
+                "en": "saudi-cafe-matrix",
+              },
+            "type": "SaudiCafeMatrix",
+            "category": "manipulation",
+            "kind": "interactive",
+            "path": "./interactive",
+            "config_path": "./interactive/config.json",
+            "purpose":
+              {
+                "ar": "تفاعل محلي يعمل داخل المنصة.",
+                "ar_fusha": "تفاعل محلي يعمل داخل المنصة.",
+                "en": "Local in-platform interaction.",
+              },
+          },
+          {
+            "id": "pixel-transform",
+            "component_key": "pixel-transform",
+            "title":
+              {
+                "ar": "pixel-transform",
+                "ar_fusha": "pixel-transform",
+                "en": "pixel-transform",
+              },
+            "type": "PixelTransformationLab",
+            "category": "manipulation",
+            "kind": "interactive",
+            "path": "./interactive",
+            "config_path": "./interactive/config.json",
+            "purpose":
+              {
+                "ar": "تفاعل محلي يعمل داخل المنصة.",
+                "ar_fusha": "تفاعل محلي يعمل داخل المنصة.",
+                "en": "Local in-platform interaction.",
+              },
+          },
+          {
+            "id": "ai-compute-scale",
+            "component_key": "ai-compute-scale",
+            "title":
+              {
+                "ar": "ai-compute-scale",
+                "ar_fusha": "ai-compute-scale",
+                "en": "ai-compute-scale",
+              },
+            "type": "AIComputeScaleLab",
+            "category": "manipulation",
+            "kind": "interactive",
+            "path": "./interactive",
+            "config_path": "./interactive/config.json",
+            "purpose":
+              {
+                "ar": "تفاعل محلي يعمل داخل المنصة.",
+                "ar_fusha": "تفاعل محلي يعمل داخل المنصة.",
+                "en": "Local in-platform interaction.",
+              },
+          },
+        ],
+      "external_tools": [],
+    },
+  "makerspace_integration":
+    {
+      "required": false,
+      "fallback":
+        {
+          "ar": "إذا لم تتوفر الطباعة، استخدم النسخة الرقمية داخل التفاعل.",
+          "ar_fusha": "إذا لم تتوفر الطباعة، استخدم النسخة الرقمية داخل التفاعل.",
+          "en": "If printing is unavailable, use the digital fallback in the interaction.",
+        },
+    },
+  "screens":
+    [
+      {
+        "id": "hook_accusation",
+        "type": "story",
+        "title":
+          {
+            "ar": "هل رفع تونغ تونغ تونغ سحور أسعار قطع الحاسوب؟",
+            "ar_fusha": "هل رفع تونغ تونغ تونغ سحور أسعار قطع الحاسوب؟",
+            "en": "Did Triple-T Make Computer Pieces Expensive?",
+          },
+        "content":
+          {
+            "ar": "كنت مخطط انك تبني حاسوب ألعاب ولك فترة تجمع، ولما رحت تشوف السوق لقيت الأسعار طايرة، تتوقع وش السبب؟ هل تونغ تونغ تونغ سحور سبب هذه الكارثة؟",
+            "ar_fusha": "كنت مخططًا لبناء حاسوب ألعاب ولديك فترة لتجميع المبلغ، وعندما ذهبت إلى السوق وجدت أسعار القطع مرتفعة جدًا، ما السبب برأيك؟ هل تونغ تونغ تونغ سحور هو سبب هذه الكارثة؟",
+            "en": "You were planning to build a gaming computer and had been saving for a while. When you went to the market, you found that prices were sky-high. What do you think is the reason? Is Triple-T responsible for this disaster?",
+          },
+        "media": [{ "type": "image", "ref": "tripe-t-ram" }],
+      },
+      {
+        "id": "hook_guess",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "وش دخل تونغ بقطع الحاسوب؟",
+            "ar_fusha": "ما علاقة تونغ بقطع الحاسوب؟",
+            "en": "What Does Triple-T Have to Do with Computer Pieces?",
+          },
+        "content":
+          {
+            "ar": "وش تتوقع علاقة تونغ بارتفاع أسعار قطع الحاسوب؟",
+            "ar_fusha": "ما علاقة تونغ بارتفاع أسعار قطع الحاسوب برأيك؟",
+            "en": "What do you think is the connection between Triple-T and the high computer piece prices?",
+          },
+        "options":
+          [
+            {
+              "id": "ram",
+              "label":
+                {
+                  "ar": "تونغ مخزّن داخل ذاكرة الحاسوب",
+                  "ar_fusha": "تونغ مخزّن داخل ذاكرة الحاسوب",
+                  "en": "Tung is stored inside Memory",
+                },
+            },
+            {
+              "id": "compute",
+              "label":
+                {
+                  "ar": "صناعة صور مثله تحتاج ذاكرة وحسابات كثيرة",
+                  "ar_fusha": "صناعة صور مثله تحتاج إلى ذاكرة وحسابات كثيرة",
+                  "en": "Making images like him needs lots of memory and computation",
+                },
+            },
+            {
+              "id": "none",
+              "label":
+                {
+                  "ar": "ما له علاقة بارتفاع أسعار ذاكرة الحاسوب",
+                  "ar_fusha": "لا علاقة له بارتفاع أسعار ذاكرة الحاسوب",
+                  "en": "He is not related to rising memory prices",
+                },
+            },
+          ],
+        "correct_answer": null,
+        "require_correct_answer": false,
+        "feedback":
+          {
+            "correct":
+              {
+                "ar": "تذكّر اختيارك؛ بترجع له في نهاية البايت وتشوف إذا تغيّر رأيك.",
+                "ar_fusha": "تذكّر اختيارك؛ ستعود إليه في نهاية البايت لترى إن تغيّر رأيك.",
+                "en": "Remember your choice. You will return to it at the end and see whether your view has changed.",
+              },
+            "incorrect":
+              {
+                "ar": "تذكّر اختيارك؛ بترجع له في نهاية البايت وتشوف إذا تغيّر رأيك.",
+                "ar_fusha": "تذكّر اختيارك؛ ستعود إليه في نهاية البايت لترى إن تغيّر رأيك.",
+                "en": "Remember your choice. You will return to it at the end and see whether your view has changed.",
+              },
+          },
+      },
+      {
+        "id": "hook_zoom",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "وش داخل صورة تونغ تونغ تونغ سحور فعلًا؟",
+            "ar_fusha": "ما داخل صورة تونغ تونغ تونغ سحور فعلًا؟",
+            "en": "What Is Inside the Tung Tung Tung Sahur Image?",
+          },
+        "content":
+          {
+            "ar": "الصورة مكوّنة من مربعات صغيرة، وكل مربع له أرقام تحدد لونه. الحاسوب يحفظ هالأرقام في ذاكرته عشان يعرض الصورة أو يغيّرها أو يولد صورة جديدة.",
+            "ar_fusha": "تتكوّن الصورة من مربعات صغيرة، ولكل مربع أرقام تحدد لونه. يحفظ الحاسوب هذه الأرقام في ذاكرته ليعرض الصورة أو يغيّرها أو ينشئ صورة جديدة.",
+            "en": "An image is made of tiny squares, and each square has numbers that define its color. The computer stores these numbers in its memory to display, edit, or create an image.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "hook_zoom_interaction",
+            "visualization_ref": "tung-pixel-zoom",
+            "required": true,
+            "config":
+              { "component_key": "tung-pixel-zoom", "stage": "color-values" },
+          },
+      },
+      {
+        "id": "hook_zoom_reveal",
+        "type": "concept",
+        "title":
+          {
+            "ar": "الصورة أعداد كثيرة",
+            "ar_fusha": "الصورة أعداد كثيرة",
+            "en": "The Image Is Many Numbers",
+          },
+        "content":
+          {
+            "ar": "\u0643\u0644 \u0635\u0648\u0631\u0629 \u062d\u0648\u0644\u0643\u060c \u0645\u0646 \u0627\u0644\u062c\u0648\u0627\u0644 \u0644\u0644\u0622\u064a\u0628\u0627\u062f \u0644\u0644\u0625\u0646\u062a\u0631\u0646\u062a\u060c \u0647\u064a \u0623\u0631\u0642\u0627\u0645 \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629. \u0627\u0644\u062a\u0631\u062a\u064a\u0628 \u0647\u0648 \u0627\u0644\u0644\u064a \u064a\u062e\u0644\u064a \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u062a\u0635\u064a\u0631 \u0635\u0648\u0631\u0629.",
+            "ar_fusha": "\u0643\u0644 \u0635\u0648\u0631\u0629 \u062d\u0648\u0644\u0643\u060c \u0645\u0646 \u0627\u0644\u0647\u0627\u062a\u0641 \u0625\u0644\u0649 \u0627\u0644\u0622\u064a\u0628\u0627\u062f \u0648\u0627\u0644\u0625\u0646\u062a\u0631\u0646\u062a\u060c \u0647\u064a \u0623\u0631\u0642\u0627\u0645 \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629. \u0627\u0644\u062a\u0631\u062a\u064a\u0628 \u0647\u0648 \u0645\u0627 \u064a\u062c\u0639\u0644 \u0627\u0644\u0623\u0631\u0642\u0627\u0645 \u062a\u0635\u0628\u062d \u0635\u0648\u0631\u0629.",
+            "en": "Every picture around you, from phone to iPad to internet, is numbers arranged in rows and columns. The order is what turns the numbers into an image.",
+          },
+        "media": [{ "type": "image", "ref": "pixel_array_8" }],
+      },
+      
+      {
+        "id": "shared_scenes_view",
+        "type": "story",
+        "title":
+          {
+            "ar": "وش المشترك؟",
+            "ar_fusha": "ما المشترك؟",
+            "en": "What Do They Share?",
+          },
+        "content":
+          {
+            "ar": "شوف السينما والطقس والرفوف وكل الصور في أجهرتنا. شكلها مختلف، بس فيها شيء مشترك.",
+            "ar_fusha": "انظر إلى السينما والطقس والرفوف وجميع الصور في أجهرتنا. تبدو مختلفة، لكن بينها شيء مشترك.",
+            "en": "Look at the cinema, weather, shelves, and image. They look different, but share something.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_examples" }],
+      },
+      {
+        "id": "shared_scenes_match",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "\u0648\u0635\u0644 \u0627\u0644\u0645\u062b\u0627\u0644",
+            "ar_fusha": "\u0635\u0644 \u0627\u0644\u0645\u062b\u0627\u0644",
+            "en": "Connect the Example",
+
+          },
+        "content":
+          {
+            "ar": "\u0648\u0635\u0644 \u0643\u0644 \u0645\u062b\u0627\u0644 \u0628\u0637\u0631\u064a\u0642\u0629 \u062a\u0631\u062a\u064a\u0628\u0647: \u0623\u064a\u0627\u0645 \u0648\u062d\u0631\u0627\u0631\u0629\u060c \u0631\u0641 \u0648\u0628\u0647\u0627\u0631\u0627\u062a\u060c \u0633\u064a\u0646\u0645\u0627 \u0648\u0645\u0642\u0627\u0639\u062f\u060c \u0635\u0648\u0631\u0629 \u0648\u0628\u0643\u0633\u0644\u0627\u062a.",
+            "ar_fusha": "\u0635\u0644 \u0643\u0644 \u0645\u062b\u0627\u0644 \u0628\u0637\u0631\u064a\u0642\u0629 \u062a\u0631\u062a\u064a\u0628\u0647: \u0623\u064a\u0627\u0645 \u0648\u062d\u0631\u0627\u0631\u0629\u060c \u0631\u0641 \u0648\u0628\u0647\u0627\u0631\u0627\u062a\u060c \u0633\u064a\u0646\u0645\u0627 \u0648\u0645\u0642\u0627\u0639\u062f\u060c \u0635\u0648\u0631\u0629 \u0648\u0628\u0643\u0633\u0644\u0627\u062a.",
+            "en": "Connect each example to how it is arranged: days and temperature, shelf and spices, cinema and seats, image and pixels.",
+
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "shared_scenes_match_interaction",
+            "visualization_ref": "matrix-basics",
+            "required": true,
+            "config":
+              { "component_key": "matrix-basics", "stage": "match-scenes" },
+          },
+      },
+      {
+        "id": "rows_columns_reveal",
+        "type": "concept",
+        "title":
+          {
+            "ar": "صفوف وأعمدة",
+            "ar_fusha": "صفوف وأعمدة",
+            "en": "Rows and Columns",
+          },
+        "content":
+          {
+            "ar": "نقدر ننظم معلومات عن كل هذي الأشياء في اتجاهين: صفوف وأعمدة.",
+            "ar_fusha": "يمكننا تنظيم معلومات عن كل هذه الأشياء في اتجاهين: صفوف وأعمدة.",
+            "en": "Information about all these things can be organized in two directions: rows and columns.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_examples" }],
+      },
+      {
+        "id": "cinema_build",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "ابنِ خريطة المقاعد",
+            "ar_fusha": "ابنِ خريطة المقاعد",
+            "en": "Build the Seat Map",
+          },
+        "content":
+          {
+            "ar": "\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0642\u0627\u0639\u062f \u0627\u0644\u0645\u0634\u063a\u0648\u0644\u0629 \u0645\u0646 \u0627\u0644\u062e\u0631\u064a\u0637\u0629. \u0627\u0644\u0645\u0634\u063a\u0648\u0644 \u0623\u062d\u0645\u0631\u060c \u0648\u0627\u0644\u0641\u0627\u0636\u064a \u0623\u062e\u0636\u0631. \u0628\u0639\u062f\u0647\u0627 \u062d\u0648\u0651\u0644\u0647\u0627 \u0625\u0644\u0649 1 \u06480.",
+            "ar_fusha": "\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0642\u0627\u0639\u062f \u0627\u0644\u0645\u0634\u063a\u0648\u0644\u0629 \u0645\u0646 \u0627\u0644\u062e\u0631\u064a\u0637\u0629. \u0627\u0644\u0645\u0634\u063a\u0648\u0644 \u0623\u062d\u0645\u0631\u060c \u0648\u0627\u0644\u0641\u0627\u0631\u063a \u0623\u062e\u0636\u0631. \u0628\u0639\u062f\u0647\u0627 \u062d\u0648\u0651\u0644\u0647\u0627 \u0625\u0644\u0649 1 \u06480.",
+            "en": "Choose the taken seats on the map. Taken is red, open is green. Then switch it to 1s and 0s.",
+
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "cinema_build_interaction",
+            "visualization_ref": "matrix-basics",
+            "required": true,
+            "config":
+              { "component_key": "matrix-basics", "stage": "build-cinema" },
+          },
+      },
+      {
+        "id": "matrix_reveal",
+        "type": "concept",
+        "title":
+          {
+            "ar": "هذه مصفوفة",
+            "ar_fusha": "هذه مصفوفة",
+            "en": "This Is a Matrix",
+          },
+        "content":
+          {
+            "ar": "\u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629 \u0647\u064a \u0623\u0631\u0642\u0627\u0645 \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629. \u0647\u0630\u0627 \u0627\u0644\u0645\u062b\u0627\u0644 \u0641\u064a\u0647 \u0635\u0641\u0627\u0646 \u06483 \u0623\u0639\u0645\u062f\u0629.",
+            "ar_fusha": "\u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629 \u0647\u064a \u0623\u0631\u0642\u0627\u0645 \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629. \u0647\u0630\u0627 \u0627\u0644\u0645\u062b\u0627\u0644 \u0641\u064a\u0647 \u0635\u0641\u0627\u0646 \u06483 \u0623\u0639\u0645\u062f\u0629.",
+            "en": "A matrix is numbers arranged in rows and columns. This example has 2 rows and 3 columns.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_latex_example" }],
+      },
+      {
+        "id": "matrix_check",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "\u0648\u0634 \u0647\u064a \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629\u061f",
+            "ar_fusha": "\u0645\u0627 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629\u061f",
+            "en": "What Is a Matrix?",
+          },
+        "content":
+          {
+            "ar": "\u0627\u062e\u062a\u0631 \u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0644\u064a \u064a\u0634\u0628\u0647 \u0627\u0644\u0645\u062b\u0627\u0644: \u0623\u0631\u0642\u0627\u0645 \u0644\u0647\u0627 \u062a\u0631\u062a\u064a\u0628 \u0648\u0627\u0636\u062d.",
+            "ar_fusha": "\u0627\u062e\u062a\u0631 \u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0630\u064a \u064a\u0634\u0628\u0647 \u0627\u0644\u0645\u062b\u0627\u0644: \u0623\u0639\u062f\u0627\u062f \u0644\u0647\u0627 \u062a\u0631\u062a\u064a\u0628 \u0648\u0627\u0636\u062d.",
+            "en": "Choose the description that matches the example: numbers with a clear order.",
+          },
+        "options":
+          [
+            {
+              "id": "correct",
+              "label":
+                {
+                  "ar": "\u0623\u0631\u0642\u0627\u0645 \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629",
+                  "ar_fusha": "\u0623\u0639\u062f\u0627\u062f \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629",
+                  "en": "Numbers arranged in rows and columns",
+                },
+            },
+            {
+              "id": "wrong",
+              "label":
+                {
+                  "ar": "\u0645\u0631\u0628\u0639\u0627\u062a \u0641\u0627\u0636\u064a\u0629 \u0645\u0646 \u063a\u064a\u0631 \u0623\u0631\u0642\u0627\u0645",
+                  "ar_fusha": "\u0645\u0631\u0628\u0639\u0627\u062a \u0641\u0627\u0631\u063a\u0629 \u0645\u0646 \u063a\u064a\u0631 \u0623\u0639\u062f\u0627\u062f",
+                  "en": "Empty boxes with no numbers",
+                },
+            },
+          ],
+        "correct_answer": "correct",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct": { "ar": "\u0635\u062d\u064a\u062d.", "ar_fusha": "\u0635\u062d\u064a\u062d.", "en": "Correct." },
+            "incorrect":
+              {
+                "ar": "\u0642\u0631\u064a\u0628. \u0627\u0644\u0641\u0643\u0631\u0629 \u0627\u0644\u0645\u0647\u0645\u0629: \u0623\u0631\u0642\u0627\u0645 \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629.",
+                "ar_fusha": "\u0642\u0631\u064a\u0628. \u0627\u0644\u0641\u0643\u0631\u0629 \u0627\u0644\u0645\u0647\u0645\u0629: \u0623\u0639\u062f\u0627\u062f \u0645\u0631\u062a\u0628\u0629 \u0641\u064a \u0635\u0641\u0648\u0641 \u0648\u0623\u0639\u0645\u062f\u0629.",
+                "en": "Close. The key idea is numbers arranged in rows and columns.",
+              },
+          },
+      },
+      {
+        "id": "cell_scan",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "\u0627\u0644\u0631\u0642\u0645 \u0648\u0645\u0643\u0627\u0646\u0647",
+            "ar_fusha": "\u0627\u0644\u0639\u062f\u062f \u0648\u0645\u0643\u0627\u0646\u0647",
+            "en": "The Number and Its Place",
+          },
+        "content":
+          {
+            "ar": "\u0627\u0636\u063a\u0637 \u0623\u064a \u0631\u0642\u0645 \u0641\u064a \u0627\u0644\u062c\u062f\u0648\u0644. \u0643\u0644 \u062e\u0644\u064a\u0629 \u0644\u0647\u0627 \u0635\u0641\u060c \u0639\u0645\u0648\u062f\u060c \u0648\u0642\u064a\u0645\u0629.",
+            "ar_fusha": "\u0627\u0636\u063a\u0637 \u0623\u064a \u0639\u062f\u062f \u0641\u064a \u0627\u0644\u062c\u062f\u0648\u0644. \u0643\u0644 \u062e\u0644\u064a\u0629 \u0644\u0647\u0627 \u0635\u0641\u060c \u0639\u0645\u0648\u062f\u060c \u0648\u0642\u064a\u0645\u0629.",
+            "en": "Tap any number in the table. Every cell has a row, a column, and a value.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "cell_scan_interaction",
+            "visualization_ref": "matrix-basics",
+            "required": true,
+            "config":
+              { "component_key": "matrix-basics", "stage": "cell-scanner" },
+          },
+      },
+      {
+        "id": "labels_removed",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "\u0627\u0644\u0631\u0642\u0645 \u0644\u0648\u062d\u062f\u0647 \u064a\u0643\u0641\u064a\u061f",
+            "ar_fusha": "\u0647\u0644 \u064a\u0643\u0641\u064a \u0627\u0644\u0639\u062f\u062f \u0648\u062d\u062f\u0647\u061f",
+            "en": "Is the Number Enough?",
+          },
+        "content":
+          {
+            "ar": "\u0642\u0628\u0644 \u0634\u0648\u064a \u0639\u0631\u0641\u0646\u0627 \u0627\u0644\u062e\u0644\u064a\u0629 \u0645\u0646 \u0635\u0641\u0647\u0627\u060c \u0639\u0645\u0648\u062f\u0647\u0627\u060c \u0648\u0631\u0642\u0645\u0647\u0627. \u0627\u0644\u0622\u0646 \u062a\u062e\u064a\u0651\u0644 \u0627\u0644\u0631\u0642\u0645 1 \u0644\u062d\u0627\u0644\u0647\u060c \u0628\u062f\u0648\u0646 \u0635\u0641 \u0648\u0644\u0627 \u0639\u0645\u0648\u062f. \u0647\u0644 \u0646\u0639\u0631\u0641 \u0623\u064a \u0645\u0642\u0639\u062f \u0647\u0648\u061f",
+            "ar_fusha": "\u0642\u0628\u0644 \u0642\u0644\u064a\u0644 \u0639\u0631\u0641\u0646\u0627 \u0627\u0644\u062e\u0644\u064a\u0629 \u0645\u0646 \u0635\u0641\u0647\u0627\u060c \u0639\u0645\u0648\u062f\u0647\u0627\u060c \u0648\u0639\u062f\u062f\u0647\u0627. \u0627\u0644\u0622\u0646 \u062a\u062e\u064a\u0651\u0644 \u0627\u0644\u0639\u062f\u062f 1 \u0648\u062d\u062f\u0647\u060c \u062f\u0648\u0646 \u0635\u0641 \u0648\u0644\u0627 \u0639\u0645\u0648\u062f. \u0647\u0644 \u0646\u0639\u0631\u0641 \u0623\u064a \u0645\u0642\u0639\u062f \u0647\u0648\u061f",
+            "en": "A moment ago, we understood a cell from its row, column, and number. Now imagine the number 1 by itself, with no row or column. Do we know which seat it is?",
+          },
+        "options":
+          [
+            {
+              "id": "occupied",
+              "label":
+                {
+                  "ar": "\u0646\u0639\u0645\u060c \u064a\u0643\u0641\u064a \u0623\u0646\u0647 1",
+                  "ar_fusha": "\u0646\u0639\u0645\u060c \u064a\u0643\u0641\u064a \u0623\u0646\u0647 \u0627\u0644\u0639\u062f\u062f 1",
+                  "en": "Yes, 1 is enough",
+                },
+            },
+            {
+              "id": "needs_position",
+              "label":
+                {
+                  "ar": "\u0644\u0627\u060c \u0646\u062d\u062a\u0627\u062c \u0627\u0644\u0635\u0641 \u0648\u0627\u0644\u0639\u0645\u0648\u062f",
+                  "ar_fusha": "\u0644\u0627\u060c \u0646\u062d\u062a\u0627\u062c \u0627\u0644\u0635\u0641 \u0648\u0627\u0644\u0639\u0645\u0648\u062f",
+                  "en": "No, we need the row and column",
+                },
+            },
+          ],
+        "correct_answer": "needs_position",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct":
+              {
+                "ar": "\u0628\u0627\u0644\u0636\u0628\u0637. \u0627\u0644\u0631\u0642\u0645 \u064a\u0639\u0637\u064a\u0646\u0627 \u0627\u0644\u0642\u064a\u0645\u0629\u060c \u0648\u0627\u0644\u0645\u0643\u0627\u0646 \u064a\u0639\u0637\u064a \u0645\u0639\u0646\u0649 \u0627\u0644\u062e\u0644\u064a\u0629.",
+                "ar_fusha": "\u0628\u0627\u0644\u0636\u0628\u0637. \u0627\u0644\u0639\u062f\u062f \u064a\u0639\u0637\u064a\u0646\u0627 \u0627\u0644\u0642\u064a\u0645\u0629\u060c \u0648\u0627\u0644\u0645\u0643\u0627\u0646 \u064a\u0639\u0637\u064a \u0645\u0639\u0646\u0649 \u0627\u0644\u062e\u0644\u064a\u0629.",
+                "en": "Exactly. The number gives the value, and the position gives the cell its meaning.",
+              },
+            "incorrect":
+              {
+                "ar": "\u0627\u0644\u0631\u0642\u0645 1 \u064a\u0639\u0637\u064a\u0646\u0627 \u0627\u0644\u0642\u064a\u0645\u0629\u060c \u0644\u0643\u0646\u0647 \u0645\u0627 \u064a\u0642\u0648\u0644 \u0644\u0646\u0627 \u0645\u0643\u0627\u0646\u0647\u0627.",
+                "ar_fusha": "\u0627\u0644\u0639\u062f\u062f 1 \u064a\u0639\u0637\u064a\u0646\u0627 \u0627\u0644\u0642\u064a\u0645\u0629\u060c \u0644\u0643\u0646\u0647 \u0644\u0627 \u064a\u062e\u0628\u0631\u0646\u0627 \u0645\u0643\u0627\u0646\u0647\u0627.",
+                "en": "The number 1 gives the value, but it does not tell us its position.",
+              },
+          },
+      },
+      {
+        "id": "cell_recap",
+        "type": "concept",
+        "title":
+          {
+            "ar": "\u062e\u0644\u064a\u0629 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629",
+            "ar_fusha": "\u062e\u0644\u064a\u0629 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629",
+            "en": "A Matrix Cell",
+          },
+        "content":
+          {
+            "ar": "\u0627\u0644\u062e\u0644\u064a\u0629 \u0647\u064a \u0631\u0642\u0645 \u0648\u0627\u062d\u062f \u062f\u0627\u062e\u0644 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629. \u0646\u0639\u0631\u0641\u0647 \u0645\u0646 \u0645\u0643\u0627\u0646\u0647: \u0635\u0641 \u0648\u0639\u0645\u0648\u062f. \u0645\u062b\u0627\u0644: 5 \u0641\u064a \u0627\u0644\u0635\u0641 \u0627\u0644\u062b\u0627\u0646\u064a \u0648\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u062b\u0627\u0646\u064a.",
+            "ar_fusha": "\u0627\u0644\u062e\u0644\u064a\u0629 \u0647\u064a \u0639\u062f\u062f \u0648\u0627\u062d\u062f \u062f\u0627\u062e\u0644 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629. \u0646\u0639\u0631\u0641\u0647 \u0645\u0646 \u0645\u0643\u0627\u0646\u0647: \u0635\u0641 \u0648\u0639\u0645\u0648\u062f. \u0645\u062b\u0627\u0644: 5 \u0641\u064a \u0627\u0644\u0635\u0641 \u0627\u0644\u062b\u0627\u0646\u064a \u0648\u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u062b\u0627\u0646\u064a.",
+            "en": "A cell is one number inside a matrix. We identify it by its place: row and column. Example: 5 is in row 2, column 2.",
+          },
+        "interaction":
+          {
+            "id": "matrix_cell_recap_interaction",
+            "visualization_ref": "matrix-basics",
+            "config":
+              { "component_key": "matrix-basics", "stage": "cell-recap" },
+          },
+      },
+      {
+        "id": "tung_pixel_values",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "\u0627\u0644\u0635\u0648\u0631\u0629 \u0643\u0645\u0635\u0641\u0648\u0641\u0629",
+            "ar_fusha": "\u0627\u0644\u0635\u0648\u0631\u0629 \u0643\u0645\u0635\u0641\u0648\u0641\u0629",
+            "en": "The Image as a Matrix",
+          },
+        "content":
+          {
+            "ar": "\u062d\u0631\u0651\u0643 \u0627\u0644\u0645\u0624\u0634\u0631 \u0641\u0648\u0642 \u0635\u0648\u0631\u0629 \u062a\u0648\u0646\u063a. \u0627\u0644\u0645\u0648\u0636\u0639 \u0627\u0644\u0644\u064a \u062a\u0648\u0642\u0641 \u0639\u0646\u062f\u0647 \u064a\u0638\u0647\u0631 \u0643\u0645\u0635\u0641\u0648\u0641\u0629 \u0635\u063a\u064a\u0631\u0629 \u0645\u0646 \u0642\u064a\u0645 \u0627\u0644\u0628\u0643\u0633\u0644\u0627\u062a.",
+            "ar_fusha": "\u062d\u0631\u0651\u0643 \u0627\u0644\u0645\u0624\u0634\u0631 \u0641\u0648\u0642 \u0635\u0648\u0631\u0629 \u062a\u0648\u0646\u063a. \u0627\u0644\u0645\u0648\u0636\u0639 \u0627\u0644\u0630\u064a \u062a\u0642\u0641 \u0639\u0646\u062f\u0647 \u064a\u0638\u0647\u0631 \u0643\u0645\u0635\u0641\u0648\u0641\u0629 \u0635\u063a\u064a\u0631\u0629 \u0645\u0646 \u0642\u064a\u0645 \u0627\u0644\u0628\u0643\u0633\u0644\u0627\u062a.",
+            "en": "Move over the Tung image. The spot under the pointer appears as a small matrix of pixel values.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "tung_pixel_values_interaction",
+            "visualization_ref": "tung-pixel-zoom",
+            "required": true,
+            "config":
+              { "component_key": "tung-pixel-zoom", "stage": "grayscale-matrix" },
+          },
+      },
+      {
+        "id": "pixel_character_build",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "\u0643\u0645\u0651\u0644 \u0634\u062e\u0635\u064a\u0629 \u0627\u0644\u0628\u0643\u0633\u0644",
+            "ar_fusha": "\u0623\u0643\u0645\u0644 \u0634\u062e\u0635\u064a\u0629 \u0627\u0644\u0628\u0643\u0633\u0644",
+            "en": "Complete the Pixel Character",
+          },
+        "content":
+          {
+            "ar": "\u0627\u0645\u0644\u0623 \u0627\u0644\u062e\u0644\u0627\u064a\u0627 \u0627\u0644\u0641\u0627\u0631\u063a\u0629 \u0644\u062a\u0637\u0627\u0628\u0642 \u0627\u0644\u0647\u062f\u0641: 0 \u062e\u0644\u0641\u064a\u0629\u060c 1 \u0628\u062f\u0644\u0629 \u062d\u0645\u0631\u0627\u0621\u060c 2 \u0632\u062c\u0627\u062c \u0623\u0632\u0631\u0642.",
+            "ar_fusha": "\u0627\u0645\u0644\u0623 \u0627\u0644\u062e\u0644\u0627\u064a\u0627 \u0627\u0644\u0641\u0627\u0631\u063a\u0629 \u0644\u062a\u0637\u0627\u0628\u0642 \u0627\u0644\u0647\u062f\u0641: 0 \u062e\u0644\u0641\u064a\u0629\u060c 1 \u0628\u062f\u0644\u0629 \u062d\u0645\u0631\u0627\u0621\u060c 2 \u0632\u062c\u0627\u062c \u0623\u0632\u0631\u0642.",
+            "en": "Fill the empty cells to match the target: 0 background, 1 red suit, 2 blue visor.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "pixel_character_build_interaction",
+            "visualization_ref": "pixel-character",
+            "required": true,
+            "config":
+              { "component_key": "pixel-character", "stage": "guided-build" },
+          },
+      },
+      {
+        "id": "pixel_views",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "\u0635\u0648\u0631\u0629 \u0623\u0648 \u0623\u0631\u0642\u0627\u0645\u061f",
+            "ar_fusha": "\u0635\u0648\u0631\u0629 \u0623\u0645 \u0623\u0639\u062f\u0627\u062f\u061f",
+            "en": "Picture or Numbers?",
+          },
+        "content":
+          {
+            "ar": "\u0628\u062f\u0651\u0644 \u0628\u064a\u0646 \u0627\u0644\u0635\u0648\u0631\u0629\u060c \u0627\u0644\u0623\u0631\u0642\u0627\u0645\u060c \u0648\u0645\u0639\u064b\u0627. \u0646\u0641\u0633 \u0627\u0644\u0642\u064a\u0645 \u064a\u0645\u0643\u0646 \u0623\u0646 \u062a\u0638\u0647\u0631 \u0643\u0635\u0648\u0631\u0629 \u0623\u0648 \u0643\u0645\u0635\u0641\u0648\u0641\u0629.",
+            "ar_fusha": "\u0628\u062f\u0651\u0644 \u0628\u064a\u0646 \u0627\u0644\u0635\u0648\u0631\u0629\u060c \u0627\u0644\u0623\u0639\u062f\u0627\u062f\u060c \u0648\u0645\u0639\u064b\u0627. \u0646\u0641\u0633 \u0627\u0644\u0642\u064a\u0645 \u064a\u0645\u0643\u0646 \u0623\u0646 \u062a\u0638\u0647\u0631 \u0643\u0635\u0648\u0631\u0629 \u0623\u0648 \u0643\u0645\u0635\u0641\u0648\u0641\u0629.",
+            "en": "Switch between picture, numbers, and both. The same values can appear as an image or as a matrix.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "pixel_views_interaction",
+            "visualization_ref": "pixel-character",
+            "required": true,
+            "config":
+              { "component_key": "pixel-character", "stage": "view-switch" },
+          },
+      },
+      {
+        "id": "edit_not_multiply",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "\u063a\u064a\u0651\u0631 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629",
+            "ar_fusha": "\u063a\u064a\u0651\u0631 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629",
+            "en": "Change the Matrix",
+          },
+        "content":
+          {
+            "ar": "\u062c\u0631\u0651\u0628 \u062a\u063a\u064a\u064a\u0631 \u0628\u0643\u0633\u0644\u060c \u062a\u0635\u0641\u064a\u0631 \u0628\u0643\u0633\u0644\u060c \u0648\u062a\u0628\u062f\u064a\u0644 \u0635\u0641\u064a\u0646. \u0634\u0627\u0647\u062f \u0643\u064a\u0641 \u062a\u062a\u063a\u064a\u0631 \u0627\u0644\u0635\u0648\u0631\u0629.",
+            "ar_fusha": "\u062c\u0631\u0651\u0628 \u062a\u063a\u064a\u064a\u0631 \u0628\u0643\u0633\u0644\u060c \u062a\u0635\u0641\u064a\u0631 \u0628\u0643\u0633\u0644\u060c \u0648\u062a\u0628\u062f\u064a\u0644 \u0635\u0641\u064a\u0646. \u0634\u0627\u0647\u062f \u0643\u064a\u0641 \u062a\u062a\u063a\u064a\u0631 \u0627\u0644\u0635\u0648\u0631\u0629.",
+            "en": "Try changing a pixel, setting a pixel to 0, and swapping two rows. Watch how the image changes.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "edit_not_multiply_interaction",
+            "visualization_ref": "pixel-character",
+            "required": true,
+            "config": { "component_key": "pixel-character", "stage": "edits" },
+          },
+      },
+      {
+        "id": "cafe_problem",
+        "type": "story",
+        "title":
+          {
+            "ar": "طلبات المجلس",
+            "ar_fusha": "طلبات المجلس",
+            "en": "The Majlis Orders",
+          },
+        "content":
+          {
+            "ar": "سارة وفهد طلبوا قهوة سعودية وكرك. أولًا نرتب طلباتهم في جدول. بعدين نعرف من الجدول الثاني كم كوب وماء وحليب نحتاج للمجلس.",
+            "ar_fusha": "طلبت سارة وفهد قهوة سعودية وكركًا. أولًا نرتب طلباتهم في جدول. بعد ذلك نعرف من جدول ثان كم كوب وماء وحليب نحتاج للمجلس.",
+            "en": "Sara, Fahad ordered Saudi coffee and karak. First, we organize their orders in a table. Then a second table tells us how many cups, water, and milk the majlis needs.",
+          },
+        "media": [{ "type": "image", "ref": "majlis_orders" }],
+      },
+      {
+        "id": "cafe_orders",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "من طلب وش؟",
+            "ar_fusha": "مَن طلب ماذا؟",
+            "en": "Who Ordered What?",
+          },
+        "content":
+          {
+            "ar": "ابدأ من الصفر. اكتب طلب سارة وفهد، وكل رقم تغيّره يتحرك إلى مكانه في مصفوفة الطلبات.",
+            "ar_fusha": "ابدأ من الصفر. اكتب طلب سارة وفهد، وكل رقم تغيّره يتحرك إلى مكانه في مصفوفة الطلبات.",
+            "en": "Start from zero. Enter Sara and Fahad’s orders, and each number you change moves into its place in the orders matrix.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "cafe_orders_interaction",
+            "visualization_ref": "saudi-cafe-matrix",
+            "required": true,
+            "config":
+              { "component_key": "saudi-cafe-matrix", "stage": "orders" },
+          },
+      },
+      {
+        "id": "cafe_recipes",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "كل مشروب يحتاج وش؟",
+            "ar_fusha": "ماذا يحتاج كل مشروب؟",
+            "en": "What Does Each Drink Need?",
+          },
+        "content":
+          {
+            "ar": "شف الجدول الثاني: كل صف مشروب، وكل عمود شيء نحتاجه لتحضير حصة واحدة.",
+            "ar_fusha": "انظر إلى الجدول الثاني: كل صف مشروب، وكل عمود شيء نحتاجه لتحضير حصة واحدة.",
+            "en": "Look at the second table: each row is a drink, and each column is something needed for one serving.",
+          },
+        "completion_required": false,
+        "interaction":
+          {
+            "id": "cafe_recipes_interaction",
+            "visualization_ref": "saudi-cafe-matrix",
+            "required": false,
+            "config": { "component_key": "saudi-cafe-matrix", "stage": "recipes" },
+          },
+      },
+      {
+        "id": "shared_drinks",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "وش يربط الجدولين؟",
+            "ar_fusha": "ما الذي يربط الجدولين؟",
+            "en": "What Connects the Tables?",
+          },
+        "content":
+          {
+            "ar": "جدول الطلبات ينتهي بالمشروبات. وجدول الاحتياج يبدأ بالمشروبات. اختر الكلمة المشتركة.",
+            "ar_fusha": "جدول الطلبات ينتهي بالمشروبات. وجدول الاحتياج يبدأ بالمشروبات. اختر الكلمة المشتركة.",
+            "en": "The orders table ends with drinks. The needs table starts with drinks. Choose the shared word.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "shared_drinks_interaction",
+            "visualization_ref": "saudi-cafe-matrix",
+            "required": true,
+            "config": { "component_key": "saudi-cafe-matrix", "stage": "shared-link" },
+          },
+      },
+      {
+        "id": "row_column_demo",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "صف يلتقي بعمود",
+            "ar_fusha": "صف يلتقي بعمود",
+            "en": "A Row Meets a Column",
+          },
+        "content":
+          {
+            "ar": "تابع صف سارة وعمود الأكواب. اضرب كل زوج، ثم اجمع النواتج.",
+            "ar_fusha": "تابع صف سارة وعمود الأكواب. اضرب كل زوج، ثم اجمع النواتج.",
+            "en": "Follow Sara’s row and the Cups column. Multiply each pair, then add the products.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "row_column_demo_interaction",
+            "visualization_ref": "saudi-cafe-matrix",
+            "required": true,
+            "config":
+              {
+                "component_key": "saudi-cafe-matrix",
+                "stage": "row-column-demo",
+              },
+          },
+      },
+      {
+        "id": "calculate_milk",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "دورك: الحليب",
+            "ar_fusha": "دورك: الحليب",
+            "en": "Your Turn: Milk",
+          },
+        "options":
+          [
+            { "id": "0", "label": { "ar": "0", "ar_fusha": "0", "en": "0" } },
+            { "id": "1", "label": { "ar": "1", "ar_fusha": "1", "en": "1" } },
+            { "id": "3", "label": { "ar": "3", "ar_fusha": "3", "en": "3" } },
+          ],
+        "correct_answer": "1",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct": { "ar": "صحيح.", "ar_fusha": "صحيح.", "en": "Correct." },
+            "incorrect":
+              {
+                "ar": "جرّب مرة ثانية.",
+                "ar_fusha": "جرّب مرة ثانية.",
+                "en": "Try again.",
+              },
+          },
+        "content":
+          {
+            "ar": "سارة طلبت قهوتين سعوديتين وكركًا واحدًا. كم حصة حليب تحتاج؟",
+            "ar_fusha": "طلبت سارة قهوتين سعوديتين وكركًا واحدًا. كم حصة حليب تحتاج؟",
+            "en": "Sara ordered two Saudi coffees and one karak. How many milk portions are needed?",
+          },
+      },
+      {
+        "id": "multiplication_meaning",
+        "type": "concept",
+        "title":
+          {
+            "ar": "وش سوينا؟",
+            "ar_fusha": "ماذا فعلنا؟",
+            "en": "What Did We Do?",
+          },
+        "content":
+          {
+            "ar": "كل خلية جديدة تجمع كل الطرق اللي تربط صفًا من الأولى بعمود من الثانية. هذا هو قلب ضرب المصفوفات.",
+            "ar_fusha": "تجمع كل خلية جديدة جميع الطرق التي تربط صفًا من الأولى بعمود من الثانية. هذا هو جوهر ضرب المصفوفات.",
+            "en": "Each new cell combines every path connecting a row from the first matrix to a column from the second.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+        "cards":
+          [
+            {
+              "id": "visual",
+              "title":
+                {
+                  "ar": "مرساة بصرية",
+                  "ar_fusha": "مرساة بصرية",
+                  "en": "Visual anchor",
+                },
+              "body":
+                {
+                  "ar": "تابع الرسم ثم انتقل.",
+                  "ar_fusha": "تابع الرسم ثم انتقل.",
+                  "en": "Use the visual, then continue.",
+                },
+            },
+          ],
+      },
+      {
+        "id": "connect_labels",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "أي مصفوفتين تركب؟",
+            "ar_fusha": "أي مصفوفتين تتصلان؟",
+            "en": "Which Matrices Connect?",
+          },
+        "content":
+          {
+            "ar": "اختر الأزواج اللي تشترك في الفئة الوسطى نفسها.",
+            "ar_fusha": "اختر الأزواج التي تشترك في الفئة الوسطى نفسها.",
+            "en": "Choose pairs sharing the same middle category.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "connect_labels_interaction",
+            "visualization_ref": "saudi-cafe-matrix",
+            "required": true,
+            "config":
+              {
+                "component_key": "saudi-cafe-matrix",
+                "stage": "compatibility-labels",
+              },
+          },
+      },
+      {
+        "id": "dimensions_reveal",
+        "type": "concept",
+        "title":
+          {
+            "ar": "والأحجام؟",
+            "ar_fusha": "وماذا عن الأحجام؟",
+            "en": "What About the Sizes?",
+          },
+        "content":
+          {
+            "ar": "3×2 تضرب 2×3 لأن الرقمين في الوسط متساويان. الناتج يأخذ الحجم الخارجي: 3×3.",
+            "ar_fusha": "يمكن ضرب 3×2 في 2×3 لأن العددين في الوسط متساويان. يأخذ الناتج الحجم الخارجي: 3×3.",
+            "en": "3×2 can multiply 2×3 because the middle sizes match. The result keeps the outer size: 3×3.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "dimensions_reveal_interaction",
+            "visualization_ref": "saudi-cafe-matrix",
+            "required": true,
+            "config":
+              { "component_key": "saudi-cafe-matrix", "stage": "dimensions" },
+          },
+      },
+      {
+        "id": "transform_predict",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "وش يصير للشخصية؟",
+            "ar_fusha": "ماذا سيحدث للشخصية؟",
+            "en": "What Will Happen to the Character?",
+          },
+        "content":
+          {
+            "ar": "شوف مصفوفة العكس الجاهزة. تتوقع الشخصية تنعكس، تكبر، أو تختفي؟",
+            "ar_fusha": "انظر إلى مصفوفة العكس الجاهزة. هل تتوقع أن تنعكس الشخصية أم تكبر أم تختفي؟",
+            "en": "Look at the prepared reversal matrix. Will the character mirror, grow, or disappear?",
+          },
+        "options":
+          [
+            {
+              "id": "mirror",
+              "label": { "ar": "تنعكس", "ar_fusha": "تنعكس", "en": "Mirror" },
+            },
+            {
+              "id": "grow",
+              "label": { "ar": "تكبر", "ar_fusha": "تكبر", "en": "Grow" },
+            },
+            {
+              "id": "disappear",
+              "label":
+                { "ar": "تختفي", "ar_fusha": "تختفي", "en": "Disappear" },
+            },
+          ],
+        "correct_answer": "mirror",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct": { "ar": "صحيح.", "ar_fusha": "صحيح.", "en": "Correct." },
+            "incorrect":
+              {
+                "ar": "جرّب مرة ثانية.",
+                "ar_fusha": "جرّب مرة ثانية.",
+                "en": "Try again.",
+              },
+          },
+      },
+      {
+        "id": "transform_calculate",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "احسب بكسلًا واحدًا",
+            "ar_fusha": "احسب بكسلًا واحدًا",
+            "en": "Calculate One Pixel",
+          },
+        "content":
+          {
+            "ar": "تابع صفًا من الشخصية وعمودًا من مصفوفة العكس. احسب الخلية المحددة.",
+            "ar_fusha": "تابع صفًا من الشخصية وعمودًا من مصفوفة العكس. احسب الخلية المحددة.",
+            "en": "Follow a character row and a reversal-matrix column. Calculate the highlighted cell.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "transform_calculate_interaction",
+            "visualization_ref": "pixel-transform",
+            "required": true,
+            "config":
+              { "component_key": "pixel-transform", "stage": "one-cell" },
+          },
+      },
+      {
+        "id": "transform_reveal",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "شغّل التحويل",
+            "ar_fusha": "شغّل التحويل",
+            "en": "Run the Transformation",
+          },
+        "content":
+          {
+            "ar": "شغّل بقية الحسابات وشوف النسخة المعكوسة جنب الأصل.",
+            "ar_fusha": "شغّل بقية الحسابات وشاهد النسخة المعكوسة بجوار الأصل.",
+            "en": "Run the remaining calculations and see the mirrored version beside the original.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "transform_reveal_interaction",
+            "visualization_ref": "pixel-transform",
+            "required": true,
+            "config":
+              { "component_key": "pixel-transform", "stage": "run-all" },
+          },
+      },
+      {
+        "id": "transform_meaning",
+        "type": "concept",
+        "title":
+          {
+            "ar": "بيانات وتعليمة",
+            "ar_fusha": "بيانات وتعليمة",
+            "en": "Data and an Instruction",
+          },
+        "content":
+          {
+            "ar": "مصفوفة حملت شكل الشخصية، ومصفوفة ثانية حملت طريقة إعادة ترتيبها.",
+            "ar_fusha": "حملت مصفوفة شكل الشخصية، وحملت مصفوفة أخرى طريقة إعادة ترتيبها.",
+            "en": "One matrix held the character data; another held instructions for rearranging it.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+        "cards":
+          [
+            {
+              "id": "visual",
+              "title":
+                {
+                  "ar": "مرساة بصرية",
+                  "ar_fusha": "مرساة بصرية",
+                  "en": "Visual anchor",
+                },
+              "body":
+                {
+                  "ar": "تابع الرسم ثم انتقل.",
+                  "ar_fusha": "تابع الرسم ثم انتقل.",
+                  "en": "Use the visual, then continue.",
+                },
+            },
+          ],
+      },
+      {
+        "id": "examples_carousel",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "المصفوفات مو بس صور",
+            "ar_fusha": "المصفوفات ليست للصور فقط",
+            "en": "Matrices Are Not Only for Images",
+          },
+        "content":
+          {
+            "ar": "تنقل بين أمثلة بسيطة ومتوسطة ومتقدمة ومرتبطة بالذكاء الاصطناعي. اضغط خلية في كل مثال لتعرف معناها.",
+            "ar_fusha": "تنقل بين أمثلة بسيطة ومتوسطة ومتقدمة ومرتبطة بالذكاء الاصطناعي. اضغط خلية في كل مثال لتعرف معناها.",
+            "en": "Explore simple, medium, advanced, and AI examples. Tap a cell in each to see its meaning.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "examples_carousel_interaction",
+            "visualization_ref": "matrix-basics",
+            "required": true,
+            "config":
+              {
+                "component_key": "matrix-basics",
+                "stage": "examples-carousel",
+              },
+          },
+      },
+      {
+        "id": "ai_pipeline",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "داخل مولّد الصور",
+            "ar_fusha": "داخل مولّد الصور",
+            "en": "Inside an Image Generator",
+          },
+        "content":
+          {
+            "ar": "حرّك بين المراحل: كلمات، أعداد، ضجيج، طبقات حساب، ثم بكسلات. ما فيه توليد حي هنا.",
+            "ar_fusha": "تنقل بين المراحل: كلمات، أعداد، ضجيج، طبقات حساب، ثم بكسلات. لا يوجد توليد حي هنا.",
+            "en": "Move through words, numbers, noise, computation layers, and pixels. No live generation is used.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "ai_pipeline_interaction",
+            "visualization_ref": "ai-compute-scale",
+            "required": true,
+            "config":
+              {
+                "component_key": "ai-compute-scale",
+                "stage": "image-pipeline",
+              },
+          },
+      },
+      {
+        "id": "ai_matrix_reveal",
+        "type": "concept",
+        "title":
+          {
+            "ar": "العملية تتكرر كثير",
+            "ar_fusha": "تتكرر العملية كثيرًا",
+            "en": "The Operation Repeats Many Times",
+          },
+        "content":
+          {
+            "ar": "مولّدات الصور الحديثة تغيّر تمثيلات عددية مرة بعد مرة. ضرب المصفوفات من أهم العمليات اللي تتكرر داخلها.",
+            "ar_fusha": "تغيّر مولدات الصور الحديثة تمثيلات عددية مرارًا. ويعد ضرب المصفوفات من أهم العمليات المتكررة داخلها.",
+            "en": "Modern image generators repeatedly transform numerical representations. Matrix multiplication is one of their most repeated operations.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+        "cards":
+          [
+            {
+              "id": "visual",
+              "title":
+                {
+                  "ar": "مرساة بصرية",
+                  "ar_fusha": "مرساة بصرية",
+                  "en": "Visual anchor",
+                },
+              "body":
+                {
+                  "ar": "تابع الرسم ثم انتقل.",
+                  "ar_fusha": "تابع الرسم ثم انتقل.",
+                  "en": "Use the visual, then continue.",
+                },
+            },
+          ],
+      },
+      {
+        "id": "operations_guess",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "كم عملية لصورة وحدة؟",
+            "ar_fusha": "كم عملية لصورة واحدة؟",
+            "en": "How Many Operations for One Image?",
+          },
+        "content":
+          {
+            "ar": "اختر أقرب تقدير لصورة FLUX.1-dev بحجم 1024×1024 ونحو 50 خطوة.",
+            "ar_fusha": "اختر أقرب تقدير لصورة FLUX.1-dev بحجم 1024×1024 ونحو 50 خطوة.",
+            "en": "Choose the closest estimate for one 1024×1024 FLUX.1-dev image at about 50 steps.",
+          },
+        "options":
+          [
+            {
+              "id": "million",
+              "label": { "ar": "مليون", "ar_fusha": "مليون", "en": "Million" },
+            },
+            {
+              "id": "billion",
+              "label": { "ar": "مليار", "ar_fusha": "مليار", "en": "Billion" },
+            },
+            {
+              "id": "trillion",
+              "label":
+                { "ar": "تريليون", "ar_fusha": "تريليون", "en": "Trillion" },
+            },
+            {
+              "id": "quadrillion",
+              "label":
+                {
+                  "ar": "أكثر من كوادريليون",
+                  "ar_fusha": "أكثر من كوادريليون",
+                  "en": "More than a quadrillion",
+                },
+            },
+          ],
+        "correct_answer": "quadrillion",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct": { "ar": "صحيح.", "ar_fusha": "صحيح.", "en": "Correct." },
+            "incorrect":
+              {
+                "ar": "جرّب مرة ثانية.",
+                "ar_fusha": "جرّب مرة ثانية.",
+                "en": "Try again.",
+              },
+          },
+      },
+      {
+        "id": "operations_counter",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "كبر الرقم",
+            "ar_fusha": "كبّر العدد",
+            "en": "Grow the Number",
+          },
+        "content":
+          {
+            "ar": "اضغط تشغيل وشوف العداد ينتقل من الآلاف إلى 3,720,000,000,000,000.",
+            "ar_fusha": "اضغط تشغيل وشاهد العداد ينتقل من الآلاف إلى 3,720,000,000,000,000.",
+            "en": "Press play and watch the counter grow from thousands to 3,720,000,000,000,000.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "operations_counter_interaction",
+            "visualization_ref": "ai-compute-scale",
+            "required": true,
+            "config":
+              {
+                "component_key": "ai-compute-scale",
+                "stage": "operation-counter",
+              },
+          },
+      },
+      {
+        "id": "human_time",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "لو حسبها إنسان؟",
+            "ar_fusha": "لو حسبها إنسان؟",
+            "en": "What If a Human Calculated It?",
+          },
+        "content":
+          {
+            "ar": "افترض شخصًا سريعًا جدًا يحل عمليتين كل ثانية بلا نوم. كم يحتاج؟",
+            "ar_fusha": "افترض شخصًا سريعًا جدًا يحل عمليتين كل ثانية دون نوم. كم يحتاج؟",
+            "en": "Assume an extremely fast person completes two operations every second without sleep. How long would it take?",
+          },
+        "options":
+          [
+            {
+              "id": "59",
+              "label":
+                { "ar": "59 سنة", "ar_fusha": "59 سنة", "en": "59 years" },
+            },
+            {
+              "id": "59k",
+              "label":
+                {
+                  "ar": "59 ألف سنة",
+                  "ar_fusha": "59 ألف سنة",
+                  "en": "59 thousand years",
+                },
+            },
+            {
+              "id": "59m",
+              "label":
+                {
+                  "ar": "59 مليون سنة",
+                  "ar_fusha": "59 مليون سنة",
+                  "en": "59 million years",
+                },
+            },
+          ],
+        "correct_answer": "59m",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct": { "ar": "صحيح.", "ar_fusha": "صحيح.", "en": "Correct." },
+            "incorrect":
+              {
+                "ar": "جرّب مرة ثانية.",
+                "ar_fusha": "جرّب مرة ثانية.",
+                "en": "Try again.",
+              },
+          },
+      },
+      {
+        "id": "parallelism_gpu",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "الآلة ما تشتغل لحالها",
+            "ar_fusha": "الآلة لا تعمل كفرد واحد",
+            "en": "The Machine Is Not One Worker",
+          },
+        "content":
+          {
+            "ar": "حرّك عدد العمال من 1 إلى آلاف. شوف كيف تنقسم الحسابات. بعدها يظهر اسم المعالج المتخصص: GPU.",
+            "ar_fusha": "حرّك عدد العمال من 1 إلى آلاف. شاهد كيف تنقسم الحسابات. ثم يظهر اسم المعالج المتخصص: GPU.",
+            "en": "Increase the workers from one to thousands and watch the work split. Then meet the specialized processor: GPU.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "parallelism_gpu_interaction",
+            "visualization_ref": "ai-compute-scale",
+            "required": true,
+            "config":
+              {
+                "component_key": "ai-compute-scale",
+                "stage": "parallel-workers",
+              },
+          },
+      },
+      {
+        "id": "demand_scale",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "من تونغ واحد لمليون",
+            "ar_fusha": "من تونغ واحد إلى مليون",
+            "en": "From One Tung to One Million",
+          },
+        "content":
+          {
+            "ar": "حرّك الطلب من صورة إلى مليون صورة. راقب عدد الآلات والذاكرة المطلوبة.",
+            "ar_fusha": "حرّك الطلب من صورة واحدة إلى مليون صورة. راقب عدد الآلات والذاكرة المطلوبة.",
+            "en": "Scale demand from one image to one million and watch the machines and memory increase.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "demand_scale_interaction",
+            "visualization_ref": "ai-compute-scale",
+            "required": true,
+            "config":
+              { "component_key": "ai-compute-scale", "stage": "demand-scale" },
+          },
+      },
+      {
+        "id": "memory_workspace",
+        "type": "concept",
+        "title":
+          {
+            "ar": "ليش تحتاج ذاكرة؟",
+            "ar_fusha": "لماذا تحتاج ذاكرة؟",
+            "en": "Why Is Memory Needed?",
+          },
+        "content":
+          {
+            "ar": "المعالج يحتاج أعداد النموذج والنتائج المؤقتة قريبة منه. الذاكرة هي مساحة العمل السريعة.",
+            "ar_fusha": "يحتاج المعالج أعداد النموذج والنتائج المؤقتة قريبة منه. الذاكرة هي مساحة العمل السريعة.",
+            "en": "The processor needs model numbers and temporary results nearby. Memory is the fast workspace.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+        "cards":
+          [
+            {
+              "id": "visual",
+              "title":
+                {
+                  "ar": "مرساة بصرية",
+                  "ar_fusha": "مرساة بصرية",
+                  "en": "Visual anchor",
+                },
+              "body":
+                {
+                  "ar": "تابع الرسم ثم انتقل.",
+                  "ar_fusha": "تابع الرسم ثم انتقل.",
+                  "en": "Use the visual, then continue.",
+                },
+            },
+          ],
+      },
+      {
+        "id": "ram_market_nuance",
+        "type": "concept",
+        "title":
+          {
+            "ar": "هل AI هو السبب الوحيد؟",
+            "ar_fusha": "هل الذكاء الاصطناعي هو السبب الوحيد؟",
+            "en": "Is AI the Only Cause?",
+          },
+        "content":
+          {
+            "ar": "لا. أسعار الرام تتأثر بالعرض والمصانع وأنواع الذاكرة والطلب. لكن توسع الذكاء الاصطناعي زاد الطلب على ذاكرة سريعة وصار جزءًا مهمًا من القصة.",
+            "ar_fusha": "لا. تتأثر أسعار الذاكرة بالعرض والمصانع وأنواع الذاكرة والطلب. لكن توسع الذكاء الاصطناعي زاد الطلب على الذاكرة السريعة وأصبح جزءًا مهمًا من القصة.",
+            "en": "No. Memory prices also depend on supply, factories, memory types, and demand. But AI expansion has increased fast-memory demand and become an important part of the story.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+        "cards":
+          [
+            {
+              "id": "visual",
+              "title":
+                {
+                  "ar": "مرساة بصرية",
+                  "ar_fusha": "مرساة بصرية",
+                  "en": "Visual anchor",
+                },
+              "body":
+                {
+                  "ar": "تابع الرسم ثم انتقل.",
+                  "ar_fusha": "تابع الرسم ثم انتقل.",
+                  "en": "Use the visual, then continue.",
+                },
+            },
+          ],
+      },
+      {
+        "id": "language_models",
+        "type": "interactive",
+        "title":
+          {
+            "ar": "مو الصور بس",
+            "ar_fusha": "ليست الصور وحدها",
+            "en": "Not Only Images",
+          },
+        "content":
+          {
+            "ar": "اكتب جملة قصيرة. شوفها تتحول إلى رموز عددية تمر عبر طبقات من عمليات المصفوفات، ثم يظهر تقدير تعليمي تقريبي.",
+            "ar_fusha": "اكتب جملة قصيرة. شاهدها تتحول إلى رموز عددية تمر عبر طبقات من عمليات المصفوفات، ثم يظهر تقدير تعليمي تقريبي.",
+            "en": "Type a short sentence. Watch it become numerical tokens passing through matrix-heavy layers, then see a rough educational estimate.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "language_models_interaction",
+            "visualization_ref": "ai-compute-scale",
+            "required": true,
+            "config":
+              {
+                "component_key": "ai-compute-scale",
+                "stage": "language-model",
+              },
+          },
+      },
+      {
+        "id": "final_verdict",
+        "type": "exercise",
+        "title":
+          {
+            "ar": "الحكم على تونغ",
+            "ar_fusha": "الحكم على تونغ",
+            "en": "The Verdict on Tung",
+          },
+        "options":
+          [
+            {
+              "id": "guilty",
+              "label": { "ar": "مذنب", "ar_fusha": "مذنب", "en": "Guilty" },
+            },
+            {
+              "id": "innocent",
+              "label": { "ar": "بريء", "ar_fusha": "بريء", "en": "Not guilty" },
+            },
+            {
+              "id": "association",
+              "label":
+                {
+                  "ar": "مذنب بالارتباط فقط",
+                  "ar_fusha": "مذنب بالارتباط فقط",
+                  "en": "Guilty by association",
+                },
+            },
+          ],
+        "correct_answer": "association",
+        "require_correct_answer": true,
+        "feedback":
+          {
+            "correct": { "ar": "صحيح.", "ar_fusha": "صحيح.", "en": "Correct." },
+            "incorrect":
+              {
+                "ar": "جرّب مرة ثانية.",
+                "ar_fusha": "جرّب مرة ثانية.",
+                "en": "Try again.",
+              },
+          },
+        "content":
+          {
+            "ar": "بعد كل الأدلة، وش الحكم؟",
+            "ar_fusha": "بعد جميع الأدلة، ما الحكم؟",
+            "en": "After all the evidence, what is the verdict?",
+          },
+      },
+      {
+        "id": "verdict_reveal",
+        "type": "concept",
+        "title":
+          {
+            "ar": "مذنب بالارتباط فقط",
+            "ar_fusha": "مذنب بالارتباط فقط",
+            "en": "Guilty by Association Only",
+          },
+        "content":
+          {
+            "ar": "صورة تونغ وحدة ما غلّت الرام. لكن ملايين طلبات الصور والنصوص تحتاج آلات كثيرة وذاكرة سريعة؛ وهذا صار عاملًا في سوق الذاكرة.",
+            "ar_fusha": "لم تجعل صورة تونغ واحدة الذاكرة غالية. لكن ملايين طلبات الصور والنصوص تحتاج آلات كثيرة وذاكرة سريعة؛ وأصبح ذلك عاملًا في سوق الذاكرة.",
+            "en": "One Tung image did not make RAM expensive. But millions of image and text requests need many machines and fast memory, which has become one factor in the memory market.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+        "cards":
+          [
+            {
+              "id": "visual",
+              "title":
+                {
+                  "ar": "مرساة بصرية",
+                  "ar_fusha": "مرساة بصرية",
+                  "en": "Visual anchor",
+                },
+              "body":
+                {
+                  "ar": "تابع الرسم ثم انتقل.",
+                  "ar_fusha": "تابع الرسم ثم انتقل.",
+                  "en": "Use the visual, then continue.",
+                },
+            },
+          ],
+      },
+      {
+        "id": "project_intro",
+        "type": "project_intro",
+        "title":
+          {
+            "ar": "اصنع بطاقة التحويل",
+            "ar_fusha": "اصنع بطاقة التحويل",
+            "en": "Make the Transformation Card",
+          },
+        "content":
+          {
+            "ar": "خذ البطاقة الورقية. بتبني شخصية البكسل، تسجل مصفوفتها، وتحولها إلى نسخة معكوسة.",
+            "ar_fusha": "خذ البطاقة الورقية. ستبني شخصية البكسل، وتسجل مصفوفتها، وتحولها إلى نسخة معكوسة.",
+            "en": "Take the paper card. You will build the pixel character, record its matrix, and transform it into a mirrored version.",
+          },
+        "media": [{ "type": "download", "ref": "pixel_transformation_card" }],
+      },
+      {
+        "id": "project_build",
+        "type": "physical",
+        "title":
+          {
+            "ar": "ابنِ الأصل",
+            "ar_fusha": "ابنِ الأصل",
+            "en": "Build the Original",
+          },
+        "content":
+          {
+            "ar": "لوّن أو ألصق القيم حسب الرمز 0–3 حتى تطابق الشخصية الهدف.",
+            "ar_fusha": "لوّن أو ألصق القيم وفق الرمز 0–3 حتى تطابق الشخصية الهدف.",
+            "en": "Color or place stickers using values 0–3 until the target character matches.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "project_build_interaction",
+            "visualization_ref": "pixel-character",
+            "required": true,
+            "config":
+              { "component_key": "pixel-character", "stage": "project-build" },
+          },
+      },
+      {
+        "id": "project_transform",
+        "type": "physical",
+        "title":
+          {
+            "ar": "احسب ثم اعكس",
+            "ar_fusha": "احسب ثم اعكس",
+            "en": "Calculate, Then Mirror",
+          },
+        "content":
+          {
+            "ar": "احسب الخلية المحددة بطريقة صف × عمود، ثم أكمل الشبكة المعكوسة باستخدام القاعدة.",
+            "ar_fusha": "احسب الخلية المحددة بطريقة صف × عمود، ثم أكمل الشبكة المعكوسة باستخدام القاعدة.",
+            "en": "Calculate the highlighted cell using row × column, then complete the mirrored grid using the rule.",
+          },
+        "completion_required": true,
+        "interaction":
+          {
+            "id": "project_transform_interaction",
+            "visualization_ref": "pixel-transform",
+            "required": true,
+            "config":
+              {
+                "component_key": "pixel-transform",
+                "stage": "project-transform",
+              },
+          },
+      },
+      {
+        "id": "project_result",
+        "type": "project",
+        "title":
+          {
+            "ar": "بطاقتك جاهزة",
+            "ar_fusha": "بطاقتك جاهزة",
+            "en": "Your Card Is Ready",
+          },
+        "content":
+          {
+            "ar": "عندك الآن الأصل، المصفوفة، حساب واحد واضح، والناتج بعد التحويل.",
+            "ar_fusha": "لديك الآن الأصل، والمصفوفة، وحساب واحد واضح، والناتج بعد التحويل.",
+            "en": "You now have the original, the matrix, one clear calculation, and the transformed result.",
+          },
+        "media": [{ "type": "image", "ref": "project_card" }],
+      },
+      {
+        "id": "reflection",
+        "type": "reflection",
+        "title":
+          {
+            "ar": "اشرحها بطريقتك",
+            "ar_fusha": "اشرحها بطريقتك",
+            "en": "Explain It Your Way",
+          },
+        "prompt":
+          {
+            "ar": "كيف تشرح لشخص جديد وش تسوي المصفوفة، ووش يسوي ضرب المصفوفات داخل الذكاء الاصطناعي؟",
+            "ar_fusha": "كيف تشرح لشخص جديد ما الذي تفعله المصفوفة، وما الذي يفعله ضرب المصفوفات داخل الذكاء الاصطناعي؟",
+            "en": "How would you explain what a matrix does and what matrix multiplication does inside modern AI?",
+          },
+        "placeholder":
+          {
+            "ar": "اكتب شرحك هنا.",
+            "ar_fusha": "اكتب شرحك هنا.",
+            "en": "Write your explanation here.",
+          },
+        "content":
+          {
+            "ar": "كيف تشرح لشخص جديد وش تسوي المصفوفة، ووش يسوي ضرب المصفوفات داخل الذكاء الاصطناعي؟",
+            "ar_fusha": "كيف تشرح لشخص جديد ما الذي تفعله المصفوفة، وما الذي يفعله ضرب المصفوفات داخل الذكاء الاصطناعي؟",
+            "en": "How would you explain what a matrix does and what matrix multiplication does inside modern AI?",
+          },
+      },
+      {
+        "id": "connect_happened",
+        "type": "connect_the_dots",
+        "title":
+          { "ar": "وش صار؟", "ar_fusha": "ماذا حدث؟", "en": "What Happened?" },
+        "content":
+          {
+            "ar": "مثّلت مقاعد وصورة بأعداد منظمة، وبنيت خلية من صف وعمود، وحولت شخصية بكسلية.",
+            "ar_fusha": "مثلت مقاعد وصورة بأعداد منظمة، وبنيت خلية من صف وعمود، وحولت شخصية بكسلية.",
+            "en": "You represented seats and an image with organized numbers, built a cell from a row and column, and transformed a pixel character.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+      },
+      {
+        "id": "connect_matters",
+        "type": "connect_the_dots",
+        "title":
+          {
+            "ar": "ليش يهم؟",
+            "ar_fusha": "لماذا يهم؟",
+            "en": "Why It Matters",
+          },
+        "content":
+          {
+            "ar": "معظم أنظمة الذكاء الاصطناعي العصبية الحديثة، ومنها نماذج الصور واللغة، تعتمد كثير على ضرب المصفوفات.",
+            "ar_fusha": "تعتمد معظم أنظمة الذكاء الاصطناعي العصبية الحديثة، ومنها نماذج الصور واللغة، اعتمادًا كبيرًا على ضرب المصفوفات.",
+            "en": "Most modern neural AI systems, including image and language models, rely heavily on matrix multiplication.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+      },
+      {
+        "id": "connect_leads",
+        "type": "connect_the_dots",
+        "title":
+          {
+            "ar": "وين يقودك؟",
+            "ar_fusha": "إلى أين يقودك؟",
+            "en": "Where It Leads",
+          },
+        "content":
+          {
+            "ar": "الحين أنت جاهز تشوف كيف تستخدم الشبكات العصبية أوزانًا وطبقات لتحول المدخلات إلى نتائج.",
+            "ar_fusha": "أنت الآن جاهز لترى كيف تستخدم الشبكات العصبية أوزانًا وطبقات لتحويل المدخلات إلى نتائج.",
+            "en": "You are now ready to see how neural networks use weights and layers to turn inputs into outputs.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_diagram" }],
+      },
+      {
+        "id": "badge_award",
+        "type": "badge_award",
+        "title":
+          {
+            "ar": "شارة باني المصفوفات",
+            "ar_fusha": "شارة باني المصفوفات",
+            "en": "Matrix Builder Badge",
+          },
+        "content":
+          {
+            "ar": "أكملت بايت من مسار المهندس، وصنعت شيئًا يثبت إنك فهمت المصفوفة والتحويل.",
+            "ar_fusha": "أكملت بايتًا من مسار المهندس، وصنعت شيئًا يثبت أنك فهمت المصفوفة والتحويل.",
+            "en": "You completed an Engineering Byte and made something proving you understand matrices and transformation.",
+          },
+        "media": [{ "type": "image", "ref": "matrix_badge" }],
+      },
+    ],
+  "assessment":
+    {
+      "completion_rules":
+        {
+          "required_screens":
+            [
+              "hook_accusation",
+              "hook_guess",
+              "hook_zoom",
+              "hook_zoom_reveal",
+              "hook_promise",
+              "shared_scenes_view",
+              "shared_scenes_match",
+              "rows_columns_reveal",
+              "cinema_build",
+              "matrix_reveal",
+              "matrix_check",
+              "cell_scan",
+              "labels_removed",
+              "cell_recap",
+              "tung_pixel_values",
+              "pixel_character_build",
+              "pixel_views",
+              "edit_not_multiply",
+              "cafe_problem",
+              "cafe_orders",
+              "cafe_recipes",
+              "shared_drinks",
+              "row_column_demo",
+              "calculate_milk",
+              "multiplication_meaning",
+              "connect_labels",
+              "dimensions_reveal",
+              "transform_predict",
+              "transform_calculate",
+              "transform_reveal",
+              "transform_meaning",
+              "examples_carousel",
+              "ai_pipeline",
+              "ai_matrix_reveal",
+              "operations_guess",
+              "operations_counter",
+              "human_time",
+              "parallelism_gpu",
+              "demand_scale",
+              "memory_workspace",
+              "ram_market_nuance",
+              "language_models",
+              "final_verdict",
+              "verdict_reveal",
+              "project_intro",
+              "project_build",
+              "project_transform",
+              "project_result",
+              "reflection",
+              "connect_happened",
+              "connect_matters",
+              "connect_leads",
+              "badge_award",
+            ],
+          "project_required": true,
+          "minimum_score": 70,
+        },
+      "evidence_collected":
+        [
+          "interactionStates",
+          "exerciseAttempts",
+          "reflection",
+          "project_output",
+        ],
+    },
+  "facilitator_notes":
+    {
+      "setup_time_minutes": 5,
+      "materials":
+        [
+          {
+            "ar": "بطاقة A4 وأقلام أو ملصقات.",
+            "ar_fusha": "بطاقة A4 وأقلام أو ملصقات.",
+            "en": "A4 card and markers or stickers.",
+          },
+        ],
+    },
+  "developer_notes":
+    {
+      "source_document": "ByteSize_AI_L1_Matrices_Behind_AI_Content_Development.docx",
+      "interactive_components":
+        [
+          "TungPixelZoom",
+          "MatrixBasicsLab",
+          "GuidedPixelCharacter",
+          "SaudiCafeMatrix",
+          "PixelTransformationLab",
+          "AIComputeScaleLab",
+        ],
+    },
+}
