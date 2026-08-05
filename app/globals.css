@@ -2389,6 +2389,10 @@ html[data-stimulus="high"] .timer-status-completed.timer-alert-high {
   justify-self: stretch;
 }
 
+.cafe-link-stage .button-row {
+  justify-content: center;
+}
+
 .linked-matrix-panel {
   display: grid;
   gap: 10px;
@@ -2399,10 +2403,39 @@ html[data-stimulus="high"] .timer-status-completed.timer-alert-high {
   text-align: center;
 }
 
-.connection-word {
-  padding: 8px 18px;
-  border: 1px solid color-mix(in srgb, var(--gold) 42%, var(--line));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--gold) 12%, var(--surface));
+/* Shared-link stage: two tables side by side with a connector between them */
+.cafe-link-stage .lab-columns {
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.matrix-connector {
+  display: grid;
+  place-items: center;
+  padding: 0 6px;
+  color: var(--muted);
+  font-size: 1.25rem;
   font-weight: 900;
+}
+
+/* The word that appears in both tables (drinks) is softly highlighted in both */
+.cafe-link-stage .labelled-grid > strong[data-shared="true"] {
+  background: color-mix(in srgb, var(--gold) 16%, var(--surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 45%, var(--line));
+}
+
+.cafe-link-stage .button[aria-pressed="true"] {
+  border-color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .cafe-link-stage .lab-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .matrix-connector {
+    transform: rotate(90deg);
+    padding: 2px 0;
+  }
 }

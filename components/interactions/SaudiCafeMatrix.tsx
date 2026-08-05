@@ -11,6 +11,7 @@ const RECIPE = [[1, 1, 0], [1, 1, 1]];
 const DEFAULT_ORDERS = [[2, 1], [1, 0], [0, 2]];
 const ORDER_PEOPLE = PEOPLE.slice(0, 2);
 const ORDER_DEFAULTS = [[0, 0], [0, 0]];
+const DEMO_ORDERS = [[2, 1], [1, 0]];
 
 function label(name: string, language: string) {
   const ar: Record<string, string> = { Sara: "سارة", Fahad: "فهد", Noura: "نورة", "Saudi coffee": "قهوة سعودية", Karak: "كرك", Cups: "أكواب", Water: "ماء", Milk: "حليب" };
@@ -26,13 +27,13 @@ export function SaudiCafeMatrix(props: InteractionComponentProps) {
   return <OrdersStage {...props} />;
 }
 
-function MatrixTable({ rows, cols, values, language, highlightRow, highlightCol, activeCell }: { rows: string[]; cols: string[]; values: number[][]; language: string; highlightRow?: number; highlightCol?: number; activeCell?: string }) {
+function MatrixTable({ rows, cols, values, language, highlightRow, highlightCol, activeCell, sharedCols, sharedRows, labelColWidth }: { rows: string[]; cols: string[]; values: number[][]; language: string; highlightRow?: number; highlightCol?: number; activeCell?: string; sharedCols?: number[]; sharedRows?: number[]; labelColWidth?: string }) {
   return (
-    <div className="matrix-grid labelled-grid" style={{ gridTemplateColumns: `repeat(${cols.length + 1}, minmax(58px, 1fr))` }}>
+    <div className="matrix-grid labelled-grid" style={{ gridTemplateColumns: labelColWidth ? `${labelColWidth} repeat(${cols.length}, minmax(48px, 1fr))` : `repeat(${cols.length + 1}, minmax(58px, 1fr))` }}>
       <span />
-      {cols.map((col, index) => <strong data-highlight={highlightCol === index} key={col}>{label(col, language)}</strong>)}
+      {cols.map((col, index) => <strong data-highlight={highlightCol === index} data-shared={sharedCols?.includes(index) ? "true" : undefined} key={col}>{label(col, language)}</strong>)}
       {rows.flatMap((row, rowIndex) => [
-        <strong data-highlight={highlightRow === rowIndex} data-person-row={rowIndex} key={row}>{label(row, language)}</strong>,
+        <strong data-highlight={highlightRow === rowIndex} data-shared={sharedRows?.includes(rowIndex) ? "true" : undefined} data-person-row={rowIndex} key={row}>{label(row, language)}</strong>,
         ...cols.map((col, colIndex) => {
           const cellId = `${rowIndex}-${colIndex}`;
           return <span className="seat-cell static" data-active={activeCell === cellId} data-highlight={highlightRow === rowIndex || highlightCol === colIndex} data-order-cell={cellId} data-person-row={rowIndex} key={`${row}-${col}`}>{values[rowIndex][colIndex]}</span>;
@@ -141,10 +142,22 @@ function RecipeStage({ language, arabicVariant }: InteractionComponentProps) {
   );
 }
 
-function SharedLinkStage({ language, arabicVariant, savedState, onStateChange, onComplete }: InteractionComponentProps) {
-  const selected = typeof savedState.selected === "string" ? savedState.selected : "";
+function SharedLinkStage({ language, arabicVariant, savedState, relatedStates, onStateChange, onComplete }: InteractionComponentProps) {
+  // Start with no selection so the screen always loads without any pre-marked choice.
+  const [selected, setSelected] = useState("");
+
+  // Reuse the orders the learner entered on the "من طلب وش؟" screen (cafe_orders).
+  const savedOrders = relatedStates?.cafe_orders;
+  const enteredOrders =
+    savedOrders && savedOrders.ordersMode === "free-input-v2" && Array.isArray(savedOrders.orders)
+      ? (savedOrders.orders as number[][])
+      : [];
+  const ordersValues = ORDER_PEOPLE.map((_, r) =>
+    DRINKS.map((_, c) => (Number.isInteger(enteredOrders[r]?.[c]) ? enteredOrders[r][c] : DEMO_ORDERS[r][c]))
+  );
 
   function choose(answer: string) {
+    setSelected(answer);
     const completed = answer === "drinks";
     const state = { ...savedState, selected: answer, completed };
     onStateChange(state);
@@ -156,16 +169,18 @@ function SharedLinkStage({ language, arabicVariant, savedState, onStateChange, o
       <div className="lab-columns">
         <div className="linked-matrix-panel">
           <strong>{t({ ar: "طلبات الأشخاص", ar_fusha: "طلبات الأشخاص", en: "People orders" }, language, arabicVariant)}</strong>
-          <MatrixTable rows={ORDER_PEOPLE} cols={DRINKS} values={[[2, 1], [1, 0]]} language={language} />
+          <MatrixTable rows={ORDER_PEOPLE} cols={DRINKS} values={ordersValues} language={language} sharedCols={[0, 1]} />
+        </div>
+        <div className="matrix-connector" aria-hidden="true">
+          <span>↔</span>
         </div>
         <div className="linked-matrix-panel">
           <strong>{t({ ar: "احتياج المشروبات", ar_fusha: "احتياج المشروبات", en: "Drink needs" }, language, arabicVariant)}</strong>
-          <MatrixTable rows={DRINKS} cols={SUPPLIES} values={RECIPE} language={language} />
+          <MatrixTable rows={DRINKS} cols={SUPPLIES} values={RECIPE} language={language} sharedRows={[0, 1]} labelColWidth="minmax(104px, 1.35fr)" />
         </div>
       </div>
-      <div className="connection-word">{t({ ar: "المشروبات", ar_fusha: "المشروبات", en: "Drinks" }, language, arabicVariant)}</div>
       <div className="button-row">
-        <button className="button primary" aria-pressed={selected === "drinks"} type="button" onClick={() => choose("drinks")}>{t({ ar: "المشروبات", ar_fusha: "المشروبات", en: "Drinks" }, language, arabicVariant)}</button>
+        <button className="button" aria-pressed={selected === "drinks"} type="button" onClick={() => choose("drinks")}>{t({ ar: "المشروبات", ar_fusha: "المشروبات", en: "Drinks" }, language, arabicVariant)}</button>
         <button className="button" aria-pressed={selected === "people"} type="button" onClick={() => choose("people")}>{t({ ar: "الأشخاص", ar_fusha: "الأشخاص", en: "People" }, language, arabicVariant)}</button>
       </div>
       <div className="meaning-box" aria-live="polite">
@@ -173,7 +188,7 @@ function SharedLinkStage({ language, arabicVariant, savedState, onStateChange, o
           ? t({ ar: "صحيح. أعمدة جدول الطلبات هي المشروبات، وصفوف جدول الاحتياج هي المشروبات. هنا تصير الوصلة.", ar_fusha: "صحيح. أعمدة جدول الطلبات هي المشروبات، وصفوف جدول الاحتياج هي المشروبات. هنا تكون الوصلة.", en: "Correct. The order columns are drinks, and the needs rows are drinks. That is the link." }, language, arabicVariant)
           : selected
             ? t({ ar: "الأشخاص موجودون في جدول الطلبات فقط. ابحث عن الكلمة التي تظهر في الجدولين.", ar_fusha: "الأشخاص موجودون في جدول الطلبات فقط. ابحث عن الكلمة التي تظهر في الجدولين.", en: "People appear only in the orders table. Look for the word that appears in both tables." }, language, arabicVariant)
-            : t({ ar: "أي كلمة موجودة في الجدولين؟ هذه الكلمة هي الوصلة بينهما.", ar_fusha: "أي كلمة موجودة في الجدولين؟ هذه الكلمة هي الوصلة بينهما.", en: "Which word appears in both tables? That word is the link between them." }, language, arabicVariant)}
+            : t({ ar: "لاحظ الكلمات المميزة في الجدولين. أي كلمة تظهر في الاثنين؟", ar_fusha: "لاحظ الكلمات المميزة في الجدولين. أي كلمة تظهر في الاثنين؟", en: "Look at the highlighted words in both tables. Which word appears in both?" }, language, arabicVariant)}
       </div>
     </div>
   );
