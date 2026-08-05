@@ -387,6 +387,11 @@ export function ByteScreen({
     const visualizationRef = screen.interaction_ref ?? interaction?.visualization_ref;
     const visualization = getVisualization(byte, visualizationRef);
     const interactionState = progress.interactionStates[storageKey] ?? {};
+    const relatedStates: Record<string, Record<string, unknown>> = {};
+    for (const other of byte.screens ?? []) {
+      if (other === screen || !other.id) continue;
+      relatedStates[other.id] = progress.interactionStates[`${byte.id}:${other.id}`] ?? {};
+    }
 
     return (
       <div className="screen-content">
@@ -397,6 +402,7 @@ export function ByteScreen({
           arabicVariant={arabicVariant}
           direction={direction}
           savedState={interactionState}
+          relatedStates={relatedStates}
           onStateChange={(state) => saveInteractionState(storageKey, state)}
           onComplete={(state) => {
             saveInteractionState(storageKey, { ...interactionState, ...state, completed: true });

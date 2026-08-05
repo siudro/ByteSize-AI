@@ -901,9 +901,9 @@
           },
         "content":
           {
-            "ar": "جدول الطلبات ينتهي بالمشروبات. وجدول الاحتياج يبدأ بالمشروبات. اختر الكلمة المشتركة.",
-            "ar_fusha": "جدول الطلبات ينتهي بالمشروبات. وجدول الاحتياج يبدأ بالمشروبات. اختر الكلمة المشتركة.",
-            "en": "The orders table ends with drinks. The needs table starts with drinks. Choose the shared word.",
+            "ar": "قارن الجدولين. جدول الطلبات يوضح من طلب أي مشروب، وجدول الاحتياج يوضح ما يحتاجه كل مشروب من مستلزمات. لاحظ الكلمات المكتوبة في الجدولين، واختر الكلمة التي تظهر في الاثنين.",
+            "ar_fusha": "قارن الجدولين. جدول الطلبات يوضح من طلب أي مشروب، وجدول الاحتياج يوضح ما يحتاجه كل مشروب من مستلزمات. لاحظ الكلمات المكتوبة في الجدولين، واختر الكلمة التي تظهر في الاثنين.",
+            "en": "Compare the two tables. The orders table shows who ordered which drink, and the needs table shows what supplies each drink needs. Look at the words written in both tables and choose the word that appears in both.",
           },
         "completion_required": true,
         "interaction":

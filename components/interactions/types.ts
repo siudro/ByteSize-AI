@@ -9,6 +9,8 @@ export type InteractionComponentProps = {
   config: Record<string, unknown>;
   stage?: string;
   savedState: InteractionState;
+  /** Saved interaction states of other screens in the same byte, keyed by screen id. */
+  relatedStates?: Record<string, InteractionState>;
   interaction?: ScreenInteraction;
   visualization?: InternalVisualization;
   onStateChange: (state: InteractionState) => void;

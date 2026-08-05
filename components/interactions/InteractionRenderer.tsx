@@ -18,6 +18,7 @@ type InteractionRendererProps = {
   interaction?: ScreenInteraction;
   visualization?: InternalVisualization;
   savedState: InteractionState;
+  relatedStates?: Record<string, InteractionState>;
   onStateChange: (state: InteractionState) => void;
   onComplete: (state?: InteractionState) => void;
 };
@@ -89,6 +90,7 @@ export function InteractionRenderer(props: InteractionRendererProps) {
       config={config}
       stage={stage}
       savedState={props.savedState}
+      relatedStates={props.relatedStates}
       interaction={props.interaction}
       visualization={props.visualization}
       onStateChange={props.onStateChange}
