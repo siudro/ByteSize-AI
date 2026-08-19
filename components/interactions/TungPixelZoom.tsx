@@ -39,6 +39,8 @@ type GuideLines = {
 };
 
 const copy = {
+  zoomIn: { ar: "تكبير", ar_fusha: "تكبير", en: "Zoom in" },
+  zoomOut: { ar: "تصغير", ar_fusha: "تصغير", en: "Zoom out" },
   rgbValues: { ar: "\u0642\u064a\u0645 RGB \u0627\u0644\u0645\u062e\u0632\u0646\u0629 \u062f\u0627\u062e\u0644 \u0627\u0644\u0628\u0643\u0633\u0644\u0627\u062a", ar_fusha: "\u0642\u064a\u0645 RGB \u0627\u0644\u0645\u062e\u0632\u0646\u0629 \u062f\u0627\u062e\u0644 \u0627\u0644\u0628\u0643\u0633\u0644\u0627\u062a", en: "RGB values stored inside the pixels" },
   loadFailed: { ar: "\u062a\u0639\u0630\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0635\u0648\u0631\u0629", ar_fusha: "\u062a\u0639\u0630\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0635\u0648\u0631\u0629", en: "Image could not load" },
   loading: { ar: "\u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0635\u0648\u0631\u0629", ar_fusha: "\u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0635\u0648\u0631\u0629", en: "Loading image" },
@@ -117,16 +119,13 @@ function drawGrayscaleImage(image: HTMLImageElement, canvas: HTMLCanvasElement):
   if (!ctx) return null;
 
   canvas.width = CANVAS_SIZE;
-  canvas.height = CANVAS_SIZE;
-  ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-  ctx.fillStyle = "#14120f";
-  ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+  canvas.height = Math.round(CANVAS_SIZE * image.naturalHeight / image.naturalWidth);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const scale = Math.min(CANVAS_SIZE / image.naturalWidth, CANVAS_SIZE / image.naturalHeight);
-  const width = Math.round(image.naturalWidth * scale);
-  const height = Math.round(image.naturalHeight * scale);
-  const x = Math.round((CANVAS_SIZE - width) / 2);
-  const y = Math.round((CANVAS_SIZE - height) / 2);
+  const x = 0;
+  const y = 0;
+  const width = CANVAS_SIZE;
+  const height = canvas.height;
 
   ctx.drawImage(image, x, y, width, height);
   const imageData = ctx.getImageData(x, y, width, height);
@@ -188,8 +187,8 @@ function GrayscaleMatrixInspector(props: InteractionComponentProps) {
     if (!canvas || !sourceCanvas || !drawRect) return;
 
     const box = canvas.getBoundingClientRect();
-    const canvasX = ((event.clientX - box.left) / box.width) * CANVAS_SIZE;
-    const canvasY = ((event.clientY - box.top) / box.height) * CANVAS_SIZE;
+    const canvasX = ((event.clientX - box.left) / box.width) * canvas.width;
+    const canvasY = ((event.clientY - box.top) / box.height) * canvas.height;
     const insideX = clamp(canvasX, drawRect.x, drawRect.x + drawRect.width);
     const insideY = clamp(canvasY, drawRect.y, drawRect.y + drawRect.height);
     const pixelX = clamp(Math.round(((insideX - drawRect.x) / drawRect.width) * (sourceCanvas.width - 1)), 0, sourceCanvas.width - 1);
@@ -311,6 +310,11 @@ function ZoomPixelValues({ language, arabicVariant, config, savedState, onStateC
     if (done) onComplete(merged);
   }
 
+  function zoomBy(step: number) {
+    const nextZoom = clamp(zoom + step, 1, COMPLETE_ZOOM);
+    if (nextZoom !== zoom) commit({ zoom: nextZoom });
+  }
+
   return (
     <div className="interaction-card matrix-lab real-pixel-zoom" dir={language === "en" ? "ltr" : "rtl"}>
       <div className="real-zoom-frame" aria-live="polite">
@@ -329,11 +333,33 @@ function ZoomPixelValues({ language, arabicVariant, config, savedState, onStateC
         {!loaded ? <span className="zoom-loading">{failed ? t(copy.loadFailed, language, arabicVariant) : t(copy.loading, language, arabicVariant)}</span> : null}
       </div>
 
-      <label className="control-row real-zoom-control">
+      <div className="control-row real-zoom-control">
         <span>{t(copy.zoom, language, arabicVariant)}</span>
-        <input aria-label="zoom" min={1} max={COMPLETE_ZOOM} step={1} value={zoom} type="range" onChange={(event) => commit({ zoom: Number(event.target.value) })} />
-        <strong dir="ltr">{zoom.toFixed(1)}x</strong>
-      </label>
+        <div className="real-zoom-stepper" dir="ltr">
+          <button
+            className="icon-button real-zoom-step-button"
+            type="button"
+            aria-label={t(copy.zoomOut, language, arabicVariant)}
+            title={t(copy.zoomOut, language, arabicVariant)}
+            disabled={!loaded || zoom <= 1}
+            onClick={() => zoomBy(-1)}
+          >
+            −
+          </button>
+          <input aria-label={t(copy.zoom, language, arabicVariant)} min={1} max={COMPLETE_ZOOM} step={1} value={zoom} type="range" disabled={!loaded} onChange={(event) => commit({ zoom: Number(event.target.value) })} />
+          <button
+            className="icon-button real-zoom-step-button"
+            type="button"
+            aria-label={t(copy.zoomIn, language, arabicVariant)}
+            title={t(copy.zoomIn, language, arabicVariant)}
+            disabled={!loaded || zoom >= COMPLETE_ZOOM}
+            onClick={() => zoomBy(1)}
+          >
+            +
+          </button>
+          <strong dir="ltr">{zoom.toFixed(1)}x</strong>
+        </div>
+      </div>
 
       <p className="interaction-hint">{pixelReady ? t(copy.ready, language, arabicVariant) : t(copy.hint, language, arabicVariant)}</p>
     </div>

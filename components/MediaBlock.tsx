@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { t } from "@/lib/i18n";
 import type { ArabicVariantCode, LanguageCode, MediaReference, ScreenMedia } from "@/lib/schema";
+import { StlModelViewer } from "./StlModelViewer";
 
 type MediaBlockProps = {
   byteId: string;
@@ -33,9 +34,33 @@ const STATIC_FALLBACK = {
 export function MediaBlock({ byteId, media, mediaItem, language, arabicVariant }: MediaBlockProps) {
   const [failed, setFailed] = useState(false);
   const label = t(mediaItem?.label ?? mediaItem?.caption ?? mediaItem?.alt, language, arabicVariant) || t(GENERIC_MEDIA_LABEL, language, arabicVariant);
+  const prompt = t(mediaItem?.prompt, language, arabicVariant);
+  const [typedPrompt, setTypedPrompt] = useState("");
   const expectedPath = mediaItem ? `content/bytes/${byteId}/media/${mediaItem.path}` : `content/bytes/${byteId}/media/<missing ref>`;
   const url = mediaItem ? `/content-media/${byteId}/media/${mediaItem.path}` : "";
   const showDeveloperDetails = process.env.NODE_ENV !== "production";
+
+  useEffect(() => {
+    if (!prompt) {
+      setTypedPrompt("");
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTypedPrompt(prompt);
+      return;
+    }
+
+    let index = 0;
+    setTypedPrompt("");
+    const timer = window.setInterval(() => {
+      index += 1;
+      setTypedPrompt(prompt.slice(0, index));
+      if (index >= prompt.length) window.clearInterval(timer);
+    }, 55);
+
+    return () => window.clearInterval(timer);
+  }, [prompt]);
 
   function renderFallback() {
     return (
@@ -54,28 +79,44 @@ export function MediaBlock({ byteId, media, mediaItem, language, arabicVariant }
   }
 
   return (
-    <div className="media-tile">
-      {!mediaItem || failed ? (
-        renderFallback()
-      ) : media.type === "image" ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={url} alt={t(mediaItem.alt, language, arabicVariant) || label} onError={() => setFailed(true)} />
-      ) : media.type === "video" ? (
-        <video src={url} controls onError={() => setFailed(true)} />
-      ) : media.type === "audio" ? (
-        <div className="media-preview">
-          <audio src={url} controls onError={() => setFailed(true)} />
+    <div className="media-block">
+      {prompt ? (
+        <div className="media-prompt" dir={language === "en" ? "ltr" : "rtl"} aria-label={prompt}>
+          <span className="media-prompt-label">{language === "en" ? "Prompt" : "الوصف"}</span>
+          <p className="media-prompt-text" aria-hidden="true">
+            {typedPrompt}
+            <span className="typing-cursor" aria-hidden="true" />
+          </p>
+          <span className="visually-hidden">{prompt}</span>
         </div>
-      ) : (
-        <div className="media-preview">
-          <a className="button" href={url}>
-            {label}
-          </a>
+      ) : null}
+      <div className="media-tile">
+        {!mediaItem || failed ? (
+          renderFallback()
+        ) : media.type === "image" ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={url} alt={t(mediaItem.alt, language, arabicVariant) || label} onError={() => setFailed(true)} />
+          </>
+        ) : media.type === "video" ? (
+          <video src={url} controls onError={() => setFailed(true)} />
+        ) : media.type === "audio" ? (
+          <div className="media-preview">
+            <audio src={url} controls onError={() => setFailed(true)} />
+          </div>
+        ) : media.type === "model" ? (
+          <StlModelViewer src={url} label={label} language={language} arabicVariant={arabicVariant} />
+        ) : (
+          <div className="media-preview">
+            <a className="button" href={url}>
+              {label}
+            </a>
+          </div>
+        )}
+        <div className="media-meta">
+          <strong>{label}</strong>
+          {mediaItem?.caption ? <p>{t(mediaItem.caption, language, arabicVariant)}</p> : null}
         </div>
-      )}
-      <div className="media-meta">
-        <strong>{label}</strong>
-        {mediaItem?.caption ? <p>{t(mediaItem.caption, language, arabicVariant)}</p> : null}
       </div>
     </div>
   );

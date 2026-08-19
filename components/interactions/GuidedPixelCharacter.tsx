@@ -17,6 +17,37 @@ const TARGET = [
 const MISSING = new Set(["0-2", "1-5", "2-1", "2-4", "2-5", "2-6", "4-1", "5-4", "6-4", "7-5"]);
 const COLORS = ["#181818", "#ff3138", "#43aeea"];
 const PALETTE_VALUES = [0, 1, 2];
+const LETTER_PATTERNS: Record<string, string[]> = {
+  A: ["010", "101", "101"],
+  B: ["110", "111", "110"],
+  C: ["011", "100", "011"],
+  D: ["110", "101", "110"],
+  E: ["111", "110", "111"],
+  F: ["111", "110", "100"],
+  G: ["110", "101", "111"],
+  H: ["101", "111", "101"],
+  I: ["111", "010", "111"],
+  J: ["001", "101", "111"],
+  K: ["101", "110", "101"],
+  L: ["100", "100", "111"],
+  M: ["111", "111", "101"],
+  N: ["110", "101", "101"],
+  O: ["010", "101", "010"],
+  P: ["111", "111", "100"],
+  Q: ["010", "101", "111"],
+  R: ["110", "110", "101"],
+  S: ["011", "010", "110"],
+  T: ["111", "010", "010"],
+  U: ["101", "101", "111"],
+  V: ["101", "101", "010"],
+  W: ["101", "111", "111"],
+  X: ["101", "010", "101"],
+  Y: ["101", "111", "010"],
+  Z: ["110", "010", "011"]
+};
+const LETTERS = Object.keys(LETTER_PATTERNS);
+const ROW_LABELS = ["A", "B", "C"];
+const COLUMN_LABELS = ["1", "2", "3"];
 
 function flatten(grid: number[][]) {
   return grid.flat().join("");
@@ -43,9 +74,64 @@ function cellTextColor(value: number) {
 }
 
 export function GuidedPixelCharacter(props: InteractionComponentProps) {
+  if (props.stage === "letter-guide") return <LetterGuide {...props} />;
   if (props.stage === "view-switch") return <ViewSwitch {...props} />;
   if (props.stage === "edits") return <EditMatrix {...props} />;
   return <BuildCharacter {...props} />;
+}
+
+function LetterGuide({ language, arabicVariant, savedState, onStateChange, onComplete }: InteractionComponentProps) {
+  const savedLetter = typeof savedState.letter === "string" && LETTER_PATTERNS[savedState.letter] ? savedState.letter : "";
+  const previewLetter = savedLetter || "A";
+  const pattern = LETTER_PATTERNS[previewLetter];
+
+  function chooseLetter(letter: string) {
+    const state = { ...savedState, letter, completed: true };
+    onStateChange(state);
+    onComplete(state);
+  }
+
+  return (
+    <div className="interaction-card matrix-lab letter-guide-stage">
+      <div className="letter-guide-heading">
+        <strong>{t({ ar: "اختر أول حرف من اسمك", ar_fusha: "اختر الحرف الأول من اسمك", en: "Choose the first letter of your name" }, language, arabicVariant)}</strong>
+        <span>{t({ ar: "الخلايا الملوّنة هي أماكن البكسلات.", ar_fusha: "الخلايا الملوّنة هي مواضع البكسلات.", en: "Colored cells show where to place the pixels." }, language, arabicVariant)}</span>
+      </div>
+
+      <div className="letter-guide-choices" role="group" aria-label={t({ ar: "اختر حرفًا", ar_fusha: "اختر حرفًا", en: "Choose a letter" }, language, arabicVariant)}>
+        {LETTERS.map((letter) => (
+          <button className="letter-guide-choice" aria-pressed={savedLetter === letter} key={letter} type="button" onClick={() => chooseLetter(letter)}>{letter}</button>
+        ))}
+      </div>
+
+      <div className="letter-guide-preview">
+        <div className="letter-guide-preview-heading">
+          <strong>{previewLetter}</strong>
+          <span>{t({ ar: "الخلايا المطلوبة في المصفوفة", ar_fusha: "الخلايا المطلوبة في المصفوفة", en: "Cells needed in the matrix" }, language, arabicVariant)}</span>
+        </div>
+        <div className="letter-guide-matrix" role="grid" aria-label={t({ ar: `خريطة الحرف ${previewLetter} في شبكة 3×3`, ar_fusha: `خريطة الحرف ${previewLetter} في شبكة 3×3`, en: `${previewLetter} letter map in a 3×3 grid` }, language, arabicVariant)}>
+          <div className="letter-guide-row letter-guide-axis-row" role="row">
+            <span className="letter-guide-corner" aria-hidden="true" />
+            {COLUMN_LABELS.map((label) => <span className="letter-guide-axis-label" key={label} role="columnheader">{label}</span>)}
+          </div>
+            {pattern.map((row, rowIndex) => (
+              <div className="letter-guide-row" key={rowIndex} role="row">
+              <span className="letter-guide-axis-label" role="rowheader">{ROW_LABELS[rowIndex]}</span>
+              {[...row].map((cell, columnIndex) => (
+                <span className="letter-guide-cell" data-filled={cell === "1"} key={`${rowIndex}-${columnIndex}`} role="gridcell" aria-label={`${ROW_LABELS[rowIndex]}${COLUMN_LABELS[columnIndex]}: ${cell === "1" ? "filled" : "empty"}`} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="meaning-box" aria-live="polite">
+        {savedLetter
+          ? t({ ar: `هذا شكل حرف ${savedLetter}. استخدم الخلايا الملوّنة لبنائه.`, ar_fusha: `هذا شكل الحرف ${savedLetter}. استخدم الخلايا الملوّنة لبنائه.`, en: `This is the shape of ${savedLetter}. Use the colored cells to build it.` }, language, arabicVariant)
+          : t({ ar: "اختر حرفك، ثم استخدم الخلايا الملوّنة لبنائه.", ar_fusha: "اختر حرفك، ثم استخدم الخلايا الملوّنة لبنائه.", en: "Choose your letter, then use the colored cells to build it." }, language, arabicVariant)}
+      </div>
+    </div>
+  );
 }
 
 function PixelGrid({ grid, mode, onCell }: { grid: number[][]; mode: string; onCell?: (row: number, col: number) => void }) {
@@ -212,8 +298,8 @@ function EditMatrix({ language, arabicVariant, savedState, onStateChange, onComp
       </div>
       <div className="meaning-box" aria-live="polite">
         {complete
-          ? t({ ar: "\u062a\u063a\u064a\u064a\u0631 \u062e\u0644\u064a\u0629 \u0623\u0648 \u0635\u0641 \u064a\u063a\u064a\u0651\u0631 \u0627\u0644\u0635\u0648\u0631\u0629. \u0647\u0630\u0627 \u062a\u0639\u062f\u064a\u0644 \u0644\u0644\u0645\u0635\u0641\u0648\u0641\u0629\u060c \u0648\u0644\u064a\u0633 \u0636\u0631\u0628 \u0645\u0635\u0641\u0648\u0641\u0627\u062a.", ar_fusha: "\u062a\u063a\u064a\u064a\u0631 \u062e\u0644\u064a\u0629 \u0623\u0648 \u0635\u0641 \u064a\u063a\u064a\u0651\u0631 \u0627\u0644\u0635\u0648\u0631\u0629. \u0647\u0630\u0627 \u062a\u0639\u062f\u064a\u0644 \u0644\u0644\u0645\u0635\u0641\u0648\u0641\u0629\u060c \u0648\u0644\u064a\u0633 \u0636\u0631\u0628 \u0645\u0635\u0641\u0648\u0641\u0627\u062a.", en: "Changing a cell or row changes the image. This edits a matrix; it is not matrix multiplication." }, language, arabicVariant)
-          : t({ ar: "\u062c\u0631\u0651\u0628 \u0627\u0644\u0623\u0632\u0631\u0627\u0631. \u0631\u0627\u0642\u0628 \u0643\u064a\u0641 \u064a\u063a\u064a\u0651\u0631 \u0627\u0644\u0631\u0642\u0645 \u0645\u0643\u0627\u0646\u0647 \u0641\u064a \u0627\u0644\u0635\u0648\u0631\u0629.", ar_fusha: "\u062c\u0631\u0651\u0628 \u0627\u0644\u0623\u0632\u0631\u0627\u0631. \u0631\u0627\u0642\u0628 \u0643\u064a\u0641 \u064a\u063a\u064a\u0651\u0631 \u0627\u0644\u0639\u062f\u062f \u0645\u0643\u0627\u0646\u0647 \u0641\u064a \u0627\u0644\u0635\u0648\u0631\u0629.", en: "Try the buttons. Watch how a number changes its spot in the image." }, language, arabicVariant)}
+          ? t({ ar: "تغيير قيمة خلية يغيّر لون البكسل ويغيّر الصورة في ذلك المكان. هذا تعديل للمصفوفة، مو ضرب مصفوفات.", ar_fusha: "يؤدي تغيير قيمة خلية إلى تغيير لون البكسل والصورة في ذلك الموضع. هذا تعديل للمصفوفة، وليس ضربًا للمصفوفات.", en: "Changing a cell value changes the pixel's color and the image in that spot. This edits a matrix; it is not matrix multiplication." }, language, arabicVariant)
+          : t({ ar: "جرّب الأزرار. قيمة كل بكسل تحدد لونه، وتغيير الرقم يغيّر جزءًا من الصورة.", ar_fusha: "جرّب الأزرار. تحدد قيمة كل بكسل لونه، وتغييرها يغيّر جزءًا من الصورة.", en: "Try the buttons. Each pixel value sets its color, so changing it changes part of the image." }, language, arabicVariant)}
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ function screenMediaFromRecord(value: UnknownRecord): ScreenMedia | null {
   const type = stringValue(value.type);
   const ref = stringValue(value.ref);
   if (!type || !ref) return null;
-  if (!["image", "video", "audio", "download"].includes(type)) return null;
+  if (!["image", "video", "audio", "download", "model"].includes(type)) return null;
   return { type: type as ScreenMedia["type"], ref };
 }
 
@@ -214,7 +214,7 @@ export function ByteScreen({
     const cards = records(screen.cards);
     if (cards.length === 0) return null;
     return (
-      <div className="screen-content">
+      <div className={`screen-content ${screen.id === "hook_promise" ? "investigation-steps" : ""}`}>
         {cards.map((card) => (
           <div className="info-block" key={stringValue(card.id) ?? t(localized(card.title), language, arabicVariant)}>
             <h3>{t(localized(card.title), language, arabicVariant)}</h3>
@@ -345,6 +345,7 @@ export function ByteScreen({
 
     return (
       <div className="screen-content">
+        {renderMedia(screen.media)}
         {blocks.map((block) => (
           <div className="info-block" key={t(block.label, language, arabicVariant)}>
             <h3>{t(block.label, language, arabicVariant)}</h3>
@@ -392,9 +393,10 @@ export function ByteScreen({
       if (other === screen || !other.id) continue;
       relatedStates[other.id] = progress.interactionStates[`${byte.id}:${other.id}`] ?? {};
     }
+    const isWaterShock = interaction?.config?.stage === "water-shock";
 
     return (
-      <div className="screen-content">
+      <div className={`screen-content ${isWaterShock ? "water-shock-screen" : ""}`}>
         <InteractionRenderer
           interaction={interaction}
           visualization={visualization}
@@ -409,6 +411,7 @@ export function ByteScreen({
             onAnswerStateChange?.(true);
           }}
         />
+        {screen.media?.length ? renderMedia(screen.media) : null}
         {screen.reflection_prompt ? <p>{t(screen.reflection_prompt, language, arabicVariant)}</p> : null}
       </div>
     );

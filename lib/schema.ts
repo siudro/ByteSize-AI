@@ -9,13 +9,14 @@ export type LocalizedText = {
 
 export type LocalizedField = string | LocalizedText | undefined | null;
 
-export type MediaKind = "image" | "video" | "audio" | "download";
+export type MediaKind = "image" | "video" | "audio" | "download" | "model";
 
 export type MediaReference = {
   id: string;
   path: string;
   type?: MediaKind;
   alt?: LocalizedText;
+  prompt?: LocalizedText;
   caption?: LocalizedText;
   transcript?: LocalizedText;
   label?: LocalizedText;
@@ -203,6 +204,7 @@ export type Byte = {
     videos?: MediaReference[];
     audio?: MediaReference[];
     downloads?: MediaReference[];
+    models?: MediaReference[];
   };
   tools?: {
     internal_visualizations?: InternalVisualization[];
