@@ -3,6 +3,9 @@
 import { type PointerEvent, useRef, useState } from "react";
 import { t } from "@/lib/i18n";
 import { numberValue, type InteractionComponentProps, type InteractionState } from "./types";
+import { SHELF } from "./SpiceShelf";
+
+const SPICE_SHELF_BACKGROUND = "/content-media/L1-ENG-MATRIX-RAM/media/images/spice-shelf.png";
 
 const SCENES = [
   { id: "cinema", icon: { ar: "\u0633\u064a\u0646\u0645\u0627", ar_fusha: "\u0633\u064a\u0646\u0645\u0627", en: "Cinema" }, rows: { ar: "\u0635\u0641\u0648\u0641 \u0627\u0644\u0633\u064a\u0646\u0645\u0627", ar_fusha: "\u0635\u0641\u0648\u0641 \u0627\u0644\u0633\u064a\u0646\u0645\u0627", en: "cinema rows" }, cols: { ar: "\u0623\u0631\u0642\u0627\u0645 \u0627\u0644\u0645\u0642\u0627\u0639\u062f", ar_fusha: "\u0623\u0631\u0642\u0627\u0645 \u0627\u0644\u0645\u0642\u0627\u0639\u062f", en: "seat numbers" } },
@@ -41,12 +44,13 @@ function SceneMatcher({ language, arabicVariant, savedState, onStateChange, onCo
     if (completed) onComplete(state);
   }
 
-  function pointFor(element: HTMLElement | null): MatchPoint | null {
+  function pointFor(element: HTMLElement | null, edge: "center" | "left" | "right" = "center"): MatchPoint | null {
     const board = boardRef.current;
     if (!board || !element) return null;
     const boardBox = board.getBoundingClientRect();
     const box = element.getBoundingClientRect();
-    return { x: box.left + box.width / 2 - boardBox.left, y: box.top + box.height / 2 - boardBox.top };
+    const x = edge === "left" ? box.left : edge === "right" ? box.right : box.left + box.width / 2;
+    return { x: x - boardBox.left, y: box.top + box.height / 2 - boardBox.top };
   }
 
   function pointerFor(event: PointerEvent): MatchPoint | null {
@@ -76,11 +80,11 @@ function SceneMatcher({ language, arabicVariant, savedState, onStateChange, onCo
 
   const matchedLines = SCENES.map((scene) => {
     if (matches[scene.id] !== scene.id) return null;
-    const from = pointFor(leftRefs.current[scene.id]);
-    const to = pointFor(rightRefs.current[scene.id]);
+    const from = pointFor(leftRefs.current[scene.id], "left");
+    const to = pointFor(rightRefs.current[scene.id], "right");
     return from && to ? { id: scene.id, from, to } : null;
   }).filter(Boolean) as Array<{ id: string; from: MatchPoint; to: MatchPoint }>;
-  const activeFrom = selected ? pointFor(leftRefs.current[selected]) : null;
+  const activeFrom = selected ? pointFor(leftRefs.current[selected], "left") : null;
 
   return (
     <div className="interaction-card matrix-lab">
@@ -109,7 +113,7 @@ function SceneMatcher({ language, arabicVariant, savedState, onStateChange, onCo
             })}
           </div>
           <div className="mini-card-list">
-            {SCENES.map((scene) => (
+            {SCENES.slice().reverse().map((scene) => (
               <button className="matrix-card" data-matched={matches[scene.id] === scene.id} ref={(node) => { rightRefs.current[scene.id] = node; }} key={scene.id} type="button" onPointerDown={(event) => tryMatch(scene.id, event)}>
                 <span>{t(scene.rows, language, arabicVariant)}</span>
                 <span>+</span>
@@ -188,6 +192,8 @@ function CellScanner({ language, arabicVariant, savedState, onStateChange, onCom
   ];
   const rowLabels = language === "en" ? SEAT_ROWS : ["\u0623", "\u0628", "\u062c"];
   const selected = typeof savedState.cell === "string" ? savedState.cell : "";
+  const selectedRow = typeof savedState.row === "string" ? savedState.row : "";
+  const selectedCol = typeof savedState.col === "string" ? savedState.col : "";
 
   function choose(row: number, col: number) {
     const id = `${rowLabels[row]}${SEAT_COLS[col]}`;
@@ -200,9 +206,9 @@ function CellScanner({ language, arabicVariant, savedState, onStateChange, onCom
     <div className="interaction-card matrix-lab">
       <div className="matrix-grid labelled-grid" style={{ gridTemplateColumns: `repeat(${SEAT_COLS.length + 1}, minmax(44px, 1fr))` }}>
         <span />
-        {SEAT_COLS.map((col) => <strong key={col}>{col}</strong>)}
+        {SEAT_COLS.map((col) => <strong data-axis-selected={selectedCol === col ? "true" : undefined} key={col}>{col}</strong>)}
         {rowLabels.flatMap((row, rowIndex) => [
-          <strong key={row}>{row}</strong>,
+          <strong data-axis-selected={selectedRow === row ? "true" : undefined} key={row}>{row}</strong>,
           ...SEAT_COLS.map((col, colIndex) => {
             const id = `${row}${col}`;
             const value = values[rowIndex][colIndex];
@@ -273,43 +279,117 @@ function MatrixCellRecap({ language, arabicVariant, savedState, onStateChange, o
     </div>
   );
 }
-function ExamplesCarousel({ language, arabicVariant, savedState, onStateChange, onComplete }: InteractionComponentProps) {
+function ExamplesCarousel({ language, arabicVariant, direction, savedState, onStateChange, onComplete }: InteractionComponentProps) {
   const examples = [
-    { ar: "سينما", ar_fusha: "سينما", en: "Cinema" },
-    { ar: "طقس", ar_fusha: "طقس", en: "Weather" },
-    { ar: "مخزون", ar_fusha: "مخزون", en: "Inventory" },
-    { ar: "أسهم", ar_fusha: "أسهم", en: "Stocks" },
-    { ar: "فلتر صورة", ar_fusha: "مرشح صورة", en: "Image filter" },
-    { ar: "نص", ar_fusha: "نص", en: "Text" }
-  ];
-  const index = typeof savedState.index === "number" ? savedState.index : 0;
+    {
+      id: "pixels",
+      title: { ar: "البكسلات", ar_fusha: "البكسلات", en: "Pixels" },
+      rows: ["1", "2", "3", "4", "5", "6", "7", "8"],
+      cols: ["1", "2", "3", "4", "5", "6", "7", "8"],
+      values: [
+        [0, 0, 1, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 2, 2, 2, 0],
+        [0, 1, 1, 1, 2, 2, 2, 0],
+        [0, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 0, 1, 1, 0],
+        [0, 0, 1, 1, 0, 1, 1, 0]
+      ]
+    },
+    {
+      id: "orders",
+      title: { ar: "طلبات المقهى", ar_fusha: "طلبات المقهى", en: "Cafe orders" },
+      rows: [{ ar: "سارة", ar_fusha: "سارة", en: "Sara" }, { ar: "فهد", ar_fusha: "فهد", en: "Fahad" }],
+      cols: [{ ar: "قهوة سعودية", ar_fusha: "قهوة سعودية", en: "Saudi coffee" }, { ar: "كرك", ar_fusha: "كرك", en: "Karak" }],
+      values: [[2, 1], [1, 0]]
+    },
+    {
+      id: "spices",
+      title: { ar: "رف البهارات", ar_fusha: "رف البهارات", en: "Spice shelf" },
+      rows: ["1", "2", "3"],
+      cols: ["1", "2", "3"],
+      values: Array.from({ length: 3 }, (_, rowIndex) => SHELF.filter((cell) => cell.row === rowIndex + 1).map((cell) => cell.label))
+    }
+  ] as const;
+  const rawIndex = typeof savedState.index === "number" ? savedState.index : 0;
+  const index = Math.min(Math.max(rawIndex, 0), examples.length - 1);
   const viewed = new Set(Array.isArray(savedState.viewed) ? (savedState.viewed as number[]) : [index]);
+  const selectedCell = typeof savedState.selectedCell === "string" ? savedState.selectedCell : "";
+  const example = examples[index];
 
   function setIndex(nextIndex: number) {
     viewed.add(nextIndex);
-    const completed = viewed.size >= 4;
-    const state = { index: nextIndex, viewed: Array.from(viewed), completed };
+    const completed = viewed.size >= examples.length;
+    const state = { index: nextIndex, viewed: Array.from(viewed), selectedCell: "", completed };
     onStateChange(state);
     if (completed) onComplete(state);
   }
 
+  function selectCell(row: number, col: number) {
+    onStateChange({ index, viewed: Array.from(viewed), selectedCell: `${row}-${col}`, completed: viewed.size >= examples.length });
+  }
+
   return (
-    <div className="interaction-card matrix-lab">
-      <div className="matrix-example-stage">
-        <strong>{t(examples[index], language, arabicVariant)}</strong>
-        <div className="matrix-grid compact" dir="ltr">
-          {[1, 0, 2, 0, 3, 1, 4, 1, 0].map((value, cell) => <span className="seat-cell static" key={`${index}-${cell}`}>{(value + index) % 5}</span>)}
+    <div className="interaction-card matrix-lab matrix-examples-stage" dir={direction}>
+      <div className="matrix-example-heading">
+        <strong>{t(example.title, language, arabicVariant)}</strong>
+        <b className="matrix-example-size" dir="ltr">{example.rows.length} × {example.cols.length}</b>
+      </div>
+      {example.id === "spices" ? (
+        <div className="spice-shelf-stage matrix-example-spice-preview">
+          <img className="spice-shelf-background" src={SPICE_SHELF_BACKGROUND} alt="" aria-hidden="true" />
+          <div className="spice-shelf-grid" dir="ltr">
+            {SHELF.map((cell) => {
+              const isSelected = selectedCell === `${cell.row - 1}-${cell.col - 1}`;
+              return (
+                <button
+                  type="button"
+                  key={`${cell.row}-${cell.col}`}
+                  className="spice-cell"
+                  data-preview-selected={isSelected ? "true" : undefined}
+                  aria-label={t(cell.label, language, arabicVariant)}
+                  aria-pressed={isSelected}
+                  onClick={() => selectCell(cell.row - 1, cell.col - 1)}
+                >
+                  <span className="spice-lid" />
+                  <span className="spice-body">{t(cell.label, language, arabicVariant)}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div className="button-row">
-        <button className="button" type="button" onClick={() => setIndex((index + examples.length - 1) % examples.length)}>{t({ ar: "السابق", ar_fusha: "السابق", en: "Previous" }, language, arabicVariant)}</button>
-        <button className="button primary" type="button" onClick={() => setIndex((index + 1) % examples.length)}>{t({ ar: "التالي", ar_fusha: "التالي", en: "Next" }, language, arabicVariant)}</button>
-        <button className="button" type="button" onClick={() => onStateChange({ index: 0, viewed: [0], completed: false })}>{t({ ar: "إعادة", ar_fusha: "إعادة", en: "Reset" }, language, arabicVariant)}</button>
-      </div>
-      <div className="meaning-box" aria-live="polite">
-        {viewed.size >= 4
-          ? t({ ar: "المصفوفات تظهر في أماكن كثيرة: صور، نصوص، مخزون، وقياسات.", ar_fusha: "تظهر المصفوفات في أماكن كثيرة: صور، نصوص، مخزون، وقياسات.", en: "Matrices show up in many places: images, text, inventory, and measurements." }, language, arabicVariant)
-          : t({ ar: "تنقّل بين أربعة أمثلة على الأقل.", ar_fusha: "تنقّل بين أربعة أمثلة على الأقل.", en: "Move through at least four examples." }, language, arabicVariant)}
+      ) : (
+        <div className={`matrix-example-table-shell${example.id === "pixels" ? " matrix-example-pixels-shell" : ""}`}>
+          <table className="matrix-example-table" data-example={example.id} dir={direction}>
+            <thead>
+              <tr>
+                <th scope="col" aria-label={t({ ar: "الصفوف والأعمدة", ar_fusha: "الصفوف والأعمدة", en: "Rows and columns" }, language, arabicVariant)}>↘</th>
+                {example.cols.map((col, colIndex) => <th scope="col" key={colIndex}>{t(col, language, arabicVariant)}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {example.rows.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  <th scope="row">{t(row, language, arabicVariant)}</th>
+                  {example.values[rowIndex].map((value, colIndex) => {
+                    const isSelected = selectedCell === `${rowIndex}-${colIndex}`;
+                    const isPixel = example.id === "pixels" && typeof value === "number";
+                    const pixelColors = ["#181818", "#ff3138", "#43aeea"];
+                    return (
+                      <td key={colIndex}>
+                        <button className="matrix-example-cell" data-pixel={isPixel ? "true" : undefined} data-selected={isSelected} dir={typeof value === "number" ? "ltr" : "rtl"} style={isPixel ? { background: pixelColors[value as number], color: value === 2 ? "#181818" : "#fff8ec" } : undefined} type="button" onClick={() => selectCell(rowIndex, colIndex)}>{typeof value === "number" ? value : t(value, language, arabicVariant)}</button>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <div className="matrix-example-tabs" role="tablist" aria-label={t({ ar: "أمثلة المصفوفات", ar_fusha: "أمثلة المصفوفات", en: "Matrix examples" }, language, arabicVariant)}>
+        {examples.map((item, itemIndex) => <button className="matrix-example-tab" data-active={itemIndex === index} aria-selected={itemIndex === index} role="tab" type="button" key={item.id} onClick={() => setIndex(itemIndex)}>{t(item.title, language, arabicVariant)}</button>)}
       </div>
     </div>
   );

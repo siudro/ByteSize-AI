@@ -6,7 +6,8 @@ export function getMediaIndex(byte: Byte): Record<string, MediaReference & { typ
     ["image", media.images],
     ["video", media.videos],
     ["audio", media.audio],
-    ["download", media.downloads]
+    ["download", media.downloads],
+    ["model", media.models]
   ];
 
   return groups.reduce<Record<string, MediaReference & { type: MediaKind }>>((index, [type, items]) => {

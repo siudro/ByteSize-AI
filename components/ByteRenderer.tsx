@@ -51,7 +51,7 @@ function uiText(value: LocalizedText, language: LanguageCode, arabicVariant: Ara
 export function ByteRenderer({ byte }: ByteRendererProps) {
   const router = useRouter();
   const { language, arabicVariant, direction } = useLanguage();
-  const { loaded, isUnlocked, isCompleted, completeByte } = useProgress();
+  const { progress, loaded, isUnlocked, isCompleted, completeByte } = useProgress();
 
   const [index, setIndex] = useState(0);
   const [timePassed, setTimePassed] = useState(false);
@@ -59,6 +59,9 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
 
   const screens = byte.screens ?? [];
   const currentScreen = screens[index];
+  const savedInteractionCompleted = currentScreen
+    ? progress.interactionStates[`${byte.id}:${currentScreen.id}`]?.completed === true
+    : false;
 
   const progressPercent = screens.length ? ((index + 1) / screens.length) * 100 : 0;
   const blocked = loaded && !isUnlocked(byte.id) && !isCompleted(byte.id);
@@ -72,7 +75,7 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
     const screenMinimumSeconds = Number(currentScreen.minimum_time_seconds ?? MIN_SCREEN_TIME_SECONDS);
 
     setTimePassed(false);
-    setScreenAnswered(!screenRequiresAnswer(currentScreen));
+    setScreenAnswered(!screenRequiresAnswer(currentScreen) || savedInteractionCompleted);
 
     const timer = window.setTimeout(() => {
       setTimePassed(true);
@@ -81,7 +84,7 @@ export function ByteRenderer({ byte }: ByteRendererProps) {
     return () => {
       window.clearTimeout(timer);
     };
-  }, [index, currentScreen]);
+  }, [index, currentScreen, savedInteractionCompleted]);
 
   function markComplete() {
     completeByte(byte.id, byte.map?.unlocks ?? []);

@@ -4,10 +4,10 @@
   <path d="M470 100 H512 V260 H470" fill="none" stroke="#24211b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <g font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#24211b" text-anchor="middle" dominant-baseline="middle">
     <text x="220" y="143">1</text>
-    <text x="320" y="143">2</text>
-    <text x="420" y="143">3</text>
-    <text x="220" y="223">4</text>
-    <text x="320" y="223">5</text>
-    <text x="420" y="223">6</text>
+    <text x="320" y="143">0</text>
+    <text x="420" y="143">1</text>
+    <text x="220" y="223">0</text>
+    <text x="320" y="223">1</text>
+    <text x="420" y="223">0</text>
   </g>
 </svg>

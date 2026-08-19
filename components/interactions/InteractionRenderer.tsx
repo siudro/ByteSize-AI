@@ -8,6 +8,7 @@ import { GuidedPixelCharacter } from "./GuidedPixelCharacter";
 import { MatrixBasicsLab } from "./MatrixBasicsLab";
 import { PixelTransformationLab } from "./PixelTransformationLab";
 import { SaudiCafeMatrix } from "./SaudiCafeMatrix";
+import { SpiceShelf } from "./SpiceShelf";
 import { TungPixelZoom } from "./TungPixelZoom";
 import type { InteractionComponentProps, InteractionState } from "./types";
 
@@ -32,8 +33,11 @@ const REGISTRY: Record<string, ComponentType> = {
   MatrixBasicsLab,
   "pixel-character": GuidedPixelCharacter,
   GuidedPixelCharacter,
+  "badge-builder": GuidedPixelCharacter,
   "saudi-cafe-matrix": SaudiCafeMatrix,
   SaudiCafeMatrix,
+  "spice-shelf": SpiceShelf,
+  SpiceShelf,
   "pixel-transform": PixelTransformationLab,
   PixelTransformationLab,
   "ai-compute-scale": AIComputeScaleLab,
