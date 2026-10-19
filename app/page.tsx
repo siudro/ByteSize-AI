@@ -1,5 +1,1 @@
-import { redirect } from "next/navigation";
-
-export default function HomePage() {
-  redirect("/map");
-}
+export { default } from "./map/page";

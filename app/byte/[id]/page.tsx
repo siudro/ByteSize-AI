@@ -4,14 +4,14 @@ import { ExperienceProvider } from "@/components/ExperienceProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { ProgressProvider } from "@/components/ProgressProvider";
 import { getByteById, getByteIds } from "@/lib/bytes";
-import { getPlaceholderByte } from "@/lib/placeholderBytes";
+import { getPlaceholderByte, PLACEHOLDER_BYTES } from "@/lib/placeholderBytes";
 
 type BytePageProps = {
   params: Promise<{ id: string }>;
 };
 
 export function generateStaticParams() {
-  return getByteIds().map((id) => ({ id }));
+  return [...new Set([...getByteIds(), ...PLACEHOLDER_BYTES.map((byte) => byte.id)])].map((id) => ({ id }));
 }
 
 export default async function BytePage({ params }: BytePageProps) {

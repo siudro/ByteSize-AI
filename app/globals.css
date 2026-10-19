@@ -2193,7 +2193,7 @@ html[data-stimulus="high"] .timer-status-completed.timer-alert-high {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background-image: url("/content-media/L1-ENG-MATRIX-RAM/media/images/pixelated-triple-t.jpg");
+  background-image: var(--pixel-image);
   background-position: center;
   background-size: 84px 84px;
   background-repeat: repeat;
@@ -2542,7 +2542,7 @@ html[data-stimulus="high"] .timer-status-completed.timer-alert-high {
   z-index: 0;
   inset: 0;
   content: "";
-  background-image: url("/content-media/L1-ENG-MATRIX-RAM/media/images/pixelated-triple-t.jpg");
+  background-image: var(--pixel-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

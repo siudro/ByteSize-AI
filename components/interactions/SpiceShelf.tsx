@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { t } from "@/lib/i18n";
+import { withBasePath } from "@/lib/media";
 import type { InteractionComponentProps } from "./types";
 
 export type SpiceCell = {
@@ -47,7 +48,7 @@ const UNAVAILABLE = {
 export function SpiceShelf(props: InteractionComponentProps) {
   const { language, arabicVariant, config, savedState, onStateChange, onComplete } = props;
   const stage = typeof config.stage === "string" ? config.stage : undefined;
-  const backgroundImage = typeof config.background_image === "string" ? config.background_image : "";
+  const backgroundImage = typeof config.background_image === "string" ? withBasePath(config.background_image) : "";
 
   const restoredTried = Array.isArray(savedState?.wrongAttempts)
     ? (savedState.wrongAttempts as number[]).filter((n) => typeof n === "number")

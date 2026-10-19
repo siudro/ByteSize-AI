@@ -2,10 +2,11 @@
 
 import { type PointerEvent, useRef, useState } from "react";
 import { t } from "@/lib/i18n";
+import { withBasePath } from "@/lib/media";
 import { numberValue, type InteractionComponentProps, type InteractionState } from "./types";
 import { SHELF } from "./SpiceShelf";
 
-const SPICE_SHELF_BACKGROUND = "/content-media/L1-ENG-MATRIX-RAM/media/images/spice-shelf.png";
+const SPICE_SHELF_BACKGROUND = withBasePath("/content-media/L1-ENG-MATRIX-RAM/media/images/spice-shelf.png");
 
 const SCENES = [
   { id: "cinema", icon: { ar: "\u0633\u064a\u0646\u0645\u0627", ar_fusha: "\u0633\u064a\u0646\u0645\u0627", en: "Cinema" }, rows: { ar: "\u0635\u0641\u0648\u0641 \u0627\u0644\u0633\u064a\u0646\u0645\u0627", ar_fusha: "\u0635\u0641\u0648\u0641 \u0627\u0644\u0633\u064a\u0646\u0645\u0627", en: "cinema rows" }, cols: { ar: "\u0623\u0631\u0642\u0627\u0645 \u0627\u0644\u0645\u0642\u0627\u0639\u062f", ar_fusha: "\u0623\u0631\u0642\u0627\u0645 \u0627\u0644\u0645\u0642\u0627\u0639\u062f", en: "seat numbers" } },

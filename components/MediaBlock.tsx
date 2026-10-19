@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { t } from "@/lib/i18n";
+import { withBasePath } from "@/lib/media";
 import type { ArabicVariantCode, LanguageCode, MediaReference, ScreenMedia } from "@/lib/schema";
 import { StlModelViewer } from "./StlModelViewer";
 
@@ -37,7 +38,7 @@ export function MediaBlock({ byteId, media, mediaItem, language, arabicVariant }
   const prompt = t(mediaItem?.prompt, language, arabicVariant);
   const [typedPrompt, setTypedPrompt] = useState("");
   const expectedPath = mediaItem ? `content/bytes/${byteId}/media/${mediaItem.path}` : `content/bytes/${byteId}/media/<missing ref>`;
-  const url = mediaItem ? `/content-media/${byteId}/media/${mediaItem.path}` : "";
+  const url = mediaItem ? withBasePath(`/content-media/${byteId}/media/${mediaItem.path}`) : "";
   const showDeveloperDetails = process.env.NODE_ENV !== "production";
 
   useEffect(() => {

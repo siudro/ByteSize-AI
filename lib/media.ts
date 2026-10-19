@@ -1,5 +1,11 @@
 import type { Byte, MediaKind, MediaReference } from "./schema";
 
+export function withBasePath(url: string): string {
+  return url.startsWith("/") && !url.startsWith("//")
+    ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${url}`
+    : url;
+}
+
 export function getMediaIndex(byte: Byte): Record<string, MediaReference & { type: MediaKind }> {
   const media = byte.media ?? {};
   const groups: Array<[MediaKind, MediaReference[] | undefined]> = [

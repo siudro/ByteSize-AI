@@ -2,6 +2,7 @@
 
 import { type PointerEvent, useEffect, useRef, useState } from "react";
 import { t } from "@/lib/i18n";
+import { withBasePath } from "@/lib/media";
 import type { InteractionComponentProps, InteractionState } from "./types";
 
 const DEFAULT_IMAGE_URL = "/content-media/L1-ENG-MATRIX-RAM/media/images/pixelated-triple-t.jpg";
@@ -60,7 +61,7 @@ function numeric(value: unknown, fallback: number) {
 }
 
 function imageUrlFromConfig(config: Record<string, unknown>) {
-  return typeof config.image_url === "string" ? config.image_url : DEFAULT_IMAGE_URL;
+  return withBasePath(typeof config.image_url === "string" ? config.image_url : DEFAULT_IMAGE_URL);
 }
 
 function grayscale(r: number, g: number, b: number) {

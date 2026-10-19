@@ -38,7 +38,15 @@ The platform route flow is simple:
 
 - `/map` shows the Byte map.
 - `/byte/[id]` opens one Byte and renders one screen at a time.
-- `app/content-media/[...path]/route.ts` serves media from Byte folders when files exist.
+- `app/content-media/[...path]/route.ts` exports files from each Byte's `media/` folder at build time and serves them during development.
+
+## GitHub Pages
+
+The site is published at https://siudro.github.io/ByteSize-AI/ from pushed `main` commits using `.github/workflows/pages.yml`. In repository Settings → Pages, select **GitHub Actions** as the source.
+
+For a GitHub Pages build, set `NEXT_PUBLIC_BASE_PATH=/ByteSize-AI`, then run `npm run build` to create the static site in `out/`. Without this variable, local development and `npm run build` / `npm start` use no prefix and keep the normal Next.js server. Both authored Bytes and placeholder Bytes are generated; media stays in `content/bytes/<id>/media/` and is exported automatically. Files outside those media folders are not published as downloads.
+
+After changing YAML or adding media, push to `main` to rebuild the site. Learner progress stays in that browser's `localStorage` and is separate from progress on localhost.
 
 ## How Byte Folders Work
 
